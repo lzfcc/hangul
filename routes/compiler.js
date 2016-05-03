@@ -31,10 +31,9 @@ router.post('/compilecode', function(req, res) {
 	var form = new formidable.IncomingForm();
 	var postObj;
 	//console.log("1", this == global);  //true
-	//console.log("2", postObj); //undefined
-    form.parse(req, function(err, fields, files) {
-    	console.log(JSON.stringify(fields));
-    	//console.log("3",this === global);  //true
+    form.parse(req, (err, fields, files) => {  //因为异步不阻塞的原因，所以下面的代码全部要提到该回调函数来
+    	//console.log(JSON.stringify(fields));
+    	console.log("3",this === global);  //true
 
     	var lang = fields.lang,
     		input = fields.input,
@@ -47,7 +46,7 @@ router.post('/compilecode', function(req, res) {
 				cmd: "gcc"
 			};
 			//console.log(typeof(inputRadio));  //string!!!
-			compiler.compileC(envData, code, (inputRadio === "true") && input, function(data) { // true && str -> str, false && str -> false 
+			compiler.compileC(envData, code, (inputRadio === "true") && input, (data) => { // true && str -> str, false && str -> false 
 				if (data.error) {
 					res.send(data.error);
 				} else {
@@ -60,7 +59,7 @@ router.post('/compilecode', function(req, res) {
 				OS: "windows",
 				cmd: "g++"
 			};
-			compiler.compileCPP(envData, code, (inputRadio === "true") && input, function(data) {
+			compiler.compileCPP(envData, code, (inputRadio === "true") && input, (data) => {
 				if (data.error) {
 					res.send(data.error);
 				} else {
@@ -84,7 +83,7 @@ router.post('/compilecode', function(req, res) {
 				};
 				console.log(code);
 				compiler.compileJavaWithInput(envData, code, input, function(data) {
-					res.send(data);
+					res.send(data.output);
 				});
 	
 			}
@@ -92,21 +91,18 @@ router.post('/compilecode', function(req, res) {
 		}
 		if (lang === "Python") {
 			var envData = { OS: "windows" };
-			compiler.compilePython(envData, code, (inputRadio === "true") && input, function(data) {
-				res.send(data);
+			compiler.compilePython(envData, code, (inputRadio === "true") && input, (data) => {
+				res.send(data.output);
 			});
 	
 		}
 		if (lang == "Nodejs") {
 			var envData = { OS: "windows" };
-			compiler.compileNodejs(envData, code, (inputRadio === "true") && input, function(data) {
-				res.send(data);
+			compiler.compileNodejs(envData, code, (inputRadio === "true") && input, (data) => {
+				res.send(data.output);
 			});
 		}
     });
-    
-    console.log("5",postObj);
-    
 
 
 });

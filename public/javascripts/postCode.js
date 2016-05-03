@@ -23,7 +23,6 @@ window.onload = function() {
         xhr.open("POST", f.action, true);
         //xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded; charset=UTF-8");
         xhr.setRequestHeader("processData","false");
-        //xhr.setRequestHeader("Content-Type","multipart/form-data");
         xhr.send(formData);
 
         xhr.onreadystatechange = function () {
@@ -47,4 +46,8 @@ window.onload = function() {
  http://blog.csdn.net/xiaxiaorui2003/article/details/4091440
  http://expressjs.com/zh-cn/guide/routing.html
  ‘+’问题可能与之有关
+ 
+ 16/05/02
+ nodemon抽风：之前运行nodejs代码没问题，后来发现一提交post，就503，服务器重启，nodemon监测到改变。
+ 使用node时候没问题，于是我猜测是因为在本地/temp下写了新的js导致的。故而在package.json里改动："start": "nodemon -i /temp ./bin/www"
  */
