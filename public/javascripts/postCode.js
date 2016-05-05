@@ -1,5 +1,6 @@
-window.onload = function() {
+var postCode = function() {
     console.log("postCode.js!");
+    
     function URLencode(sStr) {
         return escape(sStr).replace(/\+/g, '%2B').replace(/\"/g,'%22').replace(/\'/g, '%27').replace(/\//g,'%2F').replace(/\&/g, '%26');
     }

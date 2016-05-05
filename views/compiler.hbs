@@ -3,9 +3,9 @@
       <h2>Code</h2>
       <textarea id="code" rows="13" cols="100" name="code"></textarea><br/>
       <h2>Input</h2>
-      <textarea id="input" rows="10" cols="100" name="input"></textarea><br/>
+      <textarea id="input" rows="10" cols="100" name="input" style="display: none"></textarea><br/>
       Language :
-      <select name="lang">
+      <select id="lang" name="lang">
         <option value="C">C</option>
         <option value="C++">C++</option>
         <option value="Java">Java</option>
@@ -13,30 +13,48 @@
         <option value="CS">C#</option>
         <option value="VB">VB</option>
         <option value="Nodejs">Node.js</option>
-      </select>Compile With Input :
-      <input id="inputRadio" type="radio" name="inputRadio" value="true"/>yes
-      <input id="inputRadio" type="radio" name="inputRadio" value="false" checked="true"/>No<br/>
+      </select>
+      </br>
+      Compile With Input :
+      <input id="hasInput" type="radio" name="inputRadio" value="true"/>yes
+      <input id="noInput" type="radio" name="inputRadio" value="false" checked="true"/>No<br/>
       <input type="submit" value="run!" name="submit"/>
     </form>
     <h2>Output</h2>
       <textarea id="output" rows="10" cols="100" name="input"></textarea><br/>
 
 
-    <script src="/javascripts/postCode.js"></script>
+    
     <script type="text/javascript" src="https://cdn.rawgit.com/codemirror/CodeMirror/master/lib/codemirror.js"></script>
     <script type="text/javascript" src="https://cdn.rawgit.com/codemirror/CodeMirror/master/addon/edit/closebrackets.js"></script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/codemirror/CodeMirror/master/addon/edit/matchbrackets.js"></script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/codemirror/CodeMirror/master/addon/selection/active-line.js"></script>
     <script type="text/javascript" src="https://cdn.rawgit.com/codemirror/CodeMirror/master/mode/clike/clike.js"></script>
     <script type="text/javascript" src="https://cdn.rawgit.com/codemirror/CodeMirror/master/mode/javascript/javascript.js"></script>
     <script type="text/javascript" src="https://cdn.rawgit.com/codemirror/CodeMirror/master/mode/python/python.js"></script>
-    <script>
-    var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
-            lineNumbers: true,
-            lineWraps: true,
-            indentUnit: 4,
-            autoCloseBrackets: true,
-            mode: "text/x-csrc"
-        });
+    <script type="text/javascript" src="/javascripts/postCode.js"></script>
+    <script type="text/javascript" src="/javascripts/editor.js"></script>
+    <script type="text/javascript">
+        //window.onload加载多个函数：http://www.webreference.com/programming/javascript/onloads/index.html
+        function addLoadEvent(func) {
+            var oldonload = window.onload;
+            if (typeof window.onload != 'function') {
+                window.onload = func;
+            } 
+            else {
+                window.onload = function() {
+                  if (oldonload) {
+                      oldonload();
+                  }
+                  func();
+                }
+            }
+        }
+        addLoadEvent(editor);
+        addLoadEvent(postCode);
     </script>
+   
+    
 
 
 <!--div class="header">

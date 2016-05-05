@@ -28,17 +28,18 @@ router.post('/compilecode', function(req, res) {
 	var lang = req.body.lang;
 	*/
 
-	var form = new formidable.IncomingForm();
+	var form = new formidable.IncomingForm(); 
 	var postObj;
 	//console.log("1", this == global);  //true
     form.parse(req, (err, fields, files) => {  //因为异步不阻塞的原因，所以下面的代码全部要提到该回调函数来
     	//console.log(JSON.stringify(fields));
-    	console.log("3",this === global);  //true
+    	//console.log("3",this === global);  //true
 
     	var lang = fields.lang,
     		input = fields.input,
     		inputRadio = fields.inputRadio,
     		code = fields.code;
+    	//console.log("inputRadio:", inputRadio, "type:", typeof(inputRadio));console.log("input is empty:" , input === "");
     		
     	if (lang === "C") {
 			var envData = {
@@ -92,14 +93,24 @@ router.post('/compilecode', function(req, res) {
 		if (lang === "Python") {
 			var envData = { OS: "windows" };
 			compiler.compilePython(envData, code, (inputRadio === "true") && input, (data) => {
-				res.send(data.output);
+				if(data.error) {
+					res.send(data.error);
+				}
+				else{
+					res.send(data.output);
+				}
 			});
 	
 		}
 		if (lang == "Nodejs") {
 			var envData = { OS: "windows" };
 			compiler.compileNodejs(envData, code, (inputRadio === "true") && input, (data) => {
-				res.send(data.output);
+				if(data.error) {
+					res.send(data.error);
+				}
+				else{
+					res.send(data.output);
+				}
 			});
 		}
     });
