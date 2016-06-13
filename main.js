@@ -9,38 +9,57 @@
 //https://en.wikipedia.org/wiki/Hangul_Jamo_(Unicode_block)
 var hanHash = {
     'g': 'ㅎ',
+    'G': 'ㅎ',
     'q': 'ㅂ',
     'Q': 'ㅃ',
     'n': 'ㅜ',
+    'N': 'ㅜ',
     'b': 'ㅠ',
+    'B': 'ㅠ',
     'z': 'ㅋ',
+    'Z': 'ㅋ',
     'p': 'ㅔ',
     'P': 'ㅖ',
     'e': 'ㄷ',
     'E': 'ㄸ',
     'f': 'ㄹ',
+    'F': 'ㄹ',
     'a': 'ㅁ',
+    'A': 'ㅁ',
     'd': 'ㅇ',
+    'D': 'ㅇ',
     'm': 'ㅡ',
+    'M': 'ㅡ',
     'l': 'ㅣ',
+    'L': 'ㅣ',
     'c': 'ㅊ',
+    'C': 'ㅊ',
     'j': 'ㅓ',
+    'J': 'ㅓ',
     'r': 'ㄱ',
     'R': 'ㄲ',
     'h': 'ㅗ',
+    'H': 'ㅗ',
     'v': 'ㅍ',
+    'V': 'ㅍ',
     'o': 'ㅐ',
     'O': 'ㅒ',
     'x': 'ㅌ',
+    'X': 'ㅌ',
     'w': 'ㅈ',
     'W': 'ㅉ',
     'k': 'ㅏ',
+    'K': 'ㅏ',
     'y': 'ㅛ',
+    'Y': 'ㅛ',
     't': 'ㅅ',
     'T': 'ㅆ',
     'u': 'ㅕ',
+    'U': 'ㅕ',
     'i': 'ㅑ',
-    's': 'ㄴ'
+    'I': 'ㅑ',
+    's': 'ㄴ',
+    'S': 'ㄴ'
 };
 var jaeumHash = {
     "ㄱ": 0,
@@ -151,7 +170,7 @@ var batchimCombine = {
     },
     "ㅂ": {
         "ㅅ": "ㅄ"
-    },
+    }
 };
 
 var jamoCode = {
@@ -242,6 +261,11 @@ Stack.prototype.pop = function() {
     }
 };
 
+Stack.prototype.clear = function() {
+    this._size = 0;
+    this._storage = {};
+};
+
 var charStruct = function() {
     this.code = 0;
     this.keySeq = [];
@@ -270,19 +294,23 @@ new Vue({
 
     },
     filters: {
-        translate: function(s) {
-            return s;
-        },
-        mapHangul: function(s) {
-            console.log(s);
+        mapUnicode: function(s) {
             if (s === undefined) {
                 return undefined;
             }
             var len = s.length;
-
+            if (len == 0) {
+                this.unicodeSeq = [];
+                this.charStack.clear();
+                this.inputStack.clear();
+                return "";
+            }
 
             var latest = s[len - 1];
             var latestHan = hanHash[latest];
+            if (latestHan === undefined) { //输入了非韩语字母 /
+                return this.unicode; //Logic Error!!!!!!!!!!!!
+            }
             var latestIsJaeum = (jaeumHash[latestHan] !== undefined);
 
 
@@ -290,7 +318,7 @@ new Vue({
 
                 this.inputStack.push(latest);
 
-                if (this.charStack._size == 0) { //如果输入序列栈为空
+                if (this.charStack._size === 0) { //如果输入序列栈为空
                     var newStruct = new charStruct();
                     newStruct.keySeq.push(latestHan);
                     newStruct.charSeq.push(latestHan);
@@ -310,8 +338,7 @@ new Vue({
                             var topJaeum = topStruct.keySeq[topStruct.keySeq.length - 1];
 
                             if (topStruct.state[2] === 0) { //单子音未成字
-                                console.log("Danziyiin weichengzi");
-                                if (latestIsJaeum == false) { //如果输入了一个母音
+                                if (latestIsJaeum === false) { //如果输入了一个母音
                                     topStruct = this.charStack.pop();
                                     topStruct.keySeq.push(latestHan);
                                     topStruct.charSeq.push(latestHan);
@@ -326,7 +353,7 @@ new Vue({
                                         topStruct = this.charStack.pop();
                                         topStruct.keySeq.push(latestHan);
                                         topStruct.charSeq.pop(); // === topJaeum
-                                        var b = batchimCombine[topJaeum][latestHan]
+                                        var b = batchimCombine[topJaeum][latestHan];
                                         topStruct.charSeq.push(b);
                                         topStruct.code = jamoCode[b];
                                         topStruct.state[2] = 1; //双收音未成字
@@ -345,7 +372,7 @@ new Vue({
 
                                 }
                             } else { //双收（子）音未成字
-                                if (latestIsJaeum == false) { //如果输入了一个母音
+                                if (latestIsJaeum === false) { //如果输入了一个母音
                                     topStruct = this.charStack.pop();
                                     topStruct.keySeq.pop();
                                     topStruct.charSeq.pop();
@@ -377,7 +404,7 @@ new Vue({
                             }
 
                         } else if (topStruct.state[1] === 0) { //[0,0,-1]单母音未成字
-                            var topMoeum = topStruct.charSeq[0];
+                            var topMoeum = topStruct.charSeq[topStruct.keySeq.length - 1];
                             if (!latestIsJaeum && topMoeum in moeumCombine && latestHan in moeumCombine[topMoeum]) { //如果输入了一个母音，又能组成复合母音
                                 topStruct = this.charStack.pop();
                                 topStruct.keySeq.push(latestHan);
@@ -421,7 +448,6 @@ new Vue({
                             var topMoeum = topStruct.keySeq[topStruct.keySeq.length - 1];
                             if (topStruct.state[1] === 0) { //单母音字[1,0,-1]
                                 var topJaeum = topStruct.charSeq[0];
-                                console.log("latestIsJaeum:", latestIsJaeum);
                                 if (!latestIsJaeum) { //如果输入了一个母音，
                                     if (topMoeum in moeumCombine && latestHan in moeumCombine[topMoeum]) { //又能组成复合母音
                                         topStruct = this.charStack.pop();
@@ -452,7 +478,7 @@ new Vue({
                                         newStruct.state = [0, -1, 0];
                                         this.charStack.push(newStruct);
                                         this.unicodeSeq.push(newStruct.code);
-                                    } else { //zi音可以做收音
+                                    } else { //子音可以做收音
                                         topStruct = this.charStack.pop();
                                         topStruct.keySeq.push(latestHan);
                                         topStruct.charSeq.push(latestHan);
@@ -464,7 +490,7 @@ new Vue({
                                     }
                                 }
                             } else { //复合母音字[1,1,-1]
-                                if (latestIsJaeum == false) { //如果输入了一个母音
+                                if (latestIsJaeum === false) { //如果输入了一个母音
                                     var newStruct = new charStruct();
                                     newStruct.keySeq.push(latestHan);
                                     newStruct.charSeq.push(latestHan);
@@ -481,7 +507,7 @@ new Vue({
                                         newStruct.state = [0, -1, 0];
                                         this.charStack.push(newStruct);
                                         this.unicodeSeq.push(newStruct.code);
-                                    } else { //zi音可以做收音
+                                    } else { //子音可以做收音
                                         topStruct = this.charStack.pop();
                                         topStruct.keySeq.push(latestHan);
                                         topStruct.charSeq.push(latestHan);
@@ -499,10 +525,8 @@ new Vue({
                             var topJaeum = topStruct.keySeq[topStruct.keySeq.length - 1];
 
                             if (latestIsJaeum) {
-                                console.log(latestHan);
 
                                 if (topJaeum in batchimCombine && latestHan in batchimCombine[topJaeum]) { //可以组合成双收音
-                                    console.log(topStruct);
                                     topStruct = this.charStack.pop();
                                     topStruct.keySeq.push(latestHan);
                                     topStruct.charSeq.pop(); // === topJaeum
@@ -527,7 +551,7 @@ new Vue({
                                 topStruct.keySeq.pop();
                                 topStruct.charSeq.pop();
                                 topStruct.code -= batchimHash[topJaeum];
-                                topStruct.state[2] = 0;
+                                topStruct.state[2] = -1;
                                 this.charStack.push(topStruct);
                                 this.unicodeSeq.pop();
                                 this.unicodeSeq.push(topStruct.code);
@@ -578,31 +602,134 @@ new Vue({
                             }
                         }
 
-                        //*********************************2016-06-12**********************************************
+                        //*********************************2016-06-13**********************************************
+                        //当前问题：1.不能处理退格 2.输入空字符或未能映射为有效韩字的字母会中止程序 3.逻辑有待优化
+                        //4. 数据结构有待优化
                     }
 
                 } // input stack is not empty
-            }
-            if (len < this.inputStack._size) {
+            } else if (len < this.inputStack._size) { //如果删除了字符
+
                 this.inputStack.pop();
+
+                var topStruct = this.charStack.top();
+
+                if (topStruct.state[0] === 0) { //未成字
+                    if (topStruct.state[1] < 0) { //子音未成字[0,-1,x]
+
+                        var topJaeum = topStruct.keySeq[topStruct.keySeq.length - 1];
+
+                        if (topStruct.state[2] === 0) { //单子音未成字
+
+                            this.charStack.pop();
+                            this.unicodeSeq.pop();
+
+                        } else { //双收（子）音未成字
+
+                            topStruct = this.charStack.pop();
+                            topStruct.keySeq.pop();
+                            topStruct.charSeq.pop();
+                            topStruct.charSeq.push(topStruct.keySeq[0]);
+                            topStruct.code = jamoCode[topStruct.keySeq[0]];
+                            topStruct.state = [0, -1, 0];
+                            this.charStack.push(topStruct);
+                            this.unicodeSeq.pop();
+                            this.unicodeSeq.push(topStruct.code);
+
+                        }
+
+                    } else if (topStruct.state[1] === 0) { //[0,0,-1]单母音未成字
+
+                        this.charStack.pop();
+                        this.unicodeSeq.pop();
+
+                    } else { //[0,1,-1]复合母音未成字（情况同空栈输入）
+                        topStruct = this.charStack.pop();
+                        topStruct.keySeq.pop();
+                        topStruct.charSeq.pop();
+                        topStruct.charSeq.push(topStruct.keySeq[0]);
+                        topStruct.code = jamoCode[topStruct.keySeq[0]];
+                        topStruct.state[1] = 0;
+                        this.charStack.push(topStruct);
+                        this.unicodeSeq.pop();
+                        this.unicodeSeq.push(topStruct.code);
+                    }
+                } else { //已成字
+                    if (topStruct.state[2] < 0) { //无收音字[1,x,-1]
+
+                        if (topStruct.state[1] === 0) { //单母音字[1,0,-1]
+                            topStruct = this.charStack.pop();
+                            topStruct.keySeq.pop();
+                            topStruct.charSeq.pop();
+                            topStruct.code = jamoCode[topStruct.keySeq[0]];
+                            topStruct.state = [0, -1, 0];
+                            this.charStack.push(topStruct);
+                            this.unicodeSeq.pop();
+                            this.unicodeSeq.push(topStruct.code);
+
+
+                        } else { //复合母音字[1,1,-1]
+                            console.log("We are here");
+                            topStruct = this.charStack.pop();
+                            topStruct.keySeq.pop();
+                            var topMoeum = topStruct.charSeq.pop();
+                            topStruct.charSeq.push(topStruct.keySeq[1]); //topStruct.keySeq.length - 1
+                            console.log(topMoeum, topStruct.keySeq[0]);
+                            topStruct.code = topStruct.code - (moeumHash[topMoeum] - moeumHash[topStruct.keySeq[1]]) * 28;
+                            topStruct.state[1] = 0;
+                            this.charStack.push(topStruct);
+                            this.unicodeSeq.pop();
+                            this.unicodeSeq.push(topStruct.code);
+                        }
+
+                    } else if (topStruct.state[2] === 0) { //单收音字[1,x,0]
+
+                        topStruct.keySeq[topStruct.keySeq.length - 1];
+
+                        topStruct = this.charStack.pop();
+                        topStruct.keySeq.pop();
+                        var topJaeum = topStruct.charSeq.pop();
+                        topStruct.code -= batchimHash[topJaeum];
+                        topStruct.state[2] = -1;
+                        this.charStack.push(topStruct);
+                        this.unicodeSeq.pop();
+                        this.unicodeSeq.push(topStruct.code);
+
+
+
+                    } else { //双收音字[1,x,1]
+
+
+                        topStruct = this.charStack.pop();
+                        var topJaeum = topStruct.charSeq.pop();
+                        topStruct.keySeq.pop();
+                        var leftPart = topStruct.keySeq[topStruct.keySeq.length - 1];
+                        topStruct.charSeq.push(leftPart);
+                        topStruct.code = topStruct.code - batchimHash[topJaeum] + batchimHash[leftPart];
+                        topStruct.state[2] = 0;
+                        this.charStack.push(topStruct);
+                        this.unicodeSeq.pop();
+                        this.unicodeSeq.push(topStruct.code);
+
+
+                    }
+
+                    //*********************************2016-06-13**********************************************
+                    //当前问题：1.退格只允许一次退一个或者全部删空，剩余子音不能与前一个字结合成收音 2.输入空字符或未能映射为有效韩字的字母会中止程序 3.逻辑有待优化
+                    //4. 数据结构有待优化
+                }
+
+                // input stack is not empty
+            } else {
+                //?????
+
             }
             console.log(this.charStack._storage);
-            console.log(this.unicodeSeq);
-            var outs = '';
-            for (i = 0; i < this.unicodeSeq.length; i++) {
-                outs += ("&#" + this.unicodeSeq[i].toString())
-            }
-            this.unicode = outs;
-            return this.hangul;
+
+            return this.unicodeSeq;
         },
-        mapUnicode: function(s) {
-            var i, outs = '',
-                han, uc;
-            //[{(initial) × 588} + {(medial) × 28} + (final)] + 44032
-            for (i = 0; i < this.unicodeSeq.length; i++) {
-                outs += ("&#" + this.unicodeSeq[i].toString())
-            }
-            this.unicode = outs;
+        translate: function(s) {
+            this.unicode = this.unicodeSeq.map(x => "&#" + x.toString()).join('');
             return this.unicode;
         }
     }

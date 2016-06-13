@@ -8,10 +8,9 @@
 <body>
 <div id="editor">
     <input type="text" v-model="input">
-    <textarea debounce="300">{{input | mapHangul}}</textarea>
-    <textarea debounce="300">{{unicode}}</textarea>
+    <textarea debounce="300">{{input | mapUnicode}}</textarea>
 
-    <div v-html="unicode | translate"></div>
+    <div v-html="unicode">{{unicode | translate}}}</div>
 </div>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.24/vue.min.js"></script>
 <script type="text/javascript" src="main.js"></script>
