@@ -2,7 +2,7 @@
  * Created by Administrator on 2016/6/11.
  */
 /*window.onload = function{
- document.getElementById('hangul').innerHtml = "sfsfsfsf";
+ document.getElementById('hangul').innerHtml = "";
  }*/
 //document.getElementById("hangul").innerHTML = "Hello &#54620&#44397.";
 //https://www.branah.com/korean
@@ -726,7 +726,9 @@ new Vue({
             }
             console.log(this.charStack._storage);
 
-            return this.unicodeSeq;
+            //return this.unicodeSeq;
+            this.unicode = this.unicodeSeq.map(x => "&#" + x.toString()).join('');
+            return this.unicode;
         },
         translate: function(s) {
             this.unicode = this.unicodeSeq.map(x => "&#" + x.toString()).join('');
