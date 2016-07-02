@@ -30,7 +30,9 @@ textarea, input{
 	width: 100%;
 	margin-bottom: 4rem;
 	color: #332244;
-	font: 200%/1 Consolas, Monaco, monospace;
+	font-family: Consolas, Monaco, monospace;
+	font-size: 50px;
+	font-weight: bold;
 	white-space: nowrap;
 	overflow: auto;
 	transition-property: color;
