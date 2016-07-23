@@ -9,6 +9,7 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var compiler = require('./routes/compiler');
 var markdown = require('./routes/markdown');
+var hangul = require("./routes/hangul");
 
 var app = express();
 
@@ -34,6 +35,7 @@ app.use('/', routes);
 app.use('/users', users);
 app.use('/codesire', compiler);
 app.use('/markdown', markdown);
+app.use('/hangul', hangul);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

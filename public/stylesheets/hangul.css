@@ -1,0 +1,39 @@
+* {
+	margin: 0;
+	color: inherit;
+	font: inherit;
+	text-shadow: inherit;
+}
+
+body{
+	background: hsl(90,20%,30%);
+	color: white;
+	-webkit-font-smoothing: antialiased; /* fix for WebKit inconsistency */
+}
+
+textarea, input{
+    text-align: center;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    /*font-family: 'Monaco', courier, monospace;*/
+    padding: 20px;
+}
+
+#editor{
+    text-align: center;
+}
+
+#ascii, #original_input, #hangul{
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	margin-bottom: 4rem;
+	color: hsl(50, 760%, 80%);
+	font: 200%/1 Consolas, Monaco, monospace;
+	white-space: nowrap;
+	overflow: auto;
+	transition-property: color;
+	transition-duration: .3s;
+}
+	
