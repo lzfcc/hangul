@@ -1,8 +1,12 @@
-
-
-Vue.config.delimiters = ['${','}'];
-
-
+/**
+ * Created by Administrator on 2016/6/11.
+ */
+/*window.onload = function{
+ document.getElementById('hangul').innerHtml = "";
+ }*/
+//document.getElementById("hangul").innerHTML = "Hello &#54620&#44397.";
+//https://www.branah.com/korean
+//https://en.wikipedia.org/wiki/Hangul_Jamo_(Unicode_block)
 var hanHash = {
     'g': 'ㅎ',
     'G': 'ㅎ',
