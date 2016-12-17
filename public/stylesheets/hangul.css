@@ -6,7 +6,7 @@
 }
 
 body{
-	background: hsl(90,20%,30%);
+	background: #eee;
 	color: white;
 	-webkit-font-smoothing: antialiased; /* fix for WebKit inconsistency */
 }
@@ -24,14 +24,29 @@ textarea, input{
     text-align: center;
 }
 
-#ascii, #original_input, #hangul{
+#hangul{
 	position: relative;
 	display: inline-block;
-	width: 100%;
+	width: 60%;
+	height: 120px;
 	margin-bottom: 4rem;
-	color: hsl(50, 760%, 80%);
+	color: #333;
+	font: 400%/1 Consolas, Monaco, monospace;
+	/*white-space: nowrap; /*需要换行！*/
+	overflow: auto;
+	transition-property: color;
+	transition-duration: .3s;
+}
+
+#original_input{
+	position: relative;
+	display: inline-block;
+	width: 60%;
+	height: 100px;
+	margin-bottom: 4rem;
+	color: #333;
 	font: 200%/1 Consolas, Monaco, monospace;
-	white-space: nowrap;
+	/*white-space: nowrap; /*需要换行！*/
 	overflow: auto;
 	transition-property: color;
 	transition-duration: .3s;

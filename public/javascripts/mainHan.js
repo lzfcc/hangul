@@ -266,7 +266,7 @@ Stack.prototype.clear = function() {
     this._storage = {};
 };
 
-var charStruct = function() {
+var CharStruct = function() {
     this.code = 0;
     this.keySeq = [];
     this.charSeq = [];
@@ -280,6 +280,8 @@ var charStruct = function() {
     //(1,0,0)(1,1,0):单收音字（如갈，有上一情况的ㄲ/ㄷ/ㅁ/ㅅ/ㅆ/ㅇ/ㅈ/ㅊ/ㅋ/ㅌ/ㅍ/ㅎ，下一个字母无论为何子音都不成字）
     //(1,0,1)(1,1,1):双收音字（如갋，下一个字母无论为何子音都不成字，为母音拆分）
 };
+
+Vue.config.delimiters = ['${', '}']
 
 new Vue({
     el: '#editor',
@@ -319,7 +321,7 @@ new Vue({
                 this.inputStack.push(latest);
 
                 if (this.charStack._size === 0) { //如果输入序列栈为空
-                    var newStruct = new charStruct();
+                    var newStruct = new CharStruct();
                     newStruct.keySeq.push(latestHan);
                     newStruct.charSeq.push(latestHan);
                     newStruct.code = jamoCode[latestHan];
@@ -361,7 +363,7 @@ new Vue({
                                         this.unicodeSeq.pop();
                                         this.unicodeSeq.push(topStruct.code);
                                     } else {
-                                        var newStruct = new charStruct();
+                                        var newStruct = new CharStruct();
                                         newStruct.keySeq.push(latestHan);
                                         newStruct.charSeq.push(latestHan);
                                         newStruct.code = jamoCode[latestHan];
@@ -383,7 +385,7 @@ new Vue({
                                     this.unicodeSeq.pop();
                                     this.unicodeSeq.push(topStruct.code);
 
-                                    var newStruct = new charStruct();
+                                    var newStruct = new CharStruct();
                                     newStruct.keySeq.push(topJaeum);
                                     newStruct.keySeq.push(latestHan);
                                     newStruct.charSeq.push(topJaeum);
@@ -393,7 +395,7 @@ new Vue({
                                     this.charStack.push(newStruct);
                                     this.unicodeSeq.push(newStruct.code);
                                 } else { //如果又输入了一个子音
-                                    var newStruct = new charStruct();
+                                    var newStruct = new CharStruct();
                                     newStruct.keySeq.push(latestHan);
                                     newStruct.charSeq.push(latestHan);
                                     newStruct.code = jamoCode[latestHan];
@@ -417,7 +419,7 @@ new Vue({
                                 this.unicodeSeq.pop();
                                 this.unicodeSeq.push(topStruct.code);
                             } else { //如果又输入了一个子音或者不能组合成复合母音的母音（情况同空栈输入）
-                                var newStruct = new charStruct();
+                                var newStruct = new CharStruct();
                                 newStruct.keySeq.push(latestHan);
                                 newStruct.charSeq.push(latestHan);
                                 newStruct.code = jamoCode[latestHan];
@@ -430,7 +432,7 @@ new Vue({
                                 this.unicodeSeq.push(newStruct.code);
                             }
                         } else { //[0,1,-1]复合母音未成字（情况同空栈输入）
-                            var newStruct = new charStruct();
+                            var newStruct = new CharStruct();
                             newStruct.keySeq.push(latestHan);
                             newStruct.charSeq.push(latestHan);
                             newStruct.code = jamoCode[latestHan];
@@ -461,7 +463,7 @@ new Vue({
                                         this.unicodeSeq.pop();
                                         this.unicodeSeq.push(topStruct.code);
                                     } else { //(情况同空栈输入）
-                                        var newStruct = new charStruct();
+                                        var newStruct = new CharStruct();
                                         newStruct.keySeq.push(latestHan);
                                         newStruct.charSeq.push(latestHan);
                                         newStruct.code = jamoCode[latestHan];
@@ -471,7 +473,7 @@ new Vue({
                                     }
                                 } else { //如果输入了一个子音
                                     if (!(latestHan in batchimHash)) { //如果子音不能做收音（情况同空栈输入）
-                                        var newStruct = new charStruct();
+                                        var newStruct = new CharStruct();
                                         newStruct.keySeq.push(latestHan);
                                         newStruct.charSeq.push(latestHan);
                                         newStruct.code = jamoCode[latestHan];
@@ -491,7 +493,7 @@ new Vue({
                                 }
                             } else { //复合母音字[1,1,-1]
                                 if (latestIsJaeum === false) { //如果输入了一个母音
-                                    var newStruct = new charStruct();
+                                    var newStruct = new CharStruct();
                                     newStruct.keySeq.push(latestHan);
                                     newStruct.charSeq.push(latestHan);
                                     newStruct.code = jamoCode[latestHan];
@@ -500,7 +502,7 @@ new Vue({
                                     this.unicodeSeq.push(newStruct.code);
                                 } else { //如果又输入了一个子音(tong shang)
                                     if (!(latestHan in batchimHash)) { //如果子音不能做收音（情况同空栈输入）
-                                        var newStruct = new charStruct();
+                                        var newStruct = new CharStruct();
                                         newStruct.keySeq.push(latestHan);
                                         newStruct.charSeq.push(latestHan);
                                         newStruct.code = jamoCode[latestHan];
@@ -538,7 +540,7 @@ new Vue({
                                     this.unicodeSeq.pop();
                                     this.unicodeSeq.push(topStruct.code);
                                 } else {
-                                    var newStruct = new charStruct();
+                                    var newStruct = new CharStruct();
                                     newStruct.keySeq.push(latestHan);
                                     newStruct.charSeq.push(latestHan);
                                     newStruct.code = jamoCode[latestHan];
@@ -556,7 +558,7 @@ new Vue({
                                 this.unicodeSeq.pop();
                                 this.unicodeSeq.push(topStruct.code);
 
-                                var newStruct = new charStruct();
+                                var newStruct = new CharStruct();
                                 newStruct.keySeq.push(topJaeum);
                                 newStruct.keySeq.push(latestHan);
                                 newStruct.charSeq.push(topJaeum);
@@ -571,7 +573,7 @@ new Vue({
                             var topJaeum = topStruct.keySeq[topStruct.keySeq.length - 1];
 
                             if (latestIsJaeum) {
-                                var newStruct = new charStruct();
+                                var newStruct = new CharStruct();
                                 newStruct.keySeq.push(latestHan);
                                 newStruct.charSeq.push(latestHan);
                                 newStruct.code = jamoCode[latestHan];
@@ -590,7 +592,7 @@ new Vue({
                                 this.unicodeSeq.pop();
                                 this.unicodeSeq.push(topStruct.code);
 
-                                var newStruct = new charStruct();
+                                var newStruct = new CharStruct();
                                 newStruct.keySeq.push(topJaeum);
                                 newStruct.keySeq.push(latestHan);
                                 newStruct.charSeq.push(topJaeum);

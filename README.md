@@ -1,7 +1,8 @@
-# devapp
-Writing an online compiler--and much more!
-Keep practicing web developement!
+# Hangul
+A sample website where you can input Korean without an input program on your computer.
 
+Express used.
 
-### 网页嵌入式代码编辑器
-https://ace.c9.io/#nav=about
+details of app.js file, see [here](http://www.tuicool.com/articles/U7buiy)
+to end the app, use Ctrl＋C
+in case that some port is occupied, use ``lsof -i:[port]`` to check which process ocuppies the port, then kill the process using ``sudo kill -s 9 [pid]``
