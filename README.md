@@ -8,3 +8,4 @@ to end the app, use Ctrl＋C
 in case that some port is occupied, use ``lsof -i:[port]`` to check which process ocuppies the port, then kill the process using ``sudo kill -s 9 [pid]``
 
 一个在线韩语输入法
+可以参考https://www.branah.com/korean
