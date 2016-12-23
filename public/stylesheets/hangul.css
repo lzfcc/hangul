@@ -11,12 +11,14 @@ body{
 	-webkit-font-smoothing: antialiased; /* fix for WebKit inconsistency */
 }
 
-textarea, input{
+textarea{
     text-align: center;
     border: none;
     outline: none;
     background-color: transparent;
-    /*font-family: 'Monaco', courier, monospace;*/
+    font-family: 'Monaco', courier, monospace;
+    font-size: 50px;
+    color: black;
     padding: 20px;
 }
 
