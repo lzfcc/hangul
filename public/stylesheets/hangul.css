@@ -18,12 +18,17 @@ textarea{
     background-color: transparent;
     font-family: 'Monaco', courier, monospace;
     font-size: 50px;
+	font-weight: bold;
     color: black;
     padding: 20px;
 }
 
 #editor{
     text-align: center;
+}
+
+#dictionary{
+	color: #424242;
 }
 
 #hangul{
@@ -53,4 +58,20 @@ textarea{
 	transition-property: color;
 	transition-duration: .3s;
 }
+
+span.love{
+	display: block;
+	position: absolute;
+	bottom: 40px;
+	width: 100%;
+	text-align: center;
+	font-family: 'Montserrat', 'sans-serif';
+	color: #424242;
+}
+
+span.love a{
+	text-decoration: none;
+	color: #D12026;
+}
+
 	

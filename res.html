@@ -1,0 +1,1618 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta name="robots" content="index,nofollow">
+<meta name="keywords" content="중국어사전,중국어,중한사전,한중사전,중국어입력기,필기인식기,Chinese dictionary,naver Chinese dictionary,中国語辞書,ネイバー中国語辞書,中国语词典,naver中国语词典,中韩词典,韩中词典">
+<meta name="description" content="중국어 문장 분석기, 신 HSK 등급별 단어찾기, 중국어 필기인식기/병음입력기 제공">
+		<meta property="og:title" content= "'잡다': 네이버 중국어사전 검색결과" />
+		<meta property="og:type" content="website" />
+		<meta property="og:image" content="http://dicimg.naver.net/cndic/img/cndic_face1.jpg" />
+		<meta property="og:site_name" content="네이버 중국어사전 " />
+		<meta property="og:description" content="다양한 사전 콘텐츠 제공, 발음듣기, 중국어 필기인식기, 보조사전, 내가 찾은 단어 제공." />
+		<meta property="og:locale" content="ko_KR" />
+		<meta property="og:locale:alternate " content="en_US" />
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:site" content="@네이버 중국어사전 " />
+		<meta name="twitter:title" content="'잡다': 네이버 중국어사전 검색결과" />
+		<meta name="twitter:description" content="" />
+		<meta name="twitter:image" content="http://dicimg.naver.net/cndic/img/cndic_face1.jpg" />
+<title> 
+'잡다' 의 검색결과 : 네이버 중국어사전
+</title>
+<link rel="shortcut icon" href="http://dicimg.naver.net/favicons/cndic-mobile/v2/Favicon.ico" type="image/x-icon">
+<link type="text/css" rel="stylesheet" href="http://dicimg.naver.net/cndic_service/style/201612201532/css/common.css?20161220154123" />
+<link type="text/css" rel="stylesheet" href="http://dicimg.naver.net/cndic_service/style/201612201532/css/style.css?20161220154123" />
+
+<link type="text/css" rel="stylesheet" href="http://dicimg.naver.net/cndic_service/style/201612201532/css/entry_add.css?20161220154123" />
+
+
+
+<script type="text/javascript" src="/js/common/jquery-1.7.1.min.js?20161220154123"></script>
+<script type="text/javascript" src="/js/common/jsrender.js?20161220154123"></script>
+<link type="text/css" rel="stylesheet" href="http://dicimg.naver.net/gnbcommon/style/dnb_onenaver/css/onenaver_gnb.css?2016122422" />
+<script type="text/javascript" src="/js/common/store.min.js?20161220154123"></script>
+<script type="text/javascript" src="/js/common/jindo2.js?20161220154123"></script>
+	<script type="text/javascript" src="/js/common/sps.js?20161220154123"></script>
+	<script type="text/javascript" src="/js/clickcr.js?20161220154123"></script>
+<script type="text/javascript" src="/js/dic.setSearchSelectType.js?20161220154123"></script>
+<script type="text/javascript" src="/js/wordbook/packJindo.js?20161220154123"></script>
+<script type="text/javascript" src="/js/rand.js?20161220154123"></script>
+<script type="text/javascript" language="JavaScript" src="/js/handWritingIpad.js?20161220154123"></script>
+<script type="text/javascript" src="/js/dic.common.js?20161220154123"></script>
+<script type="text/javascript" src="/js/dic.DragDropLayer.js?20161220154123"></script>
+
+<script type="text/javascript">
+var siteUrl = 'http://cndic.naver.com';
+var wordBookUrl = 'http://wordbook.naver.com';
+var ttsUrl ;
+var autoCompleteUrl;
+var handWriteUrl;
+var mobile = false;
+var config_userId = "";	//	userId
+var config_dicType = 5;	//	dicType
+var config_ajaxDicUrl = siteUrl+"/wordBook.nhn";
+var config_ajaxWordBookUrl = wordBookUrl+"/wordBook.nhn";
+
+ 
+// analysis used function
+function changeTag(tag){
+	var elSq = $("sentenQueryID"); 
+	if(elSq){
+		elSq.className = tag;
+		if(tag == 'used'){
+				elSq.value = document.getElementById('ac_input').value;
+		}
+	} 
+}
+</script>
+
+<script type="text/javascript">
+function isExamplePage(href) {
+	href = href || location.href;
+	return href.indexOf("search/example") > -1 || href.indexOf("search.nhn?range=example") > -1;
+};
+window.onpopstate = function(event) {
+	if (isExamplePage()) {
+		examplePageHandler(history.state);
+	}
+};
+function goPage(pageNo, noPushState) {
+	if (isExamplePage()) {
+		if (!!(window.history && history.pushState)) {
+			var query = jQuery(".static_keyword").text();
+			var subject = jQuery("input.click_radio.is_checked").attr("id");
+			var hasOtherExpl = jQuery("input.click_checkbox").hasClass("is_checked");
+			var st_translation = jQuery("input.exfilterset2_click_checkbox").hasClass("is_checked");
+
+			var params = {
+				"query" : query,
+				"pageNo" : pageNo || 1,
+				"subject" : subject,
+				"hasOtherExpl" : hasOtherExpl,
+				"st_translation" : st_translation
+			};
+			history.pushState(params, null, 'example?q=' + encodeURIComponent(query) + '&pageNo=' + pageNo + '&direct=false');
+			examplePageHandler(params);
+		} else {
+			SPS.setCookie("CNDIC_EXM_KEEP_SECH_STATUS", "yes", 30, "/", "cndic.naver.com");
+			self.location.href = '/search/all?q=%EC%9E%A1%EB%8B%A4&pageNo=' + pageNo + '&direct=false';
+		}
+	} else {
+		self.location.href = '/search/all?q=%EC%9E%A1%EB%8B%A4&pageNo=' + pageNo + '&direct=false';
+	}
+};
+function examplePageHandler(params) {
+	var query, pageNo, subject, hasOtherExpl, st_translation;
+	if (params) {
+		query = params.query;
+		pageNo = params.pageNo || 1;
+		subject = params.subject;
+		hasOtherExpl = params.hasOtherExpl;
+		st_translation = params.st_translation;
+	} else {
+		query = jQuery(".static_keyword").text();
+		pageNo = 1;
+		subject = jQuery("input.click_radio.is_checked").attr("id");
+		hasOtherExpl = jQuery("input.click_checkbox").hasClass("is_checked");
+		st_translation = jQuery("input.exfilterset2_click_checkbox").hasClass("is_checked");
+	}
+	var url = "/search/example?q=" + encodeURIComponent(query) + "&pageNo=" + pageNo + "&direct=false&subjectSearch=ok&subject=" + subject + "&hasOtherExpl=" + hasOtherExpl + "&st_translation=" + st_translation;
+	jQuery.ajax(url, {
+		dataType : 'json',
+		method : 'get',
+		async : true,
+		success : function(res) {
+			jQuery(".old_example_area").empty().append(jQuery("#jsrender_example_result").render(res));
+			var pageMessge = "(" + res.searchExampleList.start + "~" + res.searchExampleList.end +" / 총 " + SPS.numFormat(res.searchExampleList.total) + "건)";
+			jQuery("h5 em").empty().text(pageMessge);
+			window.scrollTo(0, 0);
+		},
+		error : function() {
+			alert('일시적으로 정보를 가져올 수 없습니다.\n잠시 후 다시 시도해 주십시오. ');
+		}
+	});
+}
+</script>
+<script type="text/javascript">
+//<![CDATA[
+var g_ssc = "dic.cn.all";
+var ccsrv = "cc.naver.com";
+var g_query = "잡다";
+var g_pid = '';
+var g_sid = '';
+//]]>
+</script>
+
+</head>
+
+<body>
+<script type="text/javascript" language="javaScript">$Ajax.SWFRequest.write("/js/common/ajax.swf");</script>
+<a href="#content" class="skip_to_content" tabindex="2">본문 바로가기</a>
+<div id="wrap">
+	<div id="header">
+		<script type="text/javascript">
+			LazyLoad=(function(j){var g,h,b={},e=0,f={css:[],js:[]},m=j.styleSheets;function l(p,o){var q=j.createElement(p),n;for(n in o){if(o.hasOwnProperty(n)){q.setAttribute(n,o[n])}}return q}function i(n){var q=b[n],r,o;if(q){r=q.callback;o=q.urls;o.shift();e=0;if(!o.length){r&&r.call(q.context,q.obj);b[n]=null;f[n].length&&k(n)}}}function c(){var n=navigator.userAgent;g={async:j.createElement("script").async===true};(g.webkit=/AppleWebKit\//.test(n))||(g.ie=/MSIE|Trident/.test(n))||(g.opera=/Opera/.test(n))||(g.gecko=/Gecko\//.test(n))||(g.unknown=true)
+			}function k(z,y,A,v,r){var t=function(){i(z)},B=z==="css",o=[],u,w,s,q,x,n;g||c();if(y){y=typeof y==="string"?[y]:y.concat();if(B||g.async||g.gecko||g.opera){f[z].push({urls:y,callback:A,obj:v,context:r})}else{for(u=0,w=y.length;u<w;++u){f[z].push({urls:[y[u]],callback:u===w-1?A:null,obj:v,context:r})}}}if(b[z]||!(q=b[z]=f[z].shift())){return}h||(h=j.head||j.getElementsByTagName("head")[0]);x=q.urls.concat();for(u=0,w=x.length;u<w;++u){n=x[u];if(B){s=g.gecko?l("style"):l("link",{href:n,rel:"stylesheet"})
+			}else{s=l("script",{src:n});s.async=false}s.className="lazyload";s.setAttribute("charset","utf-8");if(g.ie&&!B&&"onreadystatechange" in s&&!("draggable" in s)){s.onreadystatechange=function(){if(/loaded|complete/.test(s.readyState)){s.onreadystatechange=null;t()}}}else{if(B&&(g.gecko||g.webkit)){if(g.webkit){q.urls[u]=s.href;d()}else{s.innerHTML='@import "'+n+'";';a(s)}}else{s.onload=s.onerror=t}}o.push(s)}for(u=0,w=o.length;u<w;++u){h.appendChild(o[u])}}function a(p){var o;try{o=!!p.sheet.cssRules
+			}catch(n){e+=1;if(e<200){setTimeout(function(){a(p)},50)}else{o&&i("css")}return}i("css")}function d(){var o=b.css,n;if(o){n=m.length;while(--n>=0){if(m[n].href===o.urls[0]){i("css");break}}e+=1;if(o){if(e<200){setTimeout(d,50)}else{i("css")}}}}return{css:function(p,q,o,n){k("css",p,q,o,n)},js:function(p,q,o,n){k("js",p,q,o,n)}}})(this.document);
+		</script>
+        <!-- 공통 GNB -->
+		<div class="Ngnb_wrap">
+    <div class="Ngnb">
+        <div class="Ngnb_inner">
+            <a href="http://www.naver.com" class="Nlogo_link" onclick="clickcr(this, 'DNB.naver','','',event);"><span class="Nsp_gnb">NAVER</span></a>
+            <!--[D] 영문버전일때 lang="en" 추가 -->
+            <div class="Ngnb_service">
+                <h1 class="Nservice_item"><a href="http://dic.naver.com" class="Nhome Ndic" onclick="clickcr(this, 'DNB.dic','','',event);"><span class="Nsp_gnb">사전</span></a></h1>
+                <span class="Nservice_subitem"><a href="http://translate.naver.com" class="Ntranslate" onclick="clickcr(this, 'DNB.translation','','',event);"><span class="Nsp_gnb">번역기</span></a></span>
+                <span class="Nservice_subitem"><a href="http://usertranslation.naver.com" class="Nusertranslation" onclick="clickcr(this, 'DNB.usetrans','','',event);"><span class="Nsp_gnb">참여번역</span></a></span>
+                <span class="Nservice_subitem"><a href="http://terms.naver.com" class="Nknowledge" onclick="clickcr(this, 'DNB.terms','','',event);"><span class="Nsp_gnb">지식백과</span></a></span>
+            </div>
+            <div class="Ngnb_common">
+                <div id="gnb">
+                     
+                </div>
+                <!-- //GNB -->
+            </div>
+        </div>
+    </div>
+    <div class="Nlnb" id="Nlnb">
+        <div class="Nlnb_inner">
+            <ul class="Nnav">
+	            <!--[D] 선택메뉴에 Nnav_item_active 추가-->
+	            <li class="Nnav_cell"><a href="http://dic.naver.com" id="_id_dichome_href" onclick="clickcr(this, 'DNB.dichome','','',event);" class="Nnav_item">사전홈</a><span id="_id_dichome_new" style="display:none" class="Nsp_gnb Nnew">신규추가</span><span id="_id_dichome_up" style="display:none" class="Nsp_gnb Nupdate">업데이트</span></li>
+	            <li class="Nnav_cell"><a href="http://endic.naver.com" id="_id_endic_href" onclick="clickcr(this, 'DNB.endic','','',event);" class="Nnav_item">영어</a><span id="_id_endic_new" style="display:none" class="Nsp_gnb Nnew" >신규추가</span><span id="_id_endic_up" style="display:none" class="Nsp_gnb Nupdate">업데이트</span></li>
+	            <li class="Nnav_cell"><a href="http://krdic.naver.com" id="_id_krdic_href" onclick="clickcr(this, 'DNB.krdic','','',event);" class="Nnav_item">국어</a><span id="_id_krdic_new" style="display:none" class="Nsp_gnb Nnew">신규추가</span><span id="_id_krdic_up" style="display:none" class="Nsp_gnb Nupdate">업데이트</span></li>
+	            <li class="Nnav_cell"><a href="http://hanja.naver.com" id="_id_hanja_href" onclick="clickcr(this, 'DNB.hanja','','',event);" class="Nnav_item">한자</a><span id="_id_hanja_new" style="display:none" class="Nsp_gnb Nnew">신규추가</span><span id="_id_hanja_up" style="display:none" class="Nsp_gnb Nupdate">업데이트</span></li>
+	            <li class="Nnav_cell"><a href="http://jpdic.naver.com" id="_id_jpdic_href" onclick="clickcr(this, 'DNB.jpdic','','',event);"  class="Nnav_item">일본어</a><span id="_id_jpdic_new" style="display:none" class="Nsp_gnb Nnew">신규추가</span><span id="_id_jpdic_up" style="display:none" class="Nsp_gnb Nupdate">업데이트</span></li>
+	            <li class="Nnav_cell"><a href="http://cndic.naver.com" id="_id_cndic_href" onclick="clickcr(this, 'DNB.cndic','','',event);"  class="Nnav_item Nnav_item_active">중국어</a><span id="_id_cndic_new" style="display:none" class="Nsp_gnb Nnew">신규추가</span><span id="_id_cndic_up" style="display:none" class="Nsp_gnb Nupdate">업데이트</span></li>
+	            <li class="Nnav_cell"><a href="http://frdic.naver.com" id="_id_frdic_href" onclick="clickcr(this, 'DNB.frdic','','',event);"  class="Nnav_item">프랑스어</a><span id="_id_frdic_new" style="display:none" class="Nsp_gnb Nnew">신규추가</span><span id="_id_frdic_up" style="display:none" class="Nsp_gnb Nupdate">업데이트</span></li>
+	            <li class="Nnav_cell"><a href="http://spdic.naver.com" id="_id_spdic_href" onclick="clickcr(this, 'DNB.spdic','','',event);"  class="Nnav_item">스페인어</a><span id="_id_spdic_new" style="display:none" class="Nsp_gnb Nnew">신규추가</span><span id="_id_spdic_up" style="display:none" class="Nsp_gnb Nupdate">업데이트</span></li>
+	            <li class="Nnav_cell"><a href="http://dedic.naver.com" id="_id_dedic_href" onclick="clickcr(this, 'DNB.dedic','','',event);"  class="Nnav_item">독일어</a><span id="_id_dedic_new" style="display:none" class="Nsp_gnb Nnew">신규추가</span><span id="_id_dedic_up" style="display:none" class="Nsp_gnb Nupdate">업데이트</span></li>
+	            <li class="Nnav_cell"><a href="http://vndic.naver.com" id="_id_vndic_href" onclick="clickcr(this, 'DNB.vndic','','',event);"  class="Nnav_item">베트남어</a><span id="_id_vndic_new" style="display:none" class="Nsp_gnb Nnew">신규추가</span><span id="_id_vndic_up" style="display:none" class="Nsp_gnb Nupdate">업데이트</span></li>    
+	            <!--[D] 더보기 메뉴는 Nmore 클래스 추가-->
+	            <li class="Nnav_cell Nmore">
+	                <!--[D] 마우스오버시 Nnav_item_active 추가
+	                        Nmore의 영역을 커서가 벗어나면 해당 Nnav_item의 Nnav_item_active 삭제
+	                -->
+	                <a href="javascript:;" class="Nnav_item" id ="_id_more_layer" onmouseover="MoreOnmouseover();" onmouseout="MoreOnmouseout();" onclick="MoreOnclick(); clickcr(this, 'DNB.lmore', '', '',event); return false;" onfocus="MoreOnfocus();" onblur="MoreOnblur();">더보기</a><span id="_id_more_new" style="display:none" class="Nsp_gnb Nnew">신규추가</span><span id="_id_more_up" style="display:none" class="Nsp_gnb Nupdate">업데이트</span><span class="Nsp_gnb Nico_more" onmouseover="MoreOnmouseover();" onmouseout="MoreOnmouseout();" onclick="MoreOnclick(); clickcr(this, 'DNB.lmore', '', '',event); return false;" onfocus="MoreOnfocus();" onblur="MoreOnblur();"></span>
+	                <div class="Nmore_dic" id ="_id_li_contain" onmouseover="MoreOnmouseover();" onmouseout="MoreOnmouseout();">
+	                     
+	                </div>
+	            </li>
+            </ul>
+        </div>
+    </div>
+</div>
+		<script type="text/javascript">
+			// DIC DNB
+			var dnb_query = "잡다"; // 검색 페이지 않으면, null 로 세팅
+			var dnb_service = "cndic";
+			var dnb_layer = "block";	//표시할려면 block
+			LazyLoad.js("http://dicimg.naver.net/dic-common-js/dnb_onenaver/gnb/dic.DNB.js?2016122422");
+		</script>
+		<!-- //공통 GNB -->	
+       	<script type="text/javascript">
+       	   //------------------记录主题例文搜索条件选项----start---
+       	   var sub_exm_sech = {
+	   			setOption2Cookie : function(option, has_other_examp, has_trans) {
+					SPS.setCookie("CNDIC_EXM_OPTION",option || jQuery("input.click_radio.is_checked").attr("id"), 30, "/", "cndic.naver.com");
+					SPS.setCookie("CNDIC_EXM_OTHER_EXM",has_other_examp || jQuery("input.click_checkbox").hasClass("is_checked"), 30, "/", "cndic.naver.com");
+					SPS.setCookie("CNDIC_EXM_HAS_TRANS",has_trans || jQuery("input.exfilterset2_click_checkbox").hasClass("is_checked"), 30, "/", "cndic.naver.com");
+				},
+				getOptionInCookie : function() {
+					var options = {
+						"subject": SPS.getCookie("CNDIC_EXM_OPTION"),
+						"hasOtherExpl": SPS.getCookie("CNDIC_EXM_OTHER_EXM"),
+						"st_translation": SPS.getCookie("CNDIC_EXM_HAS_TRANS") || "false"
+					}
+					return options;
+				}
+       	   }
+       	   //------------------记录主题例文搜索条件选项----end---
+       	   
+           var nsc="cndic.main"; //서비스에서 사용하는 nclick service code.
+           var gnb_option = {
+	           gnb_service : "cndic",
+	           gnb_template : "gnb_utf8",
+	           gnb_logout : encodeURIComponent(window.location.href),
+	           gnb_login : encodeURIComponent(window.location.href),
+	           gnb_brightness : 3, 
+	           gnb_item_hide_option : 0,
+	           gnb_one_naver : 1 
+		   }
+       	</script>
+        <script type="text/javascript" charset="utf-8" src="https://ssl.pstatic.net/static.gn/templates/gnb_utf8.nhn?2016122422"></script>
+       	
+	    <div style="clear:both;"></div>
+		<script type="text/javascript">
+			$Fn(function(e){
+	 		  var obj=$Element(e.element)
+			  if($$.getSingle("div.gnb_one") && !(obj.isChildOf($$.getSingle("div.gnb_one")))){
+			   gnbAllLayerClose();
+			  }
+			 },this).attach(document, "click");
+		</script>			<!-- top_search -->
+	<div id="top_search" class="sta">
+			<h2><a href="/" onclick="clickcr(this,'DTP.cndic','','',event);" title="중국어사전"><span class="blind">중국어사전</span></a></h2>
+			<fieldset>
+				<legend>검색영역</legend>
+				<!--[D] 자동완성노출 auto_on 추가 (기존의 gbox_inner에 on을 넣는 방식은 삭제해주세요)-->
+				<div class="gbox">
+					<div class="gbox_inner">
+						<span class="static_keyword" style="display:none">잡다</span>
+						<input type="hidden" id="ac_input_bak"/>
+						<input type="text" title="검색어" class="keyword" id="ac_input" value="">
+						<a href="javascript:;" title="자동완성 펼치기" class="btn_arw arrow"><span class="blind">자동완성 펼치기</span></a>
+						<input type="hidden" id="hid_ac_input" value="a">
+						<a href="javascript:;" title="검색" id="ajax_searchbutton" class="btn_sch ajax_searchbutton"><span class="blind">검색</span></a>
+						<!-- 자동완성레이어 -->
+						<div id="ac_layer" class="auto_complete">
+							<ul class="lst_word">
+							</ul>
+							<p class="auto_on_info">현재 자동완성 기능을 사용하고 계십니다.</p>
+							<p class="auto_off_info">네이버 <strong>검색어 자동완성</strong>을 아시나요?<br>검색어를 한 글자만 입력해도 찾으시려는 단어를 추천해주는 편리한 기능입니다.<br><a href="javascript:;" class="showAutoLayer" onclick="clickcr(this,'msh.autoon','','',event)">자동완성 사용하기</a></p>
+							<p class="nothing">해당 단어로 추천어가 없습니다.</p>
+							<div class="option">
+								<a href="javascript:;" onclick="OPS.viewOPS('ops', {url : 'http://help.naver.com/support/contents/contents.nhn',  param : 'serviceNo=606&amp;categoryNo=1994'}); clickcr(this,'msh.autohelp','','',event);return false;">도움말</a> 
+								<span class="bar"></span>
+								<a href="javascript:;" class="ac_enable_disable">자동완성 끄기</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</fieldset>
+			
+			
+            <ul class="select_ime">
+            <li class="fc"><a href="#" tabindex="-1" onmouseup="clickcr(this,'DTP.write','','',event);" class="pen">필기인식기</a></li>
+            <li class="input"><a href="#" onclick="clickcr(this,'DTP.pinyin','','',event);" class="pinyin">병음 입력기</a></li>
+            </ul>
+             <div class="write_device" style=" visibility: hidden; display: none;  ">
+				<dl>
+				<dt>필기 인식기</dt>
+				<dd class="handwrite">
+                	<div class="cavs" id="cavs"><span class="cavs_txt" id="cavs_txt">마우스로 <br>중국어를 쓰세요</span></div>
+                	<div>
+					<a href="javascript:void(0)" class="hand_undo" id="handPre">1획 지우기</a><span class="bar">|</span>
+						<a href="javascript:void(0)" class="hand_remove"	id="handRemove">전체 지우기</a>
+					</div>  
+                </dd>
+	            <dd id="writeDevice">
+	               <table cellpadding="0" cellspacing="1">
+	               		<caption >중국어 필기인식기 결과</caption> 
+	                    <tr>
+	                    <td onclick="void(0)">&nbsp;</td>
+	                    <td onclick="void(0)">&nbsp;</td>
+	                    <td onclick="void(0)">&nbsp;</td>
+	                    <td onclick="void(0)">&nbsp;</td>
+	                    </tr>
+	                    <tr>
+	                    <td onclick="void(0)">&nbsp;</td>
+	                    <td onclick="void(0)">&nbsp;</td>
+	                    <td onclick="void(0)">&nbsp;</td>
+	                    <td onclick="void(0)">&nbsp;</td>
+	                    </tr>
+	                    <tr>
+	                    <td onclick="void(0)">&nbsp;</td>
+	                    <td onclick="void(0)">&nbsp;</td>
+	                    <td onclick="void(0)">&nbsp;</td>
+	                    <td onclick="void(0)">&nbsp;</td>
+	                    </tr>
+	                    <tr>
+	                    <td onclick="void(0)">&nbsp;</td>
+	                    <td onclick="void(0)">&nbsp;</td>
+	                    <td onclick="void(0)">&nbsp;</td>
+	                    <td onclick="void(0)">&nbsp;</td>
+	                    </tr>
+	                    <tr>
+	                    <td onclick="void(0)">&nbsp;</td>
+	                    <td onclick="void(0)">&nbsp;</td>
+	                    <td onclick="void(0)">&nbsp;</td>
+	                    <td onclick="void(0)">&nbsp;</td>
+	                    </tr>
+                    </table>
+	            </dd>
+			</dl>
+			<a href="javascript:void(0);" class="cls close"><img src="http://dicimg.naver.net/cndic/web/btn_handwrite_cls.gif" alt="필기입력기 닫기" /></a>
+		</div>
+        <!-- 병음입력기150210 -->
+	<h3 class="blind">병음입력기 new</h3>		
+	   <div class="input_device" style="position: absolute;  right: 0px; top: 96px;">
+			<dl>
+				<dt>병음 입력기</dt>
+				<dd class="dev_initials">
+				<table width="600" cellspacing="0" cellpadding="0" summary="병음입력기">
+				<caption>병음입력기-자음</caption> 
+				<tr>
+					<th rowspan="2" class="noline tit" scope="row">자음</th>
+					<td class="w25" tabindex="0">b</td>
+					<td class="w25" tabindex="0">c</td>
+					<td class="w25" tabindex="0">ch</td>
+					<td class="w25" tabindex="0">d</td>
+					<td class="w25" tabindex="0">f</td>
+					<td class="w25" tabindex="0">g</td>
+					<td class="w30" tabindex="0">h</td>
+					<td class="w30" tabindex="0">j</td>
+					<td class="w30" tabindex="0">k</td>
+					<td class="w30" tabindex="0">l</td>
+					<td class="w30" tabindex="0">m</td>
+					<td class="w30" tabindex="0">n</td>
+					<td class="w30" tabindex="0">p</td>
+					<td class="w30" tabindex="0">q</td>
+					<td class="w30" tabindex="0">r</td>
+					<td class="w30" tabindex="0">s</td>
+					<td class="w30" tabindex="0">sh</td>
+					<td class="w30" tabindex="0">t</td>
+					<td class="w33" tabindex="0">w</td>
+					<td>x</td>
+				</tr>
+				<tr>
+					<td class="line_b" tabindex="0">y</td>
+					<td class="line_b" tabindex="0">z</td>
+					<td class="line_b" tabindex="0">zh</td>
+					<td class="line_b" tabindex="0">ng</td>
+					<td class="line_b">&nbsp;</td>
+					<td class="line_b">&nbsp;</td>
+					<td class="line_b">&nbsp;</td>
+					<td class="line_b">&nbsp;</td>
+					<td class="line_b">&nbsp;</td>
+					<td class="line_b">&nbsp;</td>
+					<td class="line_b">&nbsp;</td>
+					<td class="line_b">&nbsp;</td>
+					<td class="line_b">&nbsp;</td>
+					<td class="line_b">&nbsp;</td>
+					<td class="line_b">&nbsp;</td>
+					<td class="line_b">&nbsp;</td>
+					<td class="line_b">&nbsp;</td>
+					<td class="line_b">&nbsp;</td>
+					<td class="line_b">&nbsp;</td>
+					<td class="line_b">&nbsp;</td>
+				</tr>
+				</table>
+			</dd>
+			
+			<dd class="dev_finals">
+				<table width="600" cellspacing="0" cellpadding="0" summary="병음입력기">
+				<caption>병음입력기-모음</caption> 
+				<tr>
+					<th class="noline tit" scope="row">모음</th>
+					<th tabindex="0" lang="zh" scope="col">a</th>
+					<th tabindex="0" lang="zh" scope="col">e</th>
+					<th tabindex="0" lang="zh" scope="col">i</th>
+					<th tabindex="0" lang="zh" scope="col">o</th>
+					<th tabindex="0" lang="zh" scope="col">u</th>
+					<th tabindex="0" lang="zh" scope="col">ü</th>
+					<th tabindex="0" lang="zh" scope="col">ai</th>
+					<th tabindex="0" lang="zh" scope="col">ao</th>
+					<th tabindex="0" lang="zh" scope="col">ei</th>
+					<th tabindex="0" lang="zh" scope="col">ia</th>
+					<th tabindex="0" lang="zh" scope="col">ie</th>
+					<th tabindex="0" lang="zh" scope="col">io</th>
+					<th tabindex="0" lang="zh" scope="col">iu</th>
+					<th tabindex="0" lang="zh" scope="col">ou</th>
+					<th tabindex="0" lang="zh" scope="col">ua</th>
+					<th tabindex="0" lang="zh" scope="col">ui</th>
+					<th tabindex="0" lang="zh" scope="col">uo</th>
+					<th tabindex="0" lang="zh" scope="col">ue</th>
+					<th tabindex="0" lang="zh" scope="col">iao</th>
+					<th tabindex="0" lang="zh" scope="col">uai</th>
+				</tr>
+				<tr>
+					<th class="noline tit" scope="row">1성</th>
+					<td tabindex="0" class="w25">ā</td>
+					<td tabindex="0" class="w25">ē</td>
+					<td tabindex="0" class="w25">ī</td>
+					<td tabindex="0" class="w25">ō</td>
+					<td tabindex="0" class="w25">ū</td>
+					<td tabindex="0" class="w25">ǖ</td>
+					<td tabindex="0" class="w30">āi</td>
+					<td tabindex="0" class="w30">āo</td>
+					<td tabindex="0" class="w30">ēi</td>
+					<td tabindex="0" class="w30">iā</td>
+					<td tabindex="0" class="w30">iē</td>
+					<td tabindex="0" class="w30">iō</td>
+					<td tabindex="0" class="w30">iū</td>
+					<td tabindex="0" class="w30">ōu</td>
+					<td tabindex="0" class="w30">uā</td>
+					<td tabindex="0" class="w30">uī</td>
+					<td tabindex="0" class="w30">uō</td>
+					<td tabindex="0" class="w30">uē</td>
+					<td tabindex="0" class="w33">iāo</td>
+					<td tabindex="0">uāi</td>
+				</tr>
+				<tr>
+					<th class="noline tit" scope="row">2성</th>
+					<td tabindex="0">á</td>
+					<td tabindex="0">é</td>
+					<td tabindex="0">í</td>
+					<td tabindex="0">ó</td>
+					<td tabindex="0">ú</td>
+					<td tabindex="0">ǘ</td>
+					<td tabindex="0">ái</td>
+					<td tabindex="0">áo</td>
+					<td tabindex="0">éi</td>
+					<td tabindex="0">iá</td>
+					<td tabindex="0">ié</td>
+					<td tabindex="0">ió</td>
+					<td tabindex="0">iú</td>
+					<td tabindex="0">óu</td>
+					<td tabindex="0">uá</td>
+					<td tabindex="0">uí</td>
+					<td tabindex="0">uó</td>
+					<td tabindex="0">ué</td>
+					<td tabindex="0">iáo</td>
+					<td tabindex="0">uái</td>
+				</tr>
+				<tr>
+					<th class="noline tit" scope="row">3성</th>
+					<td tabindex="0">ǎ</td>
+					<td tabindex="0">ě</td>
+					<td tabindex="0">ǐ</td>
+					<td tabindex="0">ǒ</td>
+					<td tabindex="0">ǔ</td>
+					<td tabindex="0">ǚ</td>
+					<td tabindex="0">ǎi</td>
+					<td tabindex="0">ǎo</td>
+					<td tabindex="0">ěi</td>
+					<td tabindex="0">iǎ</td>
+					<td tabindex="0">iě</td>
+					<td tabindex="0">iǒ</td>
+					<td tabindex="0">iǔ</td>
+					<td tabindex="0">ǒu</td>
+					<td tabindex="0">uǎ</td>
+					<td tabindex="0">uǐ</td>
+					<td tabindex="0">uǒ</td>
+					<td tabindex="0">uě</td>
+					<td tabindex="0">iǎo</td>
+					<td tabindex="0">uǎi</td>
+				</tr>
+				<tr>
+					<th class="noline tit" scope="row">4성</th>
+					<td tabindex="0" class="line_b">à</td>
+					<td tabindex="0" class="line_b">è</td>
+					<td tabindex="0" class="line_b">ì</td>
+					<td tabindex="0" class="line_b">ò</td>
+					<td tabindex="0" class="line_b">ù</td>
+					<td tabindex="0" class="line_b">ǜ</td>
+					<td tabindex="0" class="line_b">ài</td>
+					<td tabindex="0" class="line_b">ào</td>
+					<td tabindex="0" class="line_b">èi</td>
+					<td tabindex="0" class="line_b">ià</td>
+					<td tabindex="0" class="line_b">iè</td>
+					<td tabindex="0" class="line_b">iò</td>
+					<td tabindex="0" class="line_b">iù</td>
+					<td tabindex="0" class="line_b">òu</td>
+					<td tabindex="0" class="line_b">uà</td>
+					<td tabindex="0" class="line_b">uì</td>
+					<td tabindex="0" class="line_b">uò</td>
+					<td tabindex="0" class="line_b">uè</td>
+					<td tabindex="0" class="line_b">iào</td>
+					<td tabindex="0" class="line_b">uài</td>
+				</tr>
+				</table>
+			</dd>
+			</dl>
+			<div class="del"><a href="javascript:;" class="J_delAlone" onclick="clickcr(this,'pyw.del','','',event)">한 글자 지우기</a> <a href="javascript:;" class="nobg J_delAll" onclick="clickcr(this,'pyw.delall','','',event)">모두 지우기</a></div>
+			<div id="over" class="over" style="display: none;">í</div>
+			<a href="javascript:void(0)" class="cls close"><img src="http://dicimg.naver.net/cndic/web/btn_handwrite_cls.gif" alt="필기입력기 닫기" /></a>	
+		</div>
+		<!-- //병음입력기150210 --> 
+        <a href="javascript:void(0)"  onclick="clickcr(this,'DTP.trans','','',event);changeTag('unused');javascript:SPS.openWindow('/html/analysis.html',660,430,'no','no','analysis_a');" class="cn_assay">중국어 분석기</a>
+		
+        <div>
+			<div>
+		   		<a id="mobile_btn" class="btn_mob" href="#" onclick="clickcr(this,'DTP.plusmobile','','',event); return false;">+Mobile</a>
+		    </div>
+		   	<div id="mobile_layer" class="lyr_mobile" style="display: none; ">
+		    	<p>모바일에 최적화된<br><strong>중국어사전</strong>을<br>체험하세요</p>
+		    	<div>
+		     		<span class="blind">중국어사전 모바일 QR코드-http://mobile.naver.com/qr/cndic</span>
+		     		<a href="#" onclick="blockChk('cndic');clickcr(this,'DTP*m.sms','','',event); return false;">URL 문자 전송</a>
+		    	</div>
+	   		</div>
+		</div>
+	</div>
+	<!-- //top_search -->
+</div>
+<!-- //header -->
+<script id="jsrender_autocomplate_result" type="text/x-jsrender">
+	{{for}}
+	{{if name}}
+	<li {{if type=='krcn'}}lang="ko"{{/if}}>
+		<a href="javascript:;" entryName="{{:trueName}}" entryid="{{:entryid}}">
+			<span class="word_wrap">{{:name}}</span>
+			<span class="mean">{{:mean}}</span>
+		</a>
+	</li>
+	{{/if}}
+	{{/for}}
+</script>	
+	<!-- container -->
+	<div id="container">
+		<!-- content -->
+		<div id="content">
+		
+				
+			<div class="view_list">
+				<h2 class="blind">검색 결과 선택 옵션</h2>
+            	<ul>
+            	<li class="tx_depth1"><strong><a class="N=a:tab.all" href="/search/all?q=%EC%9E%A1%EB%8B%A4&direct=false" onClick="clickcr(this,'nav.all','','',event)"><span>전체</span></a></strong></li>
+					<li class="tx_depth2"><a class="N=a:tab.word" href="/search/word?q=%EC%9E%A1%EB%8B%A4&direct=false" onClick="clickcr(this,'nav.word','','',event)"><span>단어</span></a></li>
+					<li class="tx_depth3"><a class="N=a:tab.example" href="/search/example?q=%EC%9E%A1%EB%8B%A4&direct=false" onClick="clickcr(this,'nav.story','','',event)"><span>예문</span></a></li>
+					<li class="tx_depth4"><a class="N=a:tab.content" href="/search/mean?q=%EC%9E%A1%EB%8B%A4&direct=false" onClick="clickcr(this,'nav.mng','','',event)"><span>본문</span></a></li>
+				</ul>
+                <div class="sel"><a href="javascript:SPS.miniPage('http://hanja.naver.com/small/search?q='+encodeURIComponent('잡다'))" onClick="clickcr(this,'nav.hanja','','',event)">한자사전 검색결과 보기</a></div>
+            </div>		
+			<h2><img src="http://dicimg.naver.net/cndic/web/ico_lsquo.gif" width="6" height="4" alt=""><strong class="sc">잡다</strong><img src="http://dicimg.naver.net/cndic/web/ico_rsquo.gif" width="6" height="4" alt=""> 검색결과</h2>
+			<div class="search_word_box">
+				<ul>
+				<li><strong>전체</strong></li>
+				<li><a href="/search/word?q=%EC%9E%A1%EB%8B%A4&direct=false" onClick="clickcr(this,'nav.word','','',event)" >단어 (<em>55</em>)</a></li>
+				<li><a href="/search/mean?q=%EC%9E%A1%EB%8B%A4&direct=false" onClick="clickcr(this,'nav.mng','','',event)" >뜻풀이 (<em>451</em>)</a></li>
+				<li><a href="/search/example?q=%EC%9E%A1%EB%8B%A4&direct=false" onClick="clickcr(this,'nav.story','','',event)" >예문 (<em>1958</em>)</a></li>
+				</ul>
+				<p class="links"><a href="javascript:SPS.miniPage('http://hanja.naver.com/small/search?q='+encodeURIComponent('잡다'))" onClick="clickcr(this,'nav.hanja','','',event)"><strong>한자사전</strong> 검색결과 보기</a></p>
+			</div>
+				
+			
+<script type="text/javascript">
+	function wikiOpen(index){
+		for(var i=100;i<121;i++){
+			if($("wiki_que_con_" + i) && i!=index){
+				$("wiki_que_con_" + i).style.display="none";
+				$("wiki_arr_top_" + i).style.display="none";
+			}
+		}
+		var que_con = $("wiki_que_con_" + index.trim());
+		var arr_top = $("wiki_arr_top_" + index.trim());
+		if(que_con.style.display=="block"){
+			que_con.style.display="none";
+			arr_top.style.display="none";
+		} else {
+			que_con.style.display="block";
+			arr_top.style.display="block";
+		} 
+	}
+</script>
+	<div class="word_result ">
+		<h5>단어 검색결과 <em>(1~5 / 총 55건)</em></h5>
+		<dl>
+<dt>
+	<a href="/kr/entry?entryID=c_3ff9bfe8ac0d98"  onClick="clickcr(this,'chi.hanja','c_3ff9bfe8ac0d98','1',event)" class="kr"><strong>잡다</strong></a>
+ 
+ <a entryID="kr-c_3ff9bfe8ac0d98"  href="#" onClick="clickcr(this,'chi.add','c_3ff9bfe8ac0d98','1',event)" class="btn _addToWordBook"><img src="http://dicimg.naver.net/cndic/web/btn_addword.gif"  width="16" height="16" alt="단어장 추가" title="단어장 추가"></a>
+ </dt>
+
+	<dd>
+		<ol>
+				<li><div><strong>1</strong>.</div> <em>[타동사]</em> <span class="sc">抓。握。揪。</span></li>
+				<li><div><strong>2</strong>.</div> <em>[타동사]</em> <span class="sc">定。落。</span></li>
+				<li><div><strong>3</strong>.</div> <em>[타동사]</em> <span class="sc">选择。</span></li>
+		</ol>
+	</dd>
+<dt>
+	<a href="/kr/entry?entryID=c_3ff9bfe8ac0a95"  onClick="clickcr(this,'chi.hanja','c_3ff9bfe8ac0a95','2',event)" class="kr"><strong>잡다</strong></a>
+ 
+ <a entryID="kr-c_3ff9bfe8ac0a95"  href="#" onClick="clickcr(this,'chi.add','c_3ff9bfe8ac0a95','2',event)" class="btn _addToWordBook"><img src="http://dicimg.naver.net/cndic/web/btn_addword.gif"  width="16" height="16" alt="단어장 추가" title="단어장 추가"></a>
+ </dt>
+
+	<dd>
+		<ol>
+				<li><div><strong>1</strong>.</div> <em>[타동사]</em> <span class="sc">杀。宰。宰杀。屠杀。</span></li>
+				<li><div><strong>2</strong>.</div> <em>[타동사]</em> <span class="sc">陷害。</span></li>
+		</ol>
+	</dd>
+<dt>
+	<a href="/kr/entry?entryID=c_3ff6bde3ab0f8f"  onClick="clickcr(this,'chi.hanja','c_3ff6bde3ab0f8f','3',event)" class="kr">손<strong>잡다</strong></a>
+ 
+ <a entryID="kr-c_3ff6bde3ab0f8f"  href="#" onClick="clickcr(this,'chi.add','c_3ff6bde3ab0f8f','3',event)" class="btn _addToWordBook"><img src="http://dicimg.naver.net/cndic/web/btn_addword.gif"  width="16" height="16" alt="단어장 추가" title="단어장 추가"></a>
+ </dt>
+
+	<dd>
+		<ol>
+				<li><div><strong>1</strong>.</div> <em>[자동사]</em> <span class="sc">手拉手。牵手。</span></li>
+				<li><div><strong>2</strong>.</div> <em>[자동사]</em> <span class="sc">携手。合作。</span></li>
+				<li><div><strong>3</strong>.</div> <em>[자동사]</em> <span class="sc">为伍。</span></li>
+		</ol>
+	</dd>
+<dt>
+	<a href="/kr/entry?entryID=c_3ff3b9e3ad0782"  onClick="clickcr(this,'chi.hanja','c_3ff3b9e3ad0782','4',event)" class="kr">마음<strong>잡다</strong></a>
+ 
+ <a entryID="kr-c_3ff3b9e3ad0782"  href="#" onClick="clickcr(this,'chi.add','c_3ff3b9e3ad0782','4',event)" class="btn _addToWordBook"><img src="http://dicimg.naver.net/cndic/web/btn_addword.gif"  width="16" height="16" alt="단어장 추가" title="단어장 추가"></a>
+ </dt>
+
+	<dd>
+		<ol>
+				<li><div><strong>1</strong>.</div> <em>[자동사]</em> <span class="sc">收心。稳住心。安下心。安神定心。</span></li>
+		</ol>
+	</dd>
+<dt>
+	<a href="/kr/entry?entryID=c_3ff9bfe8ac0b96"  onClick="clickcr(this,'chi.hanja','c_3ff9bfe8ac0b96','5',event)" class="kr"><strong>잡다</strong>하다</a>
+<em>(<span class="sc">雜多－</span>)</em> 
+ <a entryID="kr-c_3ff9bfe8ac0b96"  href="#" onClick="clickcr(this,'chi.add','c_3ff9bfe8ac0b96','5',event)" class="btn _addToWordBook"><img src="http://dicimg.naver.net/cndic/web/btn_addword.gif"  width="16" height="16" alt="단어장 추가" title="단어장 추가"></a>
+ </dt>
+
+	<dd>
+		<ol>
+				<li><div><strong>1</strong>.</div> <em>[형용사]</em> <span class="sc">各种各样。繁杂。繁琐。</span></li>
+		</ol>
+	</dd>
+		</dl>
+				<div class="more"><a href="/search/word?q=%EC%9E%A1%EB%8B%A4&direct=false" onClick="clickcr(this,'chi.more','','',event)"><span class="txt">단어 더보기</span><em class="more_ico"></em></a></div>
+	</div>
+			
+			
+			
+			
+			
+<script type="text/javascript">
+	function wikiOpenM(index){
+		jQuery('span.que_con_index').hide();
+		jQuery('span.arr_top_index').hide();
+		for(var i=100;i<121;i++){
+			if($("wiki_que_con_" + i) && i!=index){
+				$("wiki_que_con_" + i).style.display="none";
+				$("wiki_arr_top_" + i).style.display="none";
+			}
+		}
+		for(var i=0;i<21;i++){
+			if(jQuery("#que_con" + i)){
+				jQuery("#que_con" + i).hide();
+				jQuery("#arr_top" + i).hide();
+			}
+		}
+		var que_con = $("wiki_que_con_" + index.trim());
+		var arr_top = $("wiki_arr_top_" + index.trim());
+		if(que_con.style.display=="block"){
+			que_con.style.display="none";
+			arr_top.style.display="none";
+		} else {
+			que_con.style.display="block";
+			arr_top.style.display="block";
+		} 
+	}
+</script>
+			<div class="search_result ">
+				<h5>본문 검색결과 <em>(1~5 / 총 451건)</em></h5>
+				<dl>
+				<dt>
+					<a href="/zh/entry?entryID=c_3cf6b8edd7" onClick="clickcr(this,'mng.hanja','c_3cf6b8edd7','1',event)" class="sc">
+						捕捉</a> 
+					<span class="py">
+						[bǔzhuō]
+					</span> 
+				
+					<a href="#" class="sound notooltip"  onClick="clickcr(this,'mng.sound','c_3cf6b8edd7','1',event)">
+						<img src="http://dicimg.naver.net/cndic/web/play.gif" width="16" height="16" alt="발음 듣기" class="sound" id="c_3cf6b8edd7">
+						<input type="hidden" name="male" value="http://dic.dn.naver.com/v?_lsu_sa_=362825509daf32c6259ec1c8353411f45d4060f5f301df536642c4701b2463c1205bf7d867e52275c92660357723c0cfac19d41e56b5120de03b0505b70b0efe9e324215d9c06cf06e6b0434e95326707e0c2ab2cd018f294437a3b179bac0144f93e03cc5a39b24059174f1fd22b278104eed772e0a45bbe33b19d63f2e25ae"/><input type="hidden" name="female" value="http://dic.dn.naver.com/v?_lsu_sa_=38b8235b6d1330a6ba9c710134a498f51d906f75870befe4639293708b6d66d15e5bf74263353879e9456c550b2a80f78f905e499869b2c3eaa77f97576c54326a7bc228b0aee94b98a7911b6cc89e473e45997c5a4453ccf3b22e663fbcd71cf3b5e31fb6812f28204cc7e34363bd1b378558adabcc82dc308bc2d76ce0e5a9"/></a>
+				<span class="hsk">
+						<a href="/CnEntry.nhn?m=hskInfo&hskParam=6" target="_blank">
+						<img alt="新HSK6" src="http://dicimg.naver.net/cndic/web/icon_n_hsk_6.gif">
+ 						</a>
+						<img alt="新HSK1" src="http://dicimg.naver.net/cndic/web/ico_hsk_1.gif">
+				</span> 
+				<a entryID="zh-c_3cf6b8edd7"  href="javascript:;" onClick="clickcr(this,'chi.add','c_3cf6b8edd7','1',event)" class="btn _addToWordBook"><img src="http://dicimg.naver.net/cndic/web/btn_addword.gif"  width="16" height="16" alt="단어장 추가" title="단어장 추가" ></a>
+				</dt>
+				<dd>
+
+					<ol >
+					<li><strong>1</strong>. <em>[동사]</em> <strong class=bgselected>잡다</strong>. 붙<strong class=bgselected>잡다</strong>. 체포하다. </li>
+					<li><strong>2</strong>. <em>[동사]</em> (조금만 늦추어도 가버리는 시간·기회 등을) <strong class=bgselected>잡다</strong>. 포... </li>
+					</ol>
+				</dd>				<dt>
+					<a href="/zh/entry?entryID=c_32febce1ae7b" onClick="clickcr(this,'mng.hanja','c_32febce1ae7b','2',event)" class="sc">
+						拿</a> 
+					<span class="py">
+						[ná]
+					</span> 
+				
+					<a href="#" class="sound notooltip"  onClick="clickcr(this,'mng.sound','c_32febce1ae7b','2',event)">
+						<img src="http://dicimg.naver.net/cndic/web/play.gif" width="16" height="16" alt="발음 듣기" class="sound" id="c_32febce1ae7b">
+						<input type="hidden" name="male" value="http://dic.dn.naver.com/v?_lsu_sa_=31d87654bdc93ce60a9221cd3004e6f43dcb6e85d00d9f8360524c754b3a6571bc5fe7ac67a5b87f394a67c5042150cbf75e6cd01f403741bcbe7987e40d9d4f0706ca95741566c94b2d8fa58c2028fc6058d35b82e612f1600d2d0525102fcc4577f6c6d85eedc93e473c28680a910a80f78f12cbf71378db09ecdf94c54fb0"/><input type="hidden" name="female" value="http://dic.dn.naver.com/v?_lsu_sa_=34d8c75d4dc936a6649bf1a23de445f5fdd66d75ed0fffcd6432f870cbb562e18f54172762d5487bf9316165062a80da425006e6f4a487f0f1aee4dda7e4f7336a21eec09af010d7a035455e24fa3b6488725582286da6d373b7d872a40c580cdb3d538e7403fcc7738cb11598c2efde64701a4ae821a081bbe20c178fdb5502"/></a>
+				<span class="hsk">
+						<a href="/CnEntry.nhn?m=hskInfo&hskParam=3" target="_blank">
+						<img alt="新HSK3" src="http://dicimg.naver.net/cndic/web/icon_n_hsk_3.gif">
+ 						</a>
+						<img alt="新HSK4" src="http://dicimg.naver.net/cndic/web/ico_hsk_4.gif">
+						<img alt="BCT A" src="http://dicimg.naver.net/cndic/web/ico_bcta.gif">
+				</span> 
+				<a entryID="zh-c_32febce1ae7b"  href="javascript:;" onClick="clickcr(this,'chi.add','c_32febce1ae7b','2',event)" class="btn _addToWordBook"><img src="http://dicimg.naver.net/cndic/web/btn_addword.gif"  width="16" height="16" alt="단어장 추가" title="단어장 추가" ></a>
+				</dt>
+				<dd>
+					
+
+					<ol >
+					<li><strong>1</strong>. <em>[동사]</em> (손으로) 쥐다. <strong class=bgselected>잡다</strong>. 가지다. </li>
+					</ol>
+				</dd>				<dt>
+					<a href="/zh/entry?entryID=c_3ef4bde4af82" onClick="clickcr(this,'mng.hanja','c_3ef4bde4af82','3',event)" class="sc">
+						捏</a> 
+					<span class="py">
+						[niē]
+					</span> 
+				
+					<a href="#" class="sound notooltip"  onClick="clickcr(this,'mng.sound','c_3ef4bde4af82','3',event)">
+						<img src="http://dicimg.naver.net/cndic/web/play.gif" width="16" height="16" alt="발음 듣기" class="sound" id="c_3ef4bde4af82">
+						<input type="hidden" name="male" value="http://dic.dn.naver.com/v?_lsu_sa_=3f183f5b2d0b30d66199b19d3d34c4f3bd736d65b20d2f0369a2d37c7bf86681fe5c87066c25c87a69de6205562950e667715428c4cce3d2aeb51654da8ec8a85161da8476d675b393f9709a123e4021a0faba66b71159782bdb58c86f61d7062a0b67214165a3fea9f7f30991e1138e9223e20d12e1178cb0a9afddf754f2ee"/><input type="hidden" name="female" value="http://dic.dn.naver.com/v?_lsu_sa_=31682d5c4d1a3826199c91ce3e8481fdcd3f6b552d0caf4a69f21c753b9065314953071e62e5117b09e56995612530111a194d4023394c806fa0fd11579692d74af62b3608c98dd88130c37c7f0ee8e4176fcdaa9eb235767f01bbd7b33f94ce888de5b1d233f9eecfc6f07f8b09861ef920b45573d55c877a8cfff3a5bedeef"/></a>
+				<span class="hsk">
+						<a href="/CnEntry.nhn?m=hskInfo&hskParam=6" target="_blank">
+						<img alt="新HSK6" src="http://dicimg.naver.net/cndic/web/icon_n_hsk_6.gif">
+ 						</a>
+						<img alt="新HSK2" src="http://dicimg.naver.net/cndic/web/ico_hsk_2.gif">
+				</span> 
+				<a entryID="zh-c_3ef4bde4af82"  href="javascript:;" onClick="clickcr(this,'chi.add','c_3ef4bde4af82','3',event)" class="btn _addToWordBook"><img src="http://dicimg.naver.net/cndic/web/btn_addword.gif"  width="16" height="16" alt="단어장 추가" title="단어장 추가" ></a>
+				</dt>
+				<dd>
+					
+
+					<ol >
+					<li><strong>1</strong>. <em>[동사]</em> (엄지손가락과 다른 손가락으로) 집다. <strong class=bgselected>잡다</strong>. </li>
+					</ol>
+				</dd>				<dt>
+					<a href="/zh/entry?entryID=c_3ef7bee1a87c" onClick="clickcr(this,'mng.hanja','c_3ef7bee1a87c','4',event)" class="sc">
+						拿住</a> 
+					<span class="py">
+						[názhù]
+					</span> 
+				
+					<a href="#" class="sound notooltip"  onClick="clickcr(this,'mng.sound','c_3ef7bee1a87c','4',event)">
+						<img src="http://dicimg.naver.net/cndic/web/play.gif" width="16" height="16" alt="발음 듣기" class="sound" id="c_3ef7bee1a87c">
+						<input type="hidden" name="male" value="http://dic.dn.naver.com/v?_lsu_sa_=3fa8b6511d9432a6b89e01ea3914f8f6ad8163e57c0fef486fc2537d3b1669c1725d17b36a858f71695e67352f2780bbd3ea53fa261673998e7bc1d8dacf4cc2497ac47bdf31adb984407dcf152dd1d73c9b160fb599713774e6332fa91f980dc4a18677046b614006bd8246a432df728e37cb5273ca2c5f7c769511a7a897ec"/><input type="hidden" name="female" value="http://dic.dn.naver.com/v?_lsu_sa_=3258ed51bde734e6c49dc11634d498fdcde36df5c2030fc86b726f7cdbfe63114b58a77c6dc59576a97266358924c0eb57dc0c3a5dddffdad5cc62ef9da69a32496ea2fe7dd0e271199bbe6ff3e5cfc54fa4fcb80136d3ce696ff2d5284efccd73943f8541dbbadab4fed7adba4bdf14ed3f24f4f2be8cedfe66912c5c408295"/></a>
+				<span class="hsk">
+				</span> 
+				<a entryID="zh-c_3ef7bee1a87c"  href="javascript:;" onClick="clickcr(this,'chi.add','c_3ef7bee1a87c','4',event)" class="btn _addToWordBook"><img src="http://dicimg.naver.net/cndic/web/btn_addword.gif"  width="16" height="16" alt="단어장 추가" title="단어장 추가" ></a>
+				</dt>
+				<dd>
+					<div><img src="http://dicimg.naver.com/cndic/sourcing_images/1/1007_cobis_20070206153556.jpg" width="96" height="60" alt="拿住에 대한 관련 이미지!"></div>
+
+					<ol class="left">
+					<li><strong>1</strong>. <em>[동사]</em> (손으로) <strong class=bgselected>잡다</strong>. 붙<strong class=bgselected>잡다</strong>. 꽉 쥐다. </li>
+					<li><strong>2</strong>. <em>[동사]</em> 체포하다. <strong class=bgselected>잡다</strong>. </li>
+					</ol>
+				</dd>				<dt>
+					<a href="/zh/entry?entryID=c_3ff4b6eea57c" onClick="clickcr(this,'mng.hanja','c_3ff4b6eea57c','5',event)" class="sc">
+						捞</a> 
+					<span class="py">
+						[lāo]
+					</span> 
+				
+					<a href="#" class="sound notooltip"  onClick="clickcr(this,'mng.sound','c_3ff4b6eea57c','5',event)">
+						<img src="http://dicimg.naver.net/cndic/web/play.gif" width="16" height="16" alt="발음 듣기" class="sound" id="c_3ff4b6eea57c">
+						<input type="hidden" name="male" value="http://dic.dn.naver.com/v?_lsu_sa_=3c48755abdcf3ba64b9aa1253a04c4faed4e6c85e10cdf986232aa7f1bd36a11155757936f65747f699f6665332c50fb496d0f43973b31eba027233c2693089fdd2dcb052b83c145851aef6b7a882578dbfb7c93be334900e3c95b942913639c49221a4899de6b0bd7856a1da31c32961943600f992498f87829ee576bfca8d7"/><input type="hidden" name="female" value="http://dic.dn.naver.com/v?_lsu_sa_=3b280555bdda3aa68b914180377439fead386d05ea06ef386bb2477e2b406301df59e7376d351e7949846935762ac0cf2525ee31a719f55f06ac4569e11386f6566381f16d3740c2819027cb4a89f4b011ef59df04ff5cbf0095a3ec6444c474aea97a282beb693cf12ccd2a734a349035ba687eb9cebc229ef60647b623bbfc"/></a>
+				<span class="hsk">
+						<a href="/CnEntry.nhn?m=hskInfo&hskParam=6" target="_blank">
+						<img alt="新HSK6" src="http://dicimg.naver.net/cndic/web/icon_n_hsk_6.gif">
+ 						</a>
+						<img alt="新HSK3" src="http://dicimg.naver.net/cndic/web/ico_hsk_3.gif">
+				</span> 
+				<a entryID="zh-c_3ff4b6eea57c"  href="javascript:;" onClick="clickcr(this,'chi.add','c_3ff4b6eea57c','5',event)" class="btn _addToWordBook"><img src="http://dicimg.naver.net/cndic/web/btn_addword.gif"  width="16" height="16" alt="단어장 추가" title="단어장 추가" ></a>
+				</dt>
+				<dd>
+					<p><img src="http://dicimg.naver.net/cndic/web/ico_ziti.gif" width="24" height="13" alt="번체"> (<span class="sc">撈</span>) <strong></strong>
+	... <strong>로</strong>
+</p>
+
+					<ol >
+					<li><strong>1</strong>. <em>[동사]</em> (물이나 그 밖의 액체 속에서) 건지다. 끌어올리다. (물고기를) <strong class=bgselected>잡다</strong>. </li>
+					</ol>
+				</dd>				</dl>
+				<div class="more"><a href="/search/mean?q=%EC%9E%A1%EB%8B%A4&direct=false" onClick="clickcr(this,'mng.more','','',event)" ><span class="txt">본문 더보기</span><em class="more_ico"></em></a></div>
+			</div>
+						
+			
+			
+			
+			
+			<div class="term_result ">
+				<h5>예문 검색결과 <em>(1~5 / 총 1,958건)</em></h5>
+				<div class="exfilterset" style="display:none">
+				<!-- Dev Note: Add collapse status "is_collapse" Class to <div class="exfilterset">
+				<div class="exfilterset is_collapse"> -->
+					<span class="exfilterset_click" role="button"><i class="exfilterset_click_arrow">접기/펼치기</i></span>
+
+					<dl class="exfilterset_list">
+					<dt class="exfilterset_list_all"><em class="text">예문 필터링</em></dt>
+					<dd class="exfilterset_list_alldesc">
+						<ul class="exfilterset_list_allchild">
+						<li><label class="click"><input type="radio" name="exfilter_option" id="all" onClick="clickcr(this,'xmf.rsall','','',event)" class="click_radio"><i class="click_radio2 click_radio22"></i><span class="click_text">전체</span></label></li>
+						</ul>
+					</dd>
+					
+					<dt class="exfilterset_list_level"><em class="text">수준별</em><i class="ico_info" role="button" onClick="clickcr(this,'xmf.hrs','','',event)"></i></dt>
+					<dd class="exfilterset_list_leveldesc">
+						<ul class="exfilterset_list_levelchild">
+						<li><label class="click"><input type="radio" name="exfilter_option" class="click_radio" id="st_level-1" onClick="clickcr(this,'xmf.rsbeg','','',event)"><i class="click_radio2 click_radio23"></i><span class="click_text">초급</span></label></li>
+						<li><label class="click"><input type="radio" name="exfilter_option" class="click_radio" id="st_level-2" onClick="clickcr(this,'xmf.rsint','','',event)"><i class="click_radio2 click_radio24"></i><span class="click_text">중급</span></label></li>
+						<li><label class="click"><input type="radio" name="exfilter_option" class="click_radio" id="st_level-3" onClick="clickcr(this,'xmf.rsadv','','',event)"><i class="click_radio2 click_radio25"></i><span class="click_text">고급</span></label></li>
+						</ul>
+					</dd>
+					<!-- Dev Note: Hide Status -->
+					<dd class="exfilterset_list_leveldesc2 is_hide">
+
+					<!-- Dev Note: Show Status
+					<dd class="exfilterset_list_leveldesc2"> -->
+						
+						<div class="layer_exfilter">
+							<em class="layer_exfilter_title">수준별 안내</em>
+							<span class="layer_exfilter_action" role="button"><i class="layer_exfilter_close">수준별 안내창 닫기</i></span>
+							<dl class="layer_exfilter_list">
+							<dt>초급</dt>
+							<dd>간단하게 일상생활에서 일어나는 화제에 대해<br>
+							이야기 할 수있는 수준의 예문.</dd>
+							<dt>중급</dt>
+							<dd>비교적 유창하게 원어민과 대화하고<br>
+							교류할 수 있는 수준의 예문.</dd>
+							<dt>고급</dt>
+							<dd>자신의 견해를 유창하고 적절하게 전달할<br>
+							수있는 수준의 예문.</dd>
+							</dl>
+						</div>
+					</dd>
+
+					<dt class="exfilterset_list_exam">
+						<em class="text">중국어 능력시험</em><i class="ico_info" role="button" onClick="clickcr(this,'xmf.hrst','','',event)"></i>
+
+						<label class="click">
+							<!-- Dev Note: Default Status -->
+							<input type="checkbox" class="click_checkbox" onClick="clickcr(this,'xmf.rsext','','',event)">
+
+							<!-- Dev Note: Checked status - Add "is_checked" Class to <input type="checkbox">
+							<input type="checkbox" class="click_checkbox is_checked" checked>
+							
+							<!-- Dev Note: Disabled Status - Add "is_disabled" Class to <input type="checkbox">
+							<input type="checkbox" class="click_checkbox is_disabled" disabled> -->
+							<span class="click_button">
+								<i class="click_button_ico"></i>
+								<span class="click_button_text">등급 외 단어 포함</span>
+							</span>
+						</label>
+					</dt>
+					<dd class="exfilterset_list_examdesc">
+						<ul class="exfilterset_list_hskchild">
+						<li><label class="click"><input type="radio" name="exfilter_option" class="click_radio" id="st_hskGrade-1" onClick="clickcr(this,'xmf.rsh1','','',event)"><i class="click_radio2"></i><span class="click_text">HSK 1급</span></label></li>
+						<li><label class="click"><input type="radio" name="exfilter_option" class="click_radio" id="st_hskGrade-2" onClick="clickcr(this,'xmf.rsh2','','',event)"><i class="click_radio2"></i><span class="click_text">HSK 2급</span></label></li>
+						<li><label class="click"><input type="radio" name="exfilter_option" class="click_radio" id="st_hskGrade-3" onClick="clickcr(this,'xmf.rsh3','','',event)"><i class="click_radio2"></i><span class="click_text">HSK 3급</span></label></li>
+						
+						<!-- Dev Note: Checked status - Add "is_checked" Class to <input type="radio">-->
+						<li><label class="click"><input type="radio" name="exfilter_option" class="click_radio" id="st_hskGrade-4" onClick="clickcr(this,'xmf.rsh4','','',event)"><i class="click_radio2"></i><span class="click_text">HSK 4급</span></label></li>
+						<li><label class="click"><input type="radio" name="exfilter_option" class="click_radio" id="st_hskGrade-5" onClick="clickcr(this,'xmf.rsh5','','',event)"><i class="click_radio2"></i><span class="click_text">HSK 5급</span></label></li>
+						<li><label class="click"><input type="radio" name="exfilter_option" class="click_radio" id="st_hskGrade-6" onClick="clickcr(this,'xmf.rsh6','','',event)"><i class="click_radio2"></i><span class="click_text">HSK 6급</span></label></li>
+						</ul>
+
+						<ul class="exfilterset_list_bctchild">
+						<li><label class="click"><input type="radio" name="exfilter_option" class="click_radio" id="st_bctGrade-1" onClick="clickcr(this,'xmf.rsba','','',event)"><i class="click_radio2"></i><span class="click_text">BCT A급</span></label></li>
+						<li><label class="click"><input type="radio" name="exfilter_option" class="click_radio" id="st_bctGrade-2" onClick="clickcr(this,'xmf.rsbb','','',event)"><i class="click_radio2"></i><span class="click_text">BCT B급</span></label></li>
+						</ul>
+					</dd>
+					<!-- Dev Note: Show Status
+					<dd class="exfilterset_list_examdesc2"> -->
+
+					<!-- Dev Note: Hide Status -->
+					<dd class="exfilterset_list_examdesc2 is_hide">
+						<div class="layer_exfilter">
+							<em class="layer_exfilter_title">자격증 시험 안내</em>
+							<span class="layer_exfilter_action" role="button"><i class="layer_exfilter_close">자격증 시험 안내창 닫기</i></span>
+							<dl class="layer_exfilter_list">
+							<dt>HSK (Chinese Proficiency Test)</dt>
+							<dd>중국교육부국가한어수평고시로 제1언어가<br>
+							중국어가 아닌 사람의 중국어 능력을 평가하기<br>
+							위해 만들어진 국가급 표준화 고시.<br>
+								<a href="http://cndic.naver.com/CnEntry.nhn?m=hskInfo" target="_blank" class="click" role="button" onClick="clickcr(this,'xmf.hrstgo','','',event)"><span class="click_txt">HSK 등급별 단어보기</span><i class="click_arrow"></i></a>
+							</dd>
+							<dt>BCT (Business Chiness Test)</dt>
+							<dd>중국어를 모국어로 사용하지 않는 사람을 대상으로<br>
+							하며, 비즈니스 활동에 종사하는 데 있어 갖추어야<br>
+							할 중국어 실력을 측정하는 표준화된 시험.</dd>
+							<dt>등급외 단어 포함</dt>
+							<dd>등급외 단어 포함을 선택하시면,<br>
+							HSK등급에속하지 않은 단어를 포함한 예문도<br>
+							함께 노출됩니다.</dd>
+							</dl>
+						</div>
+					</dd>
+					</dl>
+				</div>
+				<div class="exfilterset2" style="display:none">
+					<h6 class="exfilterset2_title"></h6>
+
+					<label class="exfilterset2_click">
+						<!-- Dev Note: Checked status - Add "is_checked" Class to <input type="checkbox">
+						<input type="checkbox" class="exfilterset2_click_checkbox is_checked" checked> -->
+
+						<!-- Dev Note: Defalut Status -->
+						<input type="checkbox" class="exfilterset2_click_checkbox"><i class="exfilterset2_click_checkbox2"></i><span class="exfilterset2_click_text">번역문 있는 예문만 보기</span>
+					</label>
+				</div>
+				
+				<div class="exfilterbar" style="display:none" onClick="clickcr(this,'wrd.filter','','',event)">
+					<a href="javascript:;" class="exfilterbar_click">
+						<p class="exfilterbar_row">내가 원하는 <em class="exfilterbar_row_color">수준별, 중국어 능력 시험(HSK, BCT) 등급별</em> 예문을 확인해보세요!</p>
+						<span class="exfilterbar_arrow"><i class="exfilterbar_arrow_ico"></i></span>
+					</a>
+				</div>
+				
+				<div class="old_example_area" >
+				<dl class="term_result_list">
+					<dt>
+						<span class="sc"><span class="auto_link sc">使劲</span><span class="auto_link sc">抓住</span>。</span>
+						 <!-- 20120807[BTS DICNGDSUS-6776] [Cndic] 중국어사전 예문 발음 오류에 대해 비노출 처리  -->
+						 	<a href="javascript:;" onClick="clickcr(this,'wrd.sound','','',event)" class="sound"><img src="http://dicimg.naver.net/cndic/web/play.gif" width="16" height="16" alt="발음 듣기" class="tts"></a>
+<span class='sc_n'>출처:중국 흑룡강조선민족출판사 한중사전</span>
+					</dt>
+					<dd>꽉 잡다.→<a href="/kr/entry?entryID=c_3ff1bce4a8077f" onClick="clickcr(this,'wrd.word','c_3ff1bce4a8077f','1',event)"  >꽉</a></dd>
+					<dt>
+						<span class="sc"><span class="auto_link sc">捕</span><span class="auto_link sc">野鸡</span></span>
+						 <!-- 20120807[BTS DICNGDSUS-6776] [Cndic] 중국어사전 예문 발음 오류에 대해 비노출 처리  -->
+						 	<a href="javascript:;" onClick="clickcr(this,'wrd.sound','','',event)" class="sound"><img src="http://dicimg.naver.net/cndic/web/play.gif" width="16" height="16" alt="발음 듣기" class="tts"></a>
+<span class='sc_n'>출처:고려대 한한중사전</span>
+					</dt>
+					<dd>꿩을 잡다</dd>
+					<dt>
+						<span class="sc"><span class="auto_link sc">杀鸡</span></span>
+						 <!-- 20120807[BTS DICNGDSUS-6776] [Cndic] 중국어사전 예문 발음 오류에 대해 비노출 처리  -->
+						 	<a href="javascript:;" onClick="clickcr(this,'wrd.sound','','',event)" class="sound"><img src="http://dicimg.naver.net/cndic/web/play.gif" width="16" height="16" alt="발음 듣기" class="tts"></a>
+<span class='sc_n'>출처:고려대 한한중사전</span>
+					</dt>
+					<dd>닭을 잡다</dd>
+					<dt>
+						<span class="sc"><span class="auto_link sc">抓球</span></span>
+						 <!-- 20120807[BTS DICNGDSUS-6776] [Cndic] 중국어사전 예문 발음 오류에 대해 비노출 처리  -->
+						 	<a href="javascript:;" onClick="clickcr(this,'wrd.sound','','',event)" class="sound"><img src="http://dicimg.naver.net/cndic/web/play.gif" width="16" height="16" alt="발음 듣기" class="tts"></a>
+<span class='sc_n'>출처:고려대 한한중사전</span>
+					</dt>
+					<dd>공을 잡다</dd>
+					<dt>
+						<span class="sc"><span class="auto_link sc">打车</span></span>
+						 <!-- 20120807[BTS DICNGDSUS-6776] [Cndic] 중국어사전 예문 발음 오류에 대해 비노출 처리  -->
+						 	<a href="javascript:;" onClick="clickcr(this,'wrd.sound','','',event)" class="sound"><img src="http://dicimg.naver.net/cndic/web/play.gif" width="16" height="16" alt="발음 듣기" class="tts"></a>
+<span class='sc_n'>출처:고려대 한한중사전</span>
+					</dt>
+					<dd>차를 잡다</dd>
+				</dl>
+				<div class="more"><a href="/search/example?q=%EC%9E%A1%EB%8B%A4&direct=false" onClick="clickcr(this,'wrd.more','','',event)"><span class="txt">예문 더보기</span><em class="more_ico"></em></a></div>
+				</div>
+			</div>
+			
+			<div class="exfilterset3" style="display:none">
+				<p class="exfilterset3_row">선택한 조건에 대한 예문 검색결과가 없습니다.</p>
+				<a href="javascript:;" class="exfilterset3_click" onClick="clickcr(this,'xmc.searchall','','',event)">전체 검색결과 가기</a>
+			</div>
+			
+			<div class="result_box nw noData_" style="display:none">
+				<p>검색어 <img src="http://dicimg.naver.net/cndic/web/ico_lsquo.gif" width="6" height="4" alt="" /><strong class="sc query_"><span class="pinyin">xxx</span></strong><img src="http://dicimg.naver.net/cndic/web/ico_rsquo.gif" width="6" height="4" alt="" /> 에 대한 검색결과가 없습니다.</p>
+				<ul>
+				<li>위의 중국어 문장 분석 결과를 확인하시고 단어별로 다시 검색해 보세요.</li>
+				<li>원하시는 결과가 없으시면 <a class="a_1" href="javascript:;" onClick="clickcr(this,'nsc.all','','',event)" target="_blank">사전 통합검색</a>에서 ‘<span class="query_"><span class="pinyin">xxx</span></span>’에 대해 찾아보세요.</li>
+				<li>어학사전에서 부족한 것들은 <a class="a_2" href="javascript:;" onClick="clickcr(this,'nsc.enc','','',event)" target="_blank">네이버 지식백과</a>에서 보완될 수 있습니다.</li>
+				</ul>
+			</div>
+			
+
+<script id="jsrender_example_result" type="text/x-jsrender">
+<dl class="term_result_list">
+{{for searchExampleList.items}}
+<dt>
+	<span class="sc">
+		{{if linkedSentence}}
+			 {{:~autoLink_new(linkedSentence)}}
+		{{else}}
+			{{:example}}
+		{{/if}}
+	</span>
+	 <!-- 20120807[BTS DICNGDSUS-6776] [Cndic] 중국어사전 예문 발음 오류에 대해 비노출 처리  -->
+	 	<a href="javascript:;" onclick="clickcr(this,'wrd.sound','','',event)" class="sound"><img src="http://dicimg.naver.net/cndic/web/play.gif" width="16" height="16" alt="발음 듣기" class="tts"></a>
+	{{:~gdid2Source(gdid,source,'sc_n')}}
+</dt>
+<dd>{{:translatedExample}}{{if entryName ~ok=index}}→<a href="/{{:dicType}}/entry?entryID={{:encEntryID}}" onClick="clickcr(this,'wrd.word','{{:encEntryID}}','{{:~ok}}',event)"  {{if dicType == "zh"}}class="sc"{{/if}}>{{:entryName}}</a>{{/if}}
+</dd>
+{{/for}}
+</dl>
+{{if pageNo}}
+{{:~paging_new(pageNo,totalCount)}}
+{{/if}}
+{{if pageNo == 100}}
+<div class="dic_desc7">네이버 중국어사전은 최상의 검색결과 품질을위해 2,000건 이상의 검색결과를 제공하지 않습니다.<br> 원하시는 검색결과를 찾으시려면 <span class="red">더 구체적인 검색어</span>를 입력해 보세요.</div>
+{{/if}}
+</script>
+
+
+<script>
+(function($){
+	//------------------主题例文搜索条件选项区划根据当前页面判断是否显示----start---
+	var local_href = location.href;
+	if (isExamplePage(local_href)) {
+		$(".exfilterset").show();
+		$(".exfilterset2").show();
+		$("exfilterbar").hide();
+	} else if (local_href.indexOf("search/all") > -1) {
+		$(".exfilterset").hide();
+		$(".exfilterset2").hide();
+		$(".exfilterbar").show();
+	} else {
+		$(".exfilterset").hide();
+		$(".exfilterset2").hide();
+		$(".exfilterbar").hide();
+	};
+	//------------------主题例文搜索条件选项区划根据当前页面判断是否显示----end---
+
+
+	//------------------主题例文搜索条件选项区划根据cookie值判断是否折叠----start---
+	var option = sub_exm_sech.getOptionInCookie();
+	var status = SPS.getCookie("CNDIC_SUBJECT_EXAMPLE_STATUS_COOKIE") || "open";
+	var exfilterset = $(".exfilterset");
+	if(status == "open") {
+		exfilterset.removeClass("is_collapse");
+		if (option && option.hasOtherExpl == "true") {
+			$("input.click_checkbox").addClass("is_checked");
+		} else {
+			$("input.click_checkbox").removeClass("is_checked");
+		}
+		$(".exfilterset_click").attr("onclick","clickcr(this,'xmf.close','','',event)");
+	} else {
+		exfilterset.addClass("is_collapse");
+		$(".exfilterset_click").attr("onclick","clickcr(this,'xmf.open','','',event)");
+	}
+	//------------------主题例文搜索条件选项区划根据cookie值判断是否折叠----end---
+	
+	$(".click_radio").removeClass("is_checked");
+	if (false) {
+		$("#" + (option.subject || "all")).addClass("is_checked");
+		if (option.hasOtherExpl == "true" && status == "open") {//条件二是选项区域必须是非折叠状态
+			$("input.click_checkbox").addClass("is_checked");
+		} else {
+			$("input.click_checkbox").removeClass("is_checked");
+		}	
+		if (option.st_translation == "true") {
+			$("input.exfilterset2_click_checkbox").addClass("is_checked");
+			$(".exfilterset2_click").attr("onclick","clickcr(this,'xmf.trall','','',event)");
+		} else {
+			$("input.exfilterset2_click_checkbox").removeClass("is_checked");
+			$(".exfilterset2_click").attr("onclick","clickcr(this,'xmf.trex','','',event)");
+		}	
+	} else {
+		sub_exm_sech.setOption2Cookie("all", "false", "false");
+		$("#all").addClass("is_checked");
+		
+	}
+	
+	var subject = $("input.click_radio.is_checked").attr("id") || "all";
+	if (subject.indexOf("all") > -1 || subject.indexOf("st_level") > -1 || status != "open") {
+		$(".exfilterset_list_exam .click_checkbox").attr("disabled",true);
+	} else {
+		$(".exfilterset_list_exam .click_checkbox").attr("disabled",false); 
+	}
+}(jQuery));
+
+jQuery(window).load(function(){
+	if (isExamplePage()) {//只在例文页面才初始化主题例文搜索相关（不包括小词典窗口页面）
+		var subExmSech = new NaverDict.SubjectExampleSearch();
+	} else if (location.href.indexOf("com/search/all") > -1) {
+		jQuery(".exfilterbar_click").unbind("click").on("click",function(){
+			location.href = "example?q=" + encodeURIComponent(jQuery("#ac_input_bak").val()) + "&direct=false";
+		});
+	}
+});
+//BTS DICNGDSUS-27006
+setTimeout(function(){
+	var text = jQuery(".exfilterset_list").html();
+	jQuery(".exfilterset_list").empty().html(text);
+},0);
+//默认不维持主题例文搜索条件，只有在某些情况下（1,不离开例文页面搜索新单词；2,翻页；）才维持
+SPS.setCookie("CNDIC_EXM_KEEP_SECH_STATUS", "no", 30, "/", "cndic.naver.com");
+</script>
+			
+<div class="trans_result line_b_none">
+	<h5>번역 결과<img src="http://dicimg.naver.net/cndic/web/ico_main_n.gif" alt="new" class="new_ico"></h5>
+	<dl>
+		<dt>
+		<!-- 判断query 是否包含中文-->
+				<span class="cs">
+					<span class="sc">잡다</span>
+				</span>
+		</dt>
+			<dd lang="zh">
+				<span class="sc">抓</span>
+			</dd>
+	</dl>
+	<div class="more"><a href="http://translate.naver.com/#/ko/zh-CN/잡다"  target="_blank" onclick="clickcr(this,'tra.go','','',event);"><span class="txt">번역기 바로가기</span><em class="more_ico"></em></a></div>
+</div>
+
+		</div>
+		<!-- //content -->
+
+		<!-- right -->
+		<div class="aside">
+			<!-- 배너 영역 -->
+			<ul class="word_popup">
+            <li class="first"><a class="word" href="http://wordbook.naver.com/cndic" onclick="clickcr(this,'rmn.wordbook','','',event)">단어장</a></li>
+            <li><a class="popup" href="javascript:SPS.miniPage('/mini/section')" onclick="clickcr(this,'rmn.small','','',event)">작은창 사전</a></li>
+            <li><a href="http://translate.naver.com/#/ko/zh-CN" target="_brank" class="gotrans" onclick="clickcr(this,'rmn.tra','','',event)">번역기</a></li>
+            <li class="last"><a href="http://opendict.naver.com/participation/word_list.dict#common/register/zh/ko/" class="open_dic">오픈사전<span class="new">new</span></a></li>
+            </ul>
+            <div class="supply">
+				<dl>
+				<dt><img src="http://dicimg.naver.net/cndic/web/img_supply01.gif" width="40" height="11" alt="자료제공" /></dt>
+				<dd><img src="http://dicimg.naver.net/cndic/web/img_supply02.gif" width="75" height="11" alt="교학사 중한사전" /></dd>
+                <dd><img src="http://dicimg.naver.net/cndic/web/img_supply03.gif" width="68" height="11" alt="진명 한중사전" /></dd>
+                <dd><img src="http://dicimg.naver.net/cndic/web/img_supply04.gif" width="94" height="11" alt="흑룡강조선민족출판사" /></dd>
+				</dl>
+			</div>
+			<div id="addiv" name="addiv" class="ad"><h2 class="blind">광고</h2><iframe id="f280240" title="광고" name="f280240" src="" width="280" height="240"  border="0" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" align="middle"></iframe></div>
+			<script type="text/javascript">
+				SPS.DOMLoad.attach(function(){$("f280240").src="http://ad.naver.com/adshow?unit=388B";});
+				if (typeof(getGNB) != "undefined")
+				SPS.DOMLoad.attach(function(){try{getGNB();} catch(e){}});
+				SPS.DOMLoad.attach(function(){new SetSearchSelectType();});
+			</script>
+			<!-- //배너 영역 -->
+  
+			<div class="aside_con">
+				<!-- 내가 찾은 단어 -->
+				<div class="section word">
+					<h3 class="at2"><img src="http://dicimg.naver.net/cndic/web/h3_myword_1.gif" alt="내가 찾은 단어" /></h3>
+					<ul class="type2">
+					</ul>
+					<div class="tit_pr">
+					</div>
+					
+					
+						<p>찾은 단어가 없습니다.</p>
+					<div class="mw_tips" style="display:none"><strong>단어장</strong>에 추가되었습니다.</div>
+				</div>
+				
+				<!-- 번역기 -->
+				<div id="side_trans" class="side_trans">
+					<h3>번역기<img src="http://dicimg.naver.net/cndic/web/ico_main_n.gif" alt="new" class="new_ico"></h3>
+					<dl id="st_lang" class="st_lang"><!-- [D] dt 클릭시 class selected 부여 -->
+						<dt id="st_lang_dt">
+							한국어<span class="ico_arrow"></span>중국어 <span class="select_arrow"></span>
+						</dt>
+						<dd class="st_con">
+							<ul class="st_list">
+								<li><a id="st_lang_dd" href="javascript:void(0);">중국어<span class="ico_arrow"></span>한국어</a></li>
+							</ul>
+						</dd>
+					</dl>
+					<div class="st_input">
+						<textarea id="st_textarea" cols="30" rows="3" title="번역할 내용 입력">번역할 내용을 여기에 입력하세요.</textarea>
+						<a id="st_submit" href="javascript:void(0);" class="btn_st"><span class="ico_check"></span>번역하기</a>
+					</div>
+				</div>
+				<form id="side_trans_form"  action="http://translate.naver.com" method="post" target="_blank">
+	            	<input type="hidden" name="srcLang" value="ko"/>
+	            	<input type="hidden" name="tarLang" value="zh-CN"/>
+	            	<input type="hidden" name="query" value=""/>
+				</form>
+				<!-- //번역기 -->
+				
+				<!-- 20110328 -->
+				<div class="section">
+	        		<dl class="sta_hsk">
+	        			<dt><a href="/CnEntry.nhn?m=hskInfo" onclick="clickcr(this,'sty.rank','','',event)"><img src="http://dicimg.naver.net/cndic/web/tit_s_hsk.gif" alt="新HSK 등급별 단어 찾기"></a></dt>
+	        			<dd>
+	        			<a href="/CnEntry.nhn?m=hskInfo&hskParam=1" onclick="clickcr(this,'sty.rank1','','',event)" class="f">1급</a>|<a href="/CnEntry.nhn?m=hskInfo&hskParam=2" onclick="clickcr(this,'sty.rank2','','',event)">2급</a>|<a href="/CnEntry.nhn?m=hskInfo&hskParam=3" onclick="clickcr(this,'sty.rank3','','',event)">3급</a>|<a href="/CnEntry.nhn?m=hskInfo&hskParam=4" onclick="clickcr(this,'sty.rank4','','',event)">4급</a>|<a href="/CnEntry.nhn?m=hskInfo&hskParam=5" onclick="clickcr(this,'sty.rank5','','',event)">5급</a>|<a href="/CnEntry.nhn?m=hskInfo&hskParam=6" onclick="clickcr(this,'sty.rank6','','',event)">6급</a>
+	        			</dd>
+	        		</dl>
+	            	<!--// 20110328-->
+					<dl class="myword2">
+					<dt><img src="http://dicimg.naver.net/cndic/web/h3_myword_2.gif" width="68" height="12" alt="옥편처럼 찾기" /></dt>
+					<dd>
+						<ul>
+						<li><a href="http://cndic.naver.com/yupian.nhn?m=pinyinSearch" onclick="clickcr(this,'ccd.pinyin','','',event)">병음으로</a></li>
+						<li><a href="http://cndic.naver.com/bushou.nhn?m=searchBushou" onclick="clickcr(this,'ccd.radical','','',event)">부수로</a></li>
+						<li><a href="http://cndic.naver.com/yupian.nhn?m=pronunSearch" onclick="clickcr(this,'ccd.sound','','',event)">독음으로</a></li>
+						<li class="last"><a href="http://cndic.naver.com/yupian.nhn?m=strokeCntSearch" onclick="clickcr(this,'ccd.stroke','','',event)">총 획수로</a></li>
+						</ul>
+					</dd>
+					</dl>
+				</div>
+				<!-- 배너 -->
+				<ul class="ad_list1">
+				<li class="adv">
+					<a onclick="OPS.viewOPS('ops', {url : 'http://help.naver.com/support/contents/contents.nhn',  param : 'serviceNo=1000&categoryNo=2702&contentsNo=12575&interactiveMainNo=12570'}); clickcr(this,'ban.report','','',event); return false;" href="#"><img src="http://dicimg.naver.net/cndic/web/new_ad_sub_2.gif" alt="사용자와 함께 만드는 네이버 사전 사전 내용 오류 신고 및 의견 제안하기" width="280" height="61"></a>
+					<a href="http://blog.naver.com/dic_master" target="_blank"><img width="280" height="43" src="/css/img/dhrvus.gif" alt="사전 공식 블로그 방문하기"></a>
+				</li>
+				<div class="section_card _for_opendict" style="display:none">
+    
+    			</div>
+				<li class="adv2">
+				<script type="text/javascript" language="javaScript">adForSearchRight(7)
+				var isAutoSave = false
+				jQuery("#save").attr("checked",isAutoSave ? true : false);
+				</script>
+				</li>
+                   <!--<a href="http://endic.naver.com/search_example.nhn?sLn=kr&m=example&tab=1" target="_blank"><img src="http://dicimg.naver.net/cndic/img/img_multitrans.png" width="276" height="56" alt="다국어번역문 참여하기 - 영어 예문을 중국어로 번역해 보세요."></a>-->
+                <div id="mobile_s1" style="display:none" class="adv2">  
+             	   <a href="http://blog.naver.com/dic_master/220384762855" target="_blank"><img src="http://dicimg.naver.net/cndic/img/right_banner_cn.jpg" width="276" height="56" alt="다국어번역문 참여하기 - 영어 예문을 중국어로 번역해 보세요."></a>
+        		</div>
+       			<div id="mobile_s2" style="display:none"></div> 
+				</ul>
+				<!-- //배너 -->
+			</div>
+		</div>
+		<!-- //right -->
+		<div class="totop"><a href="#" onclick="clickcr(this,'fot.top','','',event)"><img src="http://dicimg.naver.net/cndic/web/btn_top_n.gif" width="42" height="11" alt="맨위로"></a></div>
+	</div>
+	
+	<div id="add_layer_info" class="add_layer2" style="display: none; top: 129px; left: 28px;">
+         <p class="txt">단어장 이용약관에 동의하신 후 이용이 가능합니다.</p>
+         <p class="btn"><a href="#"><img alt="약관보기" src="http://dicimg.naver.net/cndic/web/btn_view_reg.gif"/></a></p>
+    </div>
+	<!-- add_layer_agreement start -->
+    <div class="add_layer_agreement" id="add_layer_agreement" style="display: none; top: 129px; left: 28px;">
+        <h3><span class="fnt_k24">단어장 이용약관</span></h3>
+        <div class="reg_con">
+            <h3>제 1조 (목적)</h3>
+			<p> 네이버 단어장 이용약관(이하 “약관”이라 합니다)은 “이용자”가 NAVER주식회사(이하 “회사”라 합니다)가 제공하는 단어장 서비스를 이용함에 있어 “회사”와 “이용자”간의 권리, 의무 및 책임사항, 기타 필요한 사항을 규정함을 목적으로 합니다.</p>
+
+			<h3>제 2조 (용어의 정의)</h3>
+			<ol>
+			<li><span class="first_letter">①</span>“단어장”이란 구현되는 단말기(PC, TV, 휴대형단말기 등의 각종 유무선 장치를 포함)와 상관없이 이용자가 네이버 사전상의 모든 단어, 숙어, 예문 등을 저장하여 열람, 편집, 인쇄 등을 할 수 있는 네이버 단어장 서비스를 의미합니다.</li>
+			<li><span class="first_letter">②</span>“이용자”란 네이버 이용약관(<a href="http://www.naver.com/rules/service.html" target="_blank">http://www.naver.com/rules/service.html</a>)에 동의한 네이버 회원 중 “회사”가 제공하는 단어장 서비스를 이용하기 위해 본 약관에 동의한 고객을 말합니다.</li>
+			
+			</ol>
+
+			<h3>제 3조 (이용약관의 효력 및 변경)</h3>
+			<ol>
+			<li><span class="first_letter">①</span>본 약관은 “이용자”가 쉽게 알 수 있도록 “서비스” 초기 화면에 게시하고, “이용자”가 동의를 함으로써 효력이 발생합니다.</li>
+			<li><span class="first_letter">②</span>“회사”는 관련 법령에 위배되지 않는 범위 내에서 약관의 내용을 개정할 수 있습니다.</li>
+			<li><span class="first_letter">③</span>“회사”가 약관을 개정할 경우에는 적용일자 및 개정사유를 명시하여 현행약관과 함께 제1항의 방식에 따라 그 개정약관의 적용일자 30일 전부터 적용일자 전일까지 공지합니다. 다만, “이용자”에게 불리한 약관 개정의 경우에는 공지 외에 일정기간 네이버 서비스를 통한 전자우편, 전자쪽지, 동의창 등의 전자적 수단을 통해 따로 명확히 통지하도록 합니다.</li>
+
+			<li><span class="first_letter">④</span>“회사”가 전항에 따라 개정약관을 공지 또는 통지하면서 “이용자”에게 30일 기간 내에 의사표시를 하지 않으면 의사표시가 표명된 것으로 본다는 뜻을 명확하게 공지 또는 통지하였음에도 “이용자”가 명시적으로 거부의 의사표시를 하지 아니한 경우 “이용자”가 개정약관에 동의한 것으로 봅니다.</li>
+			<li><span class="first_letter">⑤</span>“이용자”가 개정약관의 적용에 동의하지 않는 경우 “회사”는 개정 약관의 내용을 적용할 수 없으며, 이 경우 “이용자”는 “단어장” 이용계약을 해지할 수 있습니다. 다만, 기존 약관을 적용할 수 없는 특별한 사정이 있는 경우에는 “회사”는 단어장 이용계약을 해지할 수 있습니다.</li>
+			</ol>
+			<h3>제 4조 (회사의 의무)</h3>
+			<p>회사는 계속적이고 안정적인 단어장 서비스의 제공을 위해 설비에 장애가 생기거나 멸실된 때에는 부득이한 사유가 없는 한 지체 없이 이를 수리 또는 복구합니다.</p>
+			<h3>제 5조 (이용자의 의무)</h3>
+
+			<p>“이용자”는 본인 사용의 목적에 한해서만 “단어장”의 내용을 열람, 편집, 인쇄, 사용할 수 있으며, 그 이외의 목적으로 “단어장”을 이용해서는 아니됩니다.</p>
+			<h3>제 6조 (단어장 컨텐츠의 저작권)</h3>
+			<p>네이버 사전으로부터 “단어장”으로 저장되는 모든 단어, 숙어, 예문의 저작권은 사전 컨텐츠 제공업체에 있습니다.</p>
+			<h3>제 7조 (서비스의 변경)</h3>
+			<ol>
+			<li><span class="first_letter">①</span>회사의 사정, 사전 컨텐츠 제공업체의 변경 등으로 인해 단어장 서비스의 일부 또는 전부가 변경, 종료될 수 있으며, 이 경우 “회사”는 그 사유를 변경 또는 종료 전 30일 이상 단어장 서비스 메인페이지에 게시하여야 합니다.</li>
+
+			<li><span class="first_letter">②</span>단어장 서비스의 변경 또는 종료에 따라 “단어장”에 저장된 내용이 삭제될 수 있습니다.</li>
+			<li><span class="first_letter">③</span>“회사”는 제1, 2항과 관련하여 관련법에 특별한 규정이 없는 한 “이용자”에게 별도의 보상을 하지 않습니다.</li>
+			</ol>
+			<h3>제 8조 (기타)</h3>
+			<p>본 약관에 명시되지 않은 사항은 네이버 이용약관(<a href="http://www.naver.com/rules/service.html" target="_blank">http://www.naver.com/rules/service.html</a>) 및 전기통신사업법 등 관계법령과 상관습에 따릅니다.</p>
+
+			<h3>&lt;부칙&gt;</h3>
+			<ol>
+			<li><span class="first_letter">1.</span>본 약관은 2009년 12월 29일부터 적용됩니다.</li>
+			</ol>
+    
+	       	</div>
+	        <div class="confirm">
+	            <p><img src="http://dicimg.naver.net/cndic/web/txt_reg_agree.gif" alt="이용약관에 동의하시겠습니까?" /></p>
+	
+	            <p class="btn" id="agr_btn"><a href="#"><img src="http://dicimg.naver.net/cndic/web/btn_reg_agree.gif" alt="동의" /></a><a href="#" class="mar1"><img src="http://dicimg.naver.net/cndic/web/btn_reg_disagree.gif" alt="동의하지 않습니다" /></a></p>
+	        </div>
+	        <a href="#" class="close_reg"><img src="http://dicimg.naver.net/cndic/web/btn_close3.gif" alt="중국어단어장 이용약관 팝업 닫기" class="close" /></a>
+	    </div>
+	    <!--// add_layer_agreement end -->   
+	
+	
+        <!-- add_layer start -->
+        <ul class="add_layer" id="add_layer_wblist" style="display: none;">
+        <li>북경생활 만세</li>
+        <li>비즈니스 중국어</li>
+        <li>중국어로 이메일을</li>
+        <li class="new_create">새 단어장 만들기</li>
+        </ul>
+        <!-- add_layer end -->
+        <!-- add_layer_tip start -->
+        <div class="add_layer_tip" id="add_layer_tip" style="display: none;">추가 되었습니다</div>
+        <!-- add_layer_tip end -->
+        <!-- creat_layer start -->
+        <div class="creat_layer" id="create_layer_wbname">
+            <h3><span class="fnt_k24"><strong>중국어단어장 추가</strong></span></h3>
+            <p class="des"><span class="fnt_k26">단어장을 추가 합니다. 단어장 이름을 지어주세요.</span></p>
+            <p class="in1"><label for="txt" class="fnt_k25">단어장 이름</label><input class="txt" type="text" title="단어장 이름" maxlength="16"/></p><div class="add_tiplayer">&lt; 혹은 &gt; 기호는 사용하실 수 없습니다.</div>
+            <p class="btn_area"><input name="" type="image" src="http://dicimg.naver.net/cndic/web/btn_submit2.gif" alt="단어장 추가 확인하기" /><input name="" type="image" src="http://dicimg.naver.net/cndic/web/btn_cancel2.gif" alt="단어장 추가 취소하기" width="45" height="26" class="mar" /></p>
+            <a href="#"><img src="http://dicimg.naver.net/cndic/web/btn_close3.gif" alt="중국어단어장 추가 팝업 닫기" class="close" /><span class="blind">중국어단어장 추가 팝업 닫기</span></a>
+        </div>
+        <!-- creat_layer end -->
+        <div style="clear:both"></div>
+	<!-- //container -->
+
+
+	<!-- footer -->
+	<div id="footer">
+		<dl class="faq">
+            <dt><a href="http://help.naver.com/support/service/main.nhn?serviceNo=1000&amp;categoryNo=2724" target="_blank" onclick="clickcr(this,'faq.more','','',event)"><span class="blind">중국어사전 고객센터</span></a></dt>
+            <dd><a href="http://help.naver.com/support/contents/contents.nhn?serviceNo=1000&amp;categoryNo=2747" target="_blank" onclick="clickcr(this,'faq.ime','','',event)">IME에서 중국어 입력방법 안내</a></dd>
+        </dl>
+		<div class="f_ref">
+			<dl>
+			<dt><span>자료제공 : </span></dt>
+            <dd class="source1"><span>교학사</span></dd>
+            <dd class="source2"><span>진명출판사</span></dd>
+            <dd class="source3"><span>흑룡강조선민족출판사</span></dd>
+            <dd class="source4"><span>당중거모</span></dd>
+            <dd class="source5"><span>학고방</span></dd>
+            <dd class="source6"><a href="http://www.harpercollins.com" target="_blank" onclick="clickcr(this,'fot.collins','','',event)"><span>Harper Collins Publishers Ltd</span></a></dd>
+            <dd class="source7"><span>삼정KPMG</span></dd>
+            <dd class="source8"><span>건홍리서치</span></dd>
+            <dd class="source9"><a href="http://www.kotra.or.kr/" target="_blank"><span>KOTRA</span></a></dd>
+            <dd class="source10"><span>한국관광공사</span></dd>
+            <dd class="source11"><a href="https://www.hotelscombined.co.kr/?a_aid=168179" target="_blank"><span>호텔스컴바인</span></a></dd>
+			</dl>
+			<a href="http://toolbar.naver.com" target="_blank" class="btn_tool" onclick="clickcr(this,'fot.toolbar','','',event)"><span>네이버 툴바 다운로드</span></a>
+		</div>
+		<div class="f_terms">
+            <dl class="policy">
+	            <dt class="blind">네이버 정책 및 약관</dt>
+	            <dd class="frst"><a target="_blank" href="http://www.naver.com/rules/service.html" onclick="clickcr(this,'fot.agreement','','',event)">이용약관</a></dd>
+	            <dd><a target="_blank" href="http://www.naver.com/rules/privacy.html" onclick="clickcr(this,'fot.privacy','','',event)"><strong>개인정보처리방침</strong></a></dd>
+	            <dd><a target="_blank" href="http://www.naver.com/rules/disclaimer.html" onclick="clickcr(this,'fot.disclaimer','','',event)">책임의 한계와 법적고지</a></dd>
+	            <dd><a href="#" onclick="OPS.viewOPS('ops', {url : 'http://help.naver.com/support/service/main.nhn',  param : 'serviceNo=1000&amp;categoryNo=2724'}); clickcr(this,'fot.help','','',event);return false;">사전 고객센터</a></dd>
+	            <dd><a href="#" onclick="OPS.viewOPS('ops', {url : 'http://help.naver.com/support/contents/contents.nhn', param : 'serviceNo=1000&amp;categoryNo=2702&amp;contentsNo=12575&amp;interactiveMainNo=12570'}); clickcr(this,'fot.modify','','',event); return false;">콘텐츠 수정</a>&nbsp;및 <a href="#" onclick="OPS.viewOPS('ops', {url : 'https://help.naver.com/support/service/main.nhn', param : 'serviceNo=1000&amp;categoryNo=2705'}); clickcr(this,'fot.notify','','',event); return false;">오류 신고</a></dd>
+            </dl>
+            <address lang="zh">
+                <a href="http://www.nhncorp.com" onclick="clickcr(this,'fot.nhncorp','','',event);" target="_blank" class="logo" lang="zh">NAVER</a>
+                <em lang="zh">Copyright ©</em>
+                <a href="http://www.nhncorp.com" onclick="clickcr(this,'fot.nhncorp','','',event);" target="_blank" lang="zh">NAVER Corp.</a>
+                <span lang="zh">All Rights Reserved.</span>
+            </address>
+            
+                     		<div class="warning">본 콘텐츠의 저작권은 제공처에 있으며, 이를 무단 이용하는 경우 저작권법 등에 따라 법적 책임을 질 수 있습니다.</div>
+        </div>  
+     </div>
+    <!-- //footer -->
+	<script type="text/javascript" language="javascript" src="http://static.naver.com/common/js/cs_ops_webncc.js"></script>
+</div>
+<script type="text/javascript">
+window.NaverDict = ["cndic.service.naver.com"];
+window.autoCompleteUrl = "http://ac.dic.naver.net/cndic";
+</script>
+<script type="text/javascript" src="/js/jsRenderHelpers.js?20161220154123"></script>
+<script type="text/javascript" src="/js/SubjectExampleSearch.js?20161220154123"></script>
+
+	<script type="text/javascript" src="/js/audioPlayer.js?20161220154123"></script>
+	<script type="text/javascript" src="/js/html5Audio.js?20161220154123"></script>
+	<script type="text/javascript" src="/js/entry.js?20161220154123"></script>
+	<script type="text/javascript" src="/js/layermanager.js?20161220154123" ></script>
+ 	<script language="JavaScript">
+		console.info=console.debug=function(){};
+	</script>
+	<script type="text/javascript" src="/js/AutoCompleteDic.js?20161220154123"></script>
+	<script type="text/javascript" src="/js/AutoCompleteDic_new.js?20161220154123"></script>
+	<script type="text/javascript" src="/js/top_search.js?20161220154123"></script>
+	<script type="text/javascript" src="/js/lcslog.js?20161220154123"></script>
+	<script type="text/javascript" src="/js/wordbook/WordBook.AddToWordBook.js"></script>
+	<script type="text/javascript" src="/js/mobileBtn.js?20161220154123"></script>
+	<script type="text/javascript" src="/js/wordbook/launcher.js?20161220154123"></script>
+	<script type="text/javascript" src="/js/footer_search.js?20161220154123"></script>
+	<script type="text/javascript" language="JavaScript" src="/js/addToWordbook.js?20161220154123"></script>
+	<script type="text/javascript" src="/js/AutoCompResultHandler.js?20161220154123"></script>
+	<script type="text/javascript" src="/js/autoCompInit.js?20161220154123"></script>
+
+<script type="text/javascript">
+	SPS.__inst.top_search = new SPS.top_search("top_search", undefined);
+	
+	//side_trans  ctrler
+	jQuery("#st_submit").click( function() {
+		var query = jQuery("#st_textarea").val().trim();
+		if( query != "번역할 내용을 여기에 입력하세요." && query !=""){
+			clickcr(this,'tra.act','','',event);
+			jQuery("#side_trans_form input[name=query]").val(query);
+			jQuery("#side_trans_form").submit();
+		}
+	});
+	
+	jQuery("#st_lang").mouseout(function() {	
+		jQuery("#st_lang").removeClass("selected");
+	});
+	
+	jQuery("#st_lang").mouseover( function() {
+		jQuery("#st_lang").addClass("selected");
+	});
+	
+	jQuery("#st_lang_dd").click(function(){
+		var temp_html = jQuery("#st_lang_dt").html().replace("<span class=\"select_arrow\"></span>","");
+		jQuery("#st_lang_dt").html(jQuery("#st_lang_dd").html()+"<span class=\"select_arrow\"></span>");
+		jQuery("#st_lang_dd").html(temp_html);
+		
+		if( jQuery("#st_lang_dt").html().trim().indexOf("한국어") == 0) {
+			clickcr(this,'tra.krcn','','',event);
+			jQuery("#side_trans_form input[name=srcLang]").val("ko");
+			jQuery("#side_trans_form input[name=tarLang]").val("zh-CN");
+		} else {
+			clickcr(this,'tra.cnkr','','',event);
+			jQuery("#side_trans_form input[name=srcLang]").val("zh-CN");
+			jQuery("#side_trans_form input[name=tarLang]").val("ko");
+		}
+	});
+	
+	jQuery("#st_textarea").focus( function(){
+		if( jQuery("#st_textarea").val() == "번역할 내용을 여기에 입력하세요."){
+			jQuery("#st_textarea").val("");
+		}
+	});
+	
+	jQuery("#st_textarea").blur( function() {
+		
+		if( jQuery("#st_textarea").val() == "") {
+			jQuery("#st_textarea").val("번역할 내용을 여기에 입력하세요.");
+		}
+	});
+	
+	
+			
+	//http://bts1.navercorp.com/nhnbts/browse/DICNGDSUS-19648 添加自动识别中文 功能
+	
+	var regexKo = /^[\u1100-\u11FF\u3130-\u318F\uAC00-\uD7AF\uFFA0-\uFFDC]/;
+	var regexZh = /^[\u2E80-\u2EFF|\u2F00-\u2FDF|\u3400-\u4DB5|\u4E00-\u9FFF]/;
+	
+	jQuery("#st_textarea").on("input change keyup",function(){
+		
+		var value = jQuery("#st_textarea").val();
+
+		if( value.length > 0 ){
+			var temp_html = jQuery("#st_lang_dt").html().replace("<span class=\"select_arrow\"></span>","").trim();
+			if( regexKo.test( value ) ) {
+				
+				if( temp_html.indexOf("중국어") == 0  ){
+					
+					jQuery("#st_lang_dt").html(jQuery("#st_lang_dd").html()+"<span class=\"select_arrow\"></span>");
+					jQuery("#st_lang_dd").html(temp_html);
+					
+					jQuery("#side_trans_form input[name=srcLang]").val("ko");
+					jQuery("#side_trans_form input[name=tarLang]").val("zh-CN");
+					
+				}
+				
+				
+			} else if( regexZh.test( value ) ){
+				
+				if( temp_html.indexOf("한국어") == 0  ){
+			
+					jQuery("#st_lang_dt").html(jQuery("#st_lang_dd").html()+"<span class=\"select_arrow\"></span>");
+					jQuery("#st_lang_dd").html(temp_html);
+					
+					
+					jQuery("#side_trans_form input[name=srcLang]").val("zh-CN");
+					jQuery("#side_trans_form input[name=tarLang]").val("ko");
+				}
+				
+			}
+			
+		}
+	});
+
+function openText_pc( index ) {
+
+	for(var i=0;i<21;i++){
+			if(jQuery("#que_con" + i) && i!=index){
+				jQuery("#que_con" + i).hide();
+				jQuery("#arr_top" + i).hide();
+			}
+		}
+		for(var i=100;i<121;i++){
+			if(jQuery("#wiki_que_con_" + i)){
+				jQuery("#wiki_que_con_" + i).css('display','none'); 
+				jQuery("#wiki_arr_top_" + i).css('display','none');
+			}
+		}
+		jQuery('#que_con'+ index ).show();
+		jQuery('#arr_top'+ index ).show();
+	
+}
+
+function closeText_pc( index ) {
+	
+	jQuery('#que_con'+ index ).hide();
+	jQuery('#arr_top'+ index ).hide();
+   
+}
+
+function openUrlCheck(domain,tdicLangTypeCode,query){
+	var test=/^[0-9\- &\'\.\u1100-\u11FF\u3130-\u318F\uAC00-\uD7AF\uFFA0-\uFFDC]+$/.test(query);
+	if(test){
+		return domain+'/participation/register_word.dict#dict/ko/'+tdicLangTypeCode+'/'+query;
+	}else{
+		return domain+'/participation/register_word.dict#dict/'+tdicLangTypeCode+'/ko/'+query;
+	}
+	
+}
+
+function mobile_show(){
+	var math=parseInt(Math.random()*2);
+	if(math==0){
+		document.getElementById("mobile_s1").style.display="block";
+	}else{
+		document.getElementById("mobile_s2").style.display="block";
+	}
+}
+
+jQuery(window).load(function(){		
+	mobile_show();	
+	if ( jQuery("#mobile_s2").css("display") == "block" ) {
+		var data = {
+			"srcLang" : "ko",
+			"tarLang" : "zh-CN" 
+		};
+
+		jQuery.ajax({
+			url : "http://translate.naver.com/getCantPhrase.dic",
+			type: "POST",
+			data: data,
+			dataType : "jsonp",
+			success : function(data) {
+				if (data != null) {
+					showBanner(data);
+				}
+			}
+		});
+			
+		function showBanner(data) {
+			var phrase = data.phrase;
+			    
+			var banner = document.getElementById("mobile_s2"); // 모바일 중국어사전에 번역기 트렌드 배너  div
+				banner.className = phrase.klassName; // api 사용하여 div 클래스명 입력
+				banner.innerHTML = phrase.banner; // api 사용하여 div 내부에 필요한 마크업 채우기
+		}
+	}
+	
+	var domainPrefix = location.hostname.indexOf("local.") >= 0 || location.hostname.indexOf("dev.") >= 0 ? "dev." : location.hostname.indexOf("stg.") >= 0 ? "stg." : "";
+	LazyLoad.js( "http://"+domainPrefix+"dict-plugin.naver.com/js/banner/dict.Banner.js?2016122422", function() {
+		var cndicRange = location.pathname.indexOf("search")>= 0 ? "pc_search":"pc_entry";
+		try {
+			var banner = new dict.Banner( "cndict", cndicRange );
+			if(banner!=null){
+		   		var data = banner.getBanner();
+				if (data != null) {
+					var tempJson = {
+                        banner: data.banner,
+                        className: data.className
+                    };
+			    	jQuery(".section_card._for_opendict").append(jQuery("#openBanner_Tmpl").render(tempJson));
+			    	jQuery(".section_card._for_opendict").show();
+				}
+			}	
+		} catch(e) {
+		}
+	});
+});
+
+lcs_do(); 
+var nhnUserAgent = new nhn.UserAgent();
+var flashSound;
+if(nhnUserAgent.isSupportHtmlFive){
+	flashSound = new audioPlayer_new({flashSrc:'/js/common/pronunciation.swf'});
+} else {
+	flashSound=new audioPlayer({flashSrc:'/js/common/pronunciation.swf'});
+}
+
+</script>
+<script id="openBanner_Tmpl" type="text/x-jsrender">
+	<div class="{{:className}}">
+		{{:banner}}
+	</div>
+</script>
+</body>
+</html>

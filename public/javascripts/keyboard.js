@@ -1,5 +1,9 @@
-let hangul = (function Hangul() {
-    let hangulHash = {
+'use strict';
+
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
+var hangul = function Hangul() {
+    var hangulHash = {
         'g': 'ㅎ',
         'G': 'ㅎ',
         'q': 'ㅂ',
@@ -53,13 +57,10 @@ let hangul = (function Hangul() {
         's': 'ㄴ',
         'S': 'ㄴ'
     },
-    initialTable = ["ㄱ", "ㄲ", "ㄴ", "ㄷ", "ㄸ", "ㄹ", "ㅁ", "ㅂ", "ㅃ", "ㅅ", "ㅆ", "ㅇ", "ㅈ", "ㅉ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ"],
-
-    medialTable = ["ㅏ", "ㅐ", "ㅑ", "ㅒ", "ㅓ", "ㅔ", "ㅕ", "ㅖ", "ㅗ", "ㅘ", "ㅙ", "ㅚ", "ㅛ", "ㅜ", "ㅝ", "ㅞ", "ㅟ", "ㅠ", "ㅡ", "ㅢ", "ㅣ"],
-
-    finalTable = ["", "ㄱ", "ㄲ", "ㄳ", "ㄴ", "ㄵ", "ㄶ", "ㄷ", "ㄹ", "ㄺ", "ㄻ", "ㄼ", "ㄽ", "ㄾ", "ㄿ", "ㅀ", "ㅁ", "ㅂ", "ㅄ", "ㅅ", "ㅆ", "ㅇ", "ㅈ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ"],
-
-    medialCombine = {
+        initialTable = ["ㄱ", "ㄲ", "ㄴ", "ㄷ", "ㄸ", "ㄹ", "ㅁ", "ㅂ", "ㅃ", "ㅅ", "ㅆ", "ㅇ", "ㅈ", "ㅉ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ"],
+        medialTable = ["ㅏ", "ㅐ", "ㅑ", "ㅒ", "ㅓ", "ㅔ", "ㅕ", "ㅖ", "ㅗ", "ㅘ", "ㅙ", "ㅚ", "ㅛ", "ㅜ", "ㅝ", "ㅞ", "ㅟ", "ㅠ", "ㅡ", "ㅢ", "ㅣ"],
+        finalTable = ["", "ㄱ", "ㄲ", "ㄳ", "ㄴ", "ㄵ", "ㄶ", "ㄷ", "ㄹ", "ㄺ", "ㄻ", "ㄼ", "ㄽ", "ㄾ", "ㄿ", "ㅀ", "ㅁ", "ㅂ", "ㅄ", "ㅅ", "ㅆ", "ㅇ", "ㅈ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ"],
+        medialCombine = {
         "ㅗ": {
             "ㅏ": "ㅘ",
             "ㅐ": "ㅙ",
@@ -74,7 +75,7 @@ let hangul = (function Hangul() {
             "ㅣ": "ㅢ"
         }
     },
-    finalPart = {
+        finalPart = {
         "ㄳ": ["ㄱ", "ㅅ"],
         "ㄵ": ["ㄴ", "ㅈ"],
         "ㄶ": ["ㄴ", "ㅎ"],
@@ -87,7 +88,7 @@ let hangul = (function Hangul() {
         "ㅀ": ["ㄹ", "ㅎ"],
         "ㅄ": ["ㅂ", "ㅅ"]
     },
-    finalCombine = {
+        finalCombine = {
         "ㄱ": {
             "ㅅ": "ㄳ"
         },
@@ -107,78 +108,26 @@ let hangul = (function Hangul() {
         "ㅂ": {
             "ㅅ": "ㅄ"
         }
-    },
-    jamoCode = {
-        "ㄱ": 12593,
-        "ㄲ": 12594,
-        "ㄳ": 12595,
-        "ㄴ": 12596,
-        "ㄵ": 12597,
-        "ㄶ": 12598,
-        "ㄷ": 12599,
-        "ㄸ": 12600,
-        "ㄹ": 12601,
-        "ㄺ": 12602,
-        "ㄻ": 12603,
-        "ㄼ": 12604,
-        "ㄽ": 12605,
-        "ㄾ": 12606,
-        "ㄿ": 12607,
-        "ㅀ": 12608,
-        "ㅁ": 12609,
-        "ㅂ": 12610,
-        "ㅃ": 12611,
-        "ㅄ": 12612,
-        "ㅅ": 12613,
-        "ㅆ": 12614,
-        "ㅇ": 12615,
-        "ㅈ": 12616,
-        "ㅉ": 12617,
-        "ㅊ": 12618,
-        "ㅋ": 12619,
-        "ㅌ": 12620,
-        "ㅍ": 12621,
-        "ㅎ": 12622,
-        "ㅏ": 12623,
-        "ㅐ": 12624,
-        "ㅑ": 12625,
-        "ㅒ": 12626,
-        "ㅓ": 12627,
-        "ㅔ": 12628,
-        "ㅕ": 12629,
-        "ㅖ": 12630,
-        "ㅗ": 12631,
-        "ㅘ": 12632,
-        "ㅙ": 12633,
-        "ㅚ": 12634,
-        "ㅛ": 12635,
-        "ㅜ": 12636,
-        "ㅝ": 12637,
-        "ㅞ": 12638,
-        "ㅟ": 12639,
-        "ㅠ": 12640,
-        "ㅡ": 12641,
-        "ㅢ": 12642,
-        "ㅣ": 12643
     };
 
     function composeHangul(editor, key) {
 
-        if (!/[a-zA-Z]/.test(key)) {  //input not a hangul
+        if (!/[a-zA-Z]/.test(key)) {
+            //input not a hangul
             editor.value += key;
             return;
         }
-        let text = editor.value,
+        var text = editor.value,
             input = hangulHash[key];
 
         editor.value += input;
 
-        let lastCharCode = text.charCodeAt(text.length - 1),
+        var lastCharCode = text.charCodeAt(text.length - 1),
             inputCharCode = input.charCodeAt(0),
-            newCharCode,
-            lastInitialCode,
-            lastMedialCode,
-            lastFinalCode;
+            newCharCode = void 0,
+            lastInitialCode = void 0,
+            lastMedialCode = void 0,
+            lastFinalCode = void 0;
 
         //if the last character is a JaEum
         if (12593 <= lastCharCode && lastCharCode <= 12622) {
@@ -190,78 +139,89 @@ let hangul = (function Hangul() {
         }
         //if the last character is complete
         else if (44032 <= lastCharCode && lastCharCode <= 55203) {
-            [lastFinalCode, lastMedialCode, lastInitialCode] = computeCode(lastCharCode);
-            //console.log(lastCharCode, lastInitialCode, lastMedialCode, lastFinalCode);
+                //console.log(lastCharCode, lastInitialCode, lastMedialCode, lastFinalCode);
 
-            //if the last character has no batchim
-            if (lastFinalCode === 0) {
-                if (12593 <= inputCharCode && inputCharCode <= 12622 && finalTable.indexOf(input) >= 0) { //JaEum which can be batchim
-                    newCharCode = lastCharCode + finalTable.indexOf(input);
-                    editor.value = text.substring(0, text.length - 1) + unicodeDecode(newCharCode);
-                } else { //MoEum
-                    let lastMedialChar = medialTable[lastMedialCode];
-                    if (typeof(medialCombine[lastMedialChar]) !== 'undefined' && typeof(medialCombine[lastMedialChar][input]) !== 'undefined') {
-                        lastCharCode = lastCharCode - 28 * (lastMedialCode - medialTable.indexOf(medialCombine[lastMedialChar][input]));
-                        editor.value = text.substring(0, text.length - 1) + unicodeDecode(lastCharCode);
+                //if the last character has no batchim
+                var _computeCode = computeCode(lastCharCode);
+
+                var _computeCode2 = _slicedToArray(_computeCode, 3);
+
+                lastFinalCode = _computeCode2[0];
+                lastMedialCode = _computeCode2[1];
+                lastInitialCode = _computeCode2[2];
+                if (lastFinalCode === 0) {
+                    if (12593 <= inputCharCode && inputCharCode <= 12622 && finalTable.indexOf(input) >= 0) {
+                        //JaEum which can be batchim
+                        newCharCode = lastCharCode + finalTable.indexOf(input);
+                        editor.value = text.substring(0, text.length - 1) + unicodeDecode(newCharCode);
+                    } else {
+                        //MoEum
+                        var lastMedialChar = medialTable[lastMedialCode];
+                        if (typeof medialCombine[lastMedialChar] !== 'undefined' && typeof medialCombine[lastMedialChar][input] !== 'undefined') {
+                            lastCharCode = lastCharCode - 28 * (lastMedialCode - medialTable.indexOf(medialCombine[lastMedialChar][input]));
+                            editor.value = text.substring(0, text.length - 1) + unicodeDecode(lastCharCode);
+                        }
                     }
                 }
-            }
-            //if the last character has a batchim
-            else {
-                let lastFinalChar = finalTable[lastFinalCode];
-                //key a MoEum
-                if (12623 <= inputCharCode && inputCharCode <= 12643) {
-                    //single batchim
-                    if (typeof(finalPart[lastFinalChar]) === 'undefined') {
-                        newCharCode = 44032 + 588 * initialTable.indexOf(lastFinalChar) + 28 * medialTable.indexOf(input);
-                        lastCharCode -= lastFinalCode;
-                    }
-                    //double batchim
-                    else {
-                        let lp = finalPart[lastFinalChar][0],
-                            rp = finalPart[lastFinalChar][1];
-                        newCharCode = 44032 + 588 * initialTable.indexOf(rp) + 28 * medialTable.indexOf(input);
-                        lastCharCode = lastCharCode - lastFinalCode + finalTable.indexOf(lp);
-                    }
-
-                    editor.value = text.substring(0, text.length - 1) + unicodeDecode(lastCharCode) + unicodeDecode(newCharCode);
-                }
-                //key a JaEum
+                //if the last character has a batchim
                 else {
-                    if (typeof(finalCombine[lastFinalChar]) !== 'undefined' && typeof(finalCombine[lastFinalChar][input]) !== 'undefined') {
-                        lastCharCode = lastCharCode - lastFinalCode + finalTable.indexOf(finalCombine[lastFinalChar][input]);
-                        editor.value = text.substring(0, text.length - 1) + unicodeDecode(lastCharCode);
+                        var lastFinalChar = finalTable[lastFinalCode];
+                        //key a MoEum
+                        if (12623 <= inputCharCode && inputCharCode <= 12643) {
+                            //single batchim
+                            if (typeof finalPart[lastFinalChar] === 'undefined') {
+                                newCharCode = 44032 + 588 * initialTable.indexOf(lastFinalChar) + 28 * medialTable.indexOf(input);
+                                lastCharCode -= lastFinalCode;
+                            }
+                            //double batchim
+                            else {
+                                    var lp = finalPart[lastFinalChar][0],
+                                        rp = finalPart[lastFinalChar][1];
+                                    newCharCode = 44032 + 588 * initialTable.indexOf(rp) + 28 * medialTable.indexOf(input);
+                                    lastCharCode = lastCharCode - lastFinalCode + finalTable.indexOf(lp);
+                                }
 
+                            editor.value = text.substring(0, text.length - 1) + unicodeDecode(lastCharCode) + unicodeDecode(newCharCode);
+                        }
+                        //key a JaEum
+                        else {
+                                if (typeof finalCombine[lastFinalChar] !== 'undefined' && typeof finalCombine[lastFinalChar][input] !== 'undefined') {
+                                    lastCharCode = lastCharCode - lastFinalCode + finalTable.indexOf(finalCombine[lastFinalChar][input]);
+                                    editor.value = text.substring(0, text.length - 1) + unicodeDecode(lastCharCode);
+                                }
+                            }
                     }
-                }
-
             }
-        }
-
     }
 
     function decomposeHangul(editor) {
-        let text = editor.value,
+        var text = editor.value,
             lastCharCode = text.charCodeAt(text.length - 1),
-            newCharCode,
-            lastInitialCode,
-            lastMedialCode,
-            lastFinalCode;
+            newCharCode = void 0,
+            lastInitialCode = void 0,
+            lastMedialCode = void 0,
+            lastFinalCode = void 0;
 
         //if the last character is complete
         if (44032 <= lastCharCode && lastCharCode <= 55203) {
-            [lastFinalCode, lastMedialCode, lastInitialCode] = computeCode(lastCharCode);
 
             //if the last character has no batchim
+            var _computeCode3 = computeCode(lastCharCode);
+
+            var _computeCode4 = _slicedToArray(_computeCode3, 3);
+
+            lastFinalCode = _computeCode4[0];
+            lastMedialCode = _computeCode4[1];
+            lastInitialCode = _computeCode4[2];
             if (lastFinalCode === 0) {
-                let lastInitialChar = initialTable[lastInitialCode];
+                var lastInitialChar = initialTable[lastInitialCode];
                 editor.value = text.substring(0, text.length - 1) + lastInitialChar;
             }
             //if the last character has a batchim
             else {
-                newCharCode = lastCharCode - lastFinalCode;
-                editor.value = text.substring(0, text.length - 1) + unicodeDecode(newCharCode);
-            }
+                    newCharCode = lastCharCode - lastFinalCode;
+                    editor.value = text.substring(0, text.length - 1) + unicodeDecode(newCharCode);
+                }
         } else {
             editor.value = text.substring(0, text.length - 1);
         }
@@ -273,48 +233,67 @@ let hangul = (function Hangul() {
     }
 
     function computeCode(ucode) {
-        let f = (ucode - 44032) % 28,
+        var f = (ucode - 44032) % 28,
             m = (ucode - 44032 - f) % 588 / 28,
             i = parseInt((ucode - 44032) / 588);
         return [f, m, i];
     }
 
     return {
-        composeHangul,
-        unicodeDecode,
-        decomposeHangul
-    }
-}());
-
+        composeHangul: composeHangul,
+        unicodeDecode: unicodeDecode,
+        decomposeHangul: decomposeHangul
+    };
+}();
 
 var editor = document.querySelector('textarea');
+editor.value = localStorage.getItem("hangul") || "";
+editor.focus();
 
-editor.addEventListener("keydown", function(event) {
-    //console.log(event);
-    //event.preventDefault();  //should not appear here
+var doQuery = false;
+
+editor.addEventListener("keydown", function (event) {
+    console.log(event);
+    //event.preventDefa.keyult();  //should not appear here
 
     var text = editor.value;
-    switch (event.code) {
-        case "Backspace":
-            hangul.decomposeHangul(editor);//prevent from printing English letter. !!!text.length has problem!!!
-            event.preventDefault();
-            break;
-        case "Space":
-            editor.value += " ";
-            break;
-        case "Enter":
-            editor.value += "\n";
-            break;
-        case "ShiftLeft":
-        case "ShiftRight":
-        case "CtrlLeft":
-        case "CtrlRight":
-        case "AltLeft":
-        case "AltRight":
-            break;
-        default:
-            hangul.composeHangul(editor, event.key);
-            event.preventDefault();
+    if (event.metaKey || event.key === "Process" || event.key === "Unidentified") {} else if (event.code === "Backspace" || event.key === "Backspace") {
+        hangul.decomposeHangul(editor);
+        event.preventDefault();
+    } else if (event.code === "Space" || event.key === " ") {
+        editor.value += " ";
+        event.preventDefault();
+    } else if (event.code === "Enter" || event.key == "Enter") {
+        event.preventDefault();
+    } else if ((event.code || event.key).match(/Shift|Ctrl|Alt(Left|Right)?/)) {
+        event.preventDefault();
+    } else if (/F\d+/.test(event.key)) {} else if ((event.code || event.key).match(/(Arrow)?Left|Right|Up|Down/)) {} else {
+        hangul.composeHangul(editor, event.key);
+        event.preventDefault();
     }
 
+    doQuery = true;
 });
+
+setInterval(function () {
+    localStorage.setItem("hangul", editor.value);
+}, 5000);
+
+setInterval(function () {
+    if (!doQuery) {
+        return;
+    }
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status >= 200 && xhr.status < 300 || xhr.status === 304) {
+                document.getElementById("dictionary").innerHTML = xhr.responseText;
+            } else {
+                console.log("Request not successful: " + xhr.status);
+            }
+        }
+    };
+    xhr.open('GET', '/crawler?q=' + editor.value);
+    xhr.send();
+    doQuery = false;
+}, 3000);
