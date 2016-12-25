@@ -1,5 +1,7 @@
 var gulp = require('gulp'),
-	jshint = require('gulp-jshint');
+	jshint = require('gulp-jshint'),
+	nodemon = require("gulp-nodemon"),
+	browserSync = require("browser-sync");
 
 // Load plugins
 var load = require('gulp-load-plugins')();
@@ -27,3 +29,36 @@ gulp.task('lint', function() {
 });
 
 gulp.watch(path.js, ['es6', 'lint']);
+
+gulp.task('default', ['browser-sync'], function () {
+});
+
+//https://segmentfault.com/a/1190000003787713
+gulp.task('browser-sync', ['nodemon'], function() {
+	browserSync.init(null, {
+		    //proxy: "http://localhost:5000",
+        files: ["public/**/*.*"],
+        browser: "google chrome",
+        //port: 7000,
+        server: {
+            baseDir: "./"
+        }
+	});
+});
+
+
+gulp.task('nodemon', function (cb) {
+	
+	var started = false;
+	
+	return nodemon({
+		script: './bin/www'
+	}).on('start', function () {
+		// to avoid nodemon being started multiple times
+		// thanks @matthisk
+		if (!started) {
+			cb();
+			started = true; 
+		} 
+	});
+});

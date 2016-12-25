@@ -11,6 +11,11 @@ body{
 	-webkit-font-smoothing: antialiased; /* fix for WebKit inconsistency */
 }
 
+#editor{
+    text-align: center;
+    overflow: hidden;
+}
+
 textarea{
     text-align: center;
     border: none;
@@ -21,14 +26,14 @@ textarea{
 	font-weight: bold;
     color: black;
     padding: 20px;
-}
-
-#editor{
-    text-align: center;
+    width: 60%;
+    float: left;
 }
 
 #dictionary{
 	color: #424242;
+	width: 40%;
+	float: right;
 }
 
 #hangul{
