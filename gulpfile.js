@@ -1,10 +1,10 @@
 var gulp = require('gulp'),
 	jshint = require('gulp-jshint'),
 	nodemon = require("gulp-nodemon"),
-	browserSync = require("browser-sync");
-
-// Load plugins
-var load = require('gulp-load-plugins')();
+	browserSync = require("browser-sync"),
+	sass = require('gulp-sass');
+	// Load plugins
+	var load = require('gulp-load-plugins')();
 
 var path = {
 	js: 'public/es6js/*.js'
@@ -61,4 +61,15 @@ gulp.task('nodemon', function (cb) {
 			started = true; 
 		} 
 	});
+});
+
+ 
+gulp.task('sass', function () {
+  return gulp.src('public/sass/*.sass')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('public/stylesheets'));
+});
+
+gulp.task('sass:watch', function () {
+  gulp.watch('public/sass/*.sass', ['sass']);
 });

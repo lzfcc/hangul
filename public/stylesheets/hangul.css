@@ -5,6 +5,18 @@
 	text-shadow: inherit;
 }
 
+@font-face{
+    font-family: UnGungseo;  
+    src:url('../fonts/UnGungseo.woff'),    
+    url('../fonts/UnGungseo.ttf');
+}
+
+@font-face{
+    font-family: Typo_DodamM;  
+    src:url('../fonts/Typo_DodamM.woff'),    
+    url('../fonts/Typo_DodamM.ttf');
+}
+
 body{
 	background: #eee;
 	color: white;
@@ -21,7 +33,7 @@ textarea{
     border: none;
     outline: none;
     background-color: transparent;
-    font-family: 'Monaco', courier, monospace;
+    font-family: 'UnGungseo', 'Monaco', courier, monospace;
     font-size: 50px;
 	font-weight: bold;
     color: black;

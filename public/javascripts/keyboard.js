@@ -280,7 +280,7 @@ setInterval(function () {
 }, 5000);
 
 setInterval(function () {
-    if (!doQuery) {
+    if (!doQuery || editor.value === "") {
         return;
     }
     var xhr = new XMLHttpRequest();
