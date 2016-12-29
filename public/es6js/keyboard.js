@@ -275,7 +275,7 @@ let hangul = (function Hangul() {
             hangul.decomposeHangul(editor);
         } else if (key === " ") {
             editor.value += " ";
-        } else if (key == "Enter" || key.match(/Shift|Ctrl|Alt(Left|Right)?/) || /F\d+/.test(key) || key.match(/(Arrow)?Left|Right|Up|Down/)) {
+        } else if (key.match(/return|shift|option|command|fn/) || /F\d+/.test(key)) {
         } else{
             hangul.composeHangul(editor, key);
         }
