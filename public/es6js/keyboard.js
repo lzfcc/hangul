@@ -259,33 +259,47 @@ let hangul = (function Hangul() {
             event.preventDefault();
         } else if (/F\d+/.test(event.key)) {}
         else if ((event.code || event.key).match(/(Arrow)?Left|Right|Up|Down/)) {
-    
         } else{
             hangul.composeHangul(editor, event.key);
             event.preventDefault();
         }
-
+        doQuery = true;
+    });
+    
+    
+    $(".cf li").on("click", function(event){
+        let key = $(this).find("span").text(); //event.currentTarget.childNodes[1].childNode[0].innerText;
+        console.log(event.currentTarget);
+        console.log(key);
+        if (key === "Delete") {
+            hangul.decomposeHangul(editor);
+        } else if (key === " ") {
+            editor.value += " ";
+        } else if (key == "Enter" || key.match(/Shift|Ctrl|Alt(Left|Right)?/) || /F\d+/.test(key) || key.match(/(Arrow)?Left|Right|Up|Down/)) {
+        } else{
+            hangul.composeHangul(editor, key);
+        }
+        doQuery = true;
     });
 
     //editor.onchange = ...
-    editor.addEventListener("input", () => {
-        doQuery = true;
-        lastQuery = editor.value;
-    });
+    // editor.addEventListener("input", () => {
+
+    // });
     
     setInterval(() => {
         localStorage.setItem("hangul", editor.value);
     }, 5000);
     
     setInterval(function(){
-        if(!doQuery || editor.value === "" || editor.value === lastQuery){
+        if(!doQuery || editor.value === ""){
             return;
         }
         let xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function(){
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 if ((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {
-                    document.getElementById("dictionary").innerHTML = xhr.responseText;
+                    document.getElementById("dictionary").childNodes[1].innerHTML = xhr.responseText;
                 } else {
                     console.log("Request not successful: " + xhr.status);
                 }
@@ -294,6 +308,6 @@ let hangul = (function Hangul() {
         xhr.open('GET', '/crawler?q=' + editor.value);
         xhr.send();
         doQuery = false;
-    }, 3000);
+    }, 4000);
 })();
 

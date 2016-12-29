@@ -5,19 +5,30 @@
 	text-shadow: inherit;
 }
 
-@font-face{
-	font-family: UnGungseo;
-	src: url('../fonts/UnGungseo.woff'),
-	url('../fonts/UnGungseo.ttf'),
-	url('../fonts/UnGungseo.svg'),
-	url('../fonts/UnGungseo.eot');
+@font-face {
+  font-family: 'UnDotum';
+  src: url('../fonts/UnDotum.woff') format('woff'),
+       url('../fonts/UnDotum.ttf') format('truetype');
+       /*url('UnDotum.svg#UnDotum') format('svg');*/
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'UnGungseo';
+  src: url('../fonts/UnGungseo.eot');
+  src: url('../fonts/UnGungseo.woff') format('woff'),
+       url('../fonts/UnGungseo.ttf') format('truetype'),
+       /*('UnGungseo.svg#UnGungseo') format('svg'),*/
+       url('../fonts/UnGungseo.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face{
-	font-family: Typo_DodamM;
-	src: url('../fonts/Typo_DodamM.woff'),
-	url('../fonts/Typo_DodamM.ttf');
-
+	font-family: 'TypoDodamM';
+	src: url('../fonts/TypoDodamM.woff'),
+	url('../fonts/TypoDodamM.ttf');
 }
 
 body{
@@ -26,29 +37,48 @@ body{
 	-webkit-font-smoothing: antialiased; /* fix for WebKit inconsistency */
 }
 
-#editor{
+#display{
     text-align: center;
     overflow: hidden;
+    margin: 30px;
+}
+
+#editor{
+	background-color: #98cf26;
+	border-radius: 10px;
+	box-shadow: 0px 0px 2px 3px grey inset;
+	float: left;
+	width: 60%;
 }
 
 textarea{
     text-align: center;
     border: none;
     outline: none;
+    border-radius: 10px;
+    width: 100%;
     background-color: transparent;
-    font-family: 'UnGungseo', 'Monaco', courier, monospace;
+    font-family: "UnGungseo", "Monaco", courier, monospace;
     font-size: 50px;
-	font-weight: bold;
-    color: black;
     padding: 20px;
-    width: 60%;
-    float: left;
+    color: #240719; 
+    text-shadow: 1px 0 rgba(255, 0, 0, 0.5), -1px 0 rgba(0, 0, 255, 0.5);
+        background-image: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0.2) 33.33333%, rgba(255, 255, 255, 0.4) 33.33333%, rgba(255, 255, 255, 0.4) 66.66666%, rgba(255, 255, 255, 0.6) 66.66666%), -webkit-linear-gradient(left, rgba(255, 0, 0, 0.7) 33.33333%, rgba(0, 255, 0, 0.7) 33.33333%, rgba(0, 255, 0, 0.7) 66.66666%, rgba(0, 0, 255, 0.7) 66.66666%);
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 0.2) 33.33333%, rgba(255, 255, 255, 0.4) 33.33333%, rgba(255, 255, 255, 0.4) 66.66666%, rgba(255, 255, 255, 0.6) 66.66666%), linear-gradient(to right, rgba(255, 0, 0, 0.7) 33.33333%, rgba(0, 255, 0, 0.7) 33.33333%, rgba(0, 255, 0, 0.7) 66.66666%, rgba(0, 0, 255, 0.7) 66.66666%);
+    background-size: 3px 3px;
+    mix-blend-mode: multiply;
 }
 
 #dictionary{
+    width: 35%;
+    float: right;
+    margin: 10px 0;
+    height: 120px;
+    overflow: scroll;
+}
+
+#dictionary p{
 	color: #424242;
-	width: 40%;
-	float: right;
 }
 
 #hangul{
