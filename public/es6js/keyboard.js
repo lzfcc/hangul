@@ -215,7 +215,7 @@ let hangul = (function Hangul() {
     }
 
     function unicodeDecode(ucode) {
-        //var str = decodeURIComponent("\\u" + ucode.toString(16));  //not work
+        //let str = decodeURIComponent("\\u" + ucode.toString(16));  //not work
         return String.fromCharCode(ucode);
     }
 
@@ -234,18 +234,18 @@ let hangul = (function Hangul() {
 })();
 
 (function(){
-    var editor = document.querySelector('textarea');
+    let editor = document.querySelector('textarea');
     editor.value = localStorage.getItem("hangul") || "";
     editor.focus();
     
-    var doQuery = false;
-    var lastQuery = "";
+    let doQuery = false;
+    let lastQuery = "";
     
     editor.addEventListener("keydown", function(event) {
         console.log(event);
         //event.preventDefa.keyult();  //should not appear here
     
-        var text = editor.value;
+        let text = editor.value;
         if (event.metaKey || event.key === "Process" || event.key === "Unidentified") {
         } else if (event.code === "Backspace" || event.key === "Backspace") {
             hangul.decomposeHangul(editor);
@@ -264,12 +264,16 @@ let hangul = (function Hangul() {
             hangul.composeHangul(editor, event.key);
             event.preventDefault();
         }
-    
+
+    });
+
+    //editor.onchange = ...
+    editor.addEventListener("input", () => {
         doQuery = true;
         lastQuery = editor.value;
     });
     
-    setInterval(function(){
+    setInterval(() => {
         localStorage.setItem("hangul", editor.value);
     }, 5000);
     
@@ -277,7 +281,7 @@ let hangul = (function Hangul() {
         if(!doQuery || editor.value === "" || editor.value === lastQuery){
             return;
         }
-        var xhr = new XMLHttpRequest();
+        let xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function(){
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 if ((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {

@@ -6,15 +6,18 @@
 }
 
 @font-face{
-    font-family: UnGungseo;  
-    src:url('../fonts/UnGungseo.woff'),    
-    url('../fonts/UnGungseo.ttf');
+	font-family: UnGungseo;
+	src: url('../fonts/UnGungseo.woff'),
+	url('../fonts/UnGungseo.ttf'),
+	url('../fonts/UnGungseo.svg'),
+	url('../fonts/UnGungseo.eot');
 }
 
 @font-face{
-    font-family: Typo_DodamM;  
-    src:url('../fonts/Typo_DodamM.woff'),    
-    url('../fonts/Typo_DodamM.ttf');
+	font-family: Typo_DodamM;
+	src: url('../fonts/Typo_DodamM.woff'),
+	url('../fonts/Typo_DodamM.ttf');
+
 }
 
 body{
