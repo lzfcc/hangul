@@ -237,14 +237,13 @@ let hangul = (function Hangul() {
     let editor = document.querySelector('textarea');
     editor.value = localStorage.getItem("hangul") || "";
     editor.focus();
-    
+
     let doQuery = false;
-    let lastQuery = "";
-    
+
     editor.addEventListener("keydown", function(event) {
         console.log(event);
         //event.preventDefa.keyult();  //should not appear here
-    
+
         let text = editor.value;
         if (event.metaKey || event.key === "Process" || event.key === "Unidentified") {
         } else if (event.code === "Backspace" || event.key === "Backspace") {
@@ -265,8 +264,8 @@ let hangul = (function Hangul() {
         }
         doQuery = true;
     });
-    
-    
+
+
     $(".cf li").on("click", function(event){
         let key = $(this).find("span").text(); //event.currentTarget.childNodes[1].childNode[0].innerText;
         console.log(event.currentTarget);
@@ -275,7 +274,7 @@ let hangul = (function Hangul() {
             hangul.decomposeHangul(editor);
         } else if (key === " ") {
             editor.value += " ";
-        } else if (key.match(/return|shift|option|command|fn/) || /F\d+/.test(key)) {
+        } else if (key.match(/return|shift|option|command|fn|caps/) || /F\d+/.test(key)) {
         } else{
             hangul.composeHangul(editor, key);
         }
@@ -286,11 +285,11 @@ let hangul = (function Hangul() {
     // editor.addEventListener("input", () => {
 
     // });
-    
+
     setInterval(() => {
         localStorage.setItem("hangul", editor.value);
-    }, 5000);
-    
+    }, 10000);
+
     setInterval(function(){
         if(!doQuery || editor.value === ""){
             return;
@@ -308,6 +307,5 @@ let hangul = (function Hangul() {
         xhr.open('GET', '/crawler?q=' + editor.value);
         xhr.send();
         doQuery = false;
-    }, 4000);
+    }, 3000);
 })();
-

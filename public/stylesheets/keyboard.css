@@ -2,6 +2,15 @@ body {
     background: #eee;
 }
 
+@font-face{
+	font-family: 'VAG Rounded';
+	src: url('../fonts/VAGRounded.otf'),
+	url('../fonts/VAGRounded.ttf'),
+  url('../fonts/VAGRounded.woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
 #keyboard {
     margin: 15px auto 0;
     width: 800px;
@@ -49,8 +58,9 @@ li {
 
 .key {
     display: block;
-    color: #aaa;
-    font: bold 9pt arial;
+    color: #999;
+    font-family: "VAG Rounded", "Arial Rounded", Helvetica, Arial, sans-serif;
+    font-size: 15px;
     text-decoration: none;
     text-align: center;
     width: 44px;
@@ -114,7 +124,7 @@ li {
 
 #qwerty li a span {
     display: block;
-    margin: 13px 0 0;
+    margin: 5px 0 0 -18px;
     text-transform: uppercase;
 }
 
@@ -136,7 +146,7 @@ li {
 
 #asdfg li a span {
     display: block;
-    margin: 13px 0 0;
+    margin: 5px 0 0 -18px;
     text-transform: uppercase;
 }
 
@@ -176,7 +186,7 @@ li {
 
 #zxcvb li a span {
     display: block;
-    margin: 13px 0 0;
+    margin: 5px 0 0 -18px;
     text-transform: uppercase;
 }
 
@@ -209,8 +219,8 @@ li {
 #bottomrow li #commandleft span {
     display: block;
     text-align: left;
-    margin: 31px 0 0 8px;
-    font-size: 7.5pt;
+    margin: 31px 0 0 6px;
+    font-size: 13px;
     text-transform: lowercase;
 }
 
@@ -218,8 +228,8 @@ li {
 #bottomrow li #commandright span {
     display: block;
     text-align: right;
-    margin: 31px 8px 0 0;
-    font-size: 7.5pt;
+    margin: 31px 8px 0 5px;
+    font-size: 13px;
     text-transform: lowercase;
 }
 
@@ -228,7 +238,7 @@ li {
 #bottomrow ol li #up span,
 #bottomrow ol li #down span {
     display: block;
-    margin: 9px 0 0;
+    margin: 8px 18px;
 }
 
 .fn {
@@ -281,12 +291,42 @@ li {
     width: 226px;
 }
 
-#left img,
-#up img,
-#down img,
-#right img {
-    border: none;
+#up span{
+    width: 0;
+    height: 0;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-bottom: 8px solid gray;
+    margin: 5px 14px;
 }
+
+#down span{
+    width: 0;
+    height: 0;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-top: 8px solid gray;
+    margin: 5px 14px;
+}
+
+#left span{
+    width: 0;
+    height: 0;
+    border-right: 8px solid gray;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    margin: 5px 14px;
+}
+
+#right span{
+    width: 0;
+    height: 0;
+    border-left: 8px solid gray;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    margin: 5px 14px;
+}
+
 
 ul ol {
     list-style-type: none;

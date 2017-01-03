@@ -23,7 +23,7 @@ function queryNaver(word, callback) {
 			.query({'q': word})
 			.end(function(err, res){
 				var $ = cheerio.load(res.text);
-				fs.writeFile('./res.html', res.text, 'utf8', function(err){
+				fs.writeFile('./temp/res.html', res.text, 'utf8', function(err){
 					console.log(err);
 				});
 				result = $('#content .word_result dl').text();

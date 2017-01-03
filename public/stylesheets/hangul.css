@@ -6,15 +6,6 @@
 }
 
 @font-face {
-  font-family: 'UnDotum';
-  src: url('../fonts/UnDotum.woff') format('woff'),
-       url('../fonts/UnDotum.ttf') format('truetype');
-       /*url('UnDotum.svg#UnDotum') format('svg');*/
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
   font-family: 'UnGungseo';
   src: url('../fonts/UnGungseo.eot');
   src: url('../fonts/UnGungseo.woff') format('woff'),
@@ -31,10 +22,12 @@
 	url('../fonts/TypoDodamM.ttf');
 }
 
+
 body{
 	background: #eee;
 	color: white;
 	-webkit-font-smoothing: antialiased; /* fix for WebKit inconsistency */
+	height: 800px;
 }
 
 #display{
@@ -61,7 +54,7 @@ textarea{
     font-family: "UnGungseo", "Monaco", courier, monospace;
     font-size: 50px;
     padding: 20px;
-    color: #240719; 
+    color: #240719;
     text-shadow: 1px 0 rgba(255, 0, 0, 0.5), -1px 0 rgba(0, 0, 255, 0.5);
         background-image: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0.2) 33.33333%, rgba(255, 255, 255, 0.4) 33.33333%, rgba(255, 255, 255, 0.4) 66.66666%, rgba(255, 255, 255, 0.6) 66.66666%), -webkit-linear-gradient(left, rgba(255, 0, 0, 0.7) 33.33333%, rgba(0, 255, 0, 0.7) 33.33333%, rgba(0, 255, 0, 0.7) 66.66666%, rgba(0, 0, 255, 0.7) 66.66666%);
     background-image: linear-gradient(to top, rgba(255, 255, 255, 0.2) 33.33333%, rgba(255, 255, 255, 0.4) 33.33333%, rgba(255, 255, 255, 0.4) 66.66666%, rgba(255, 255, 255, 0.6) 66.66666%), linear-gradient(to right, rgba(255, 0, 0, 0.7) 33.33333%, rgba(0, 255, 0, 0.7) 33.33333%, rgba(0, 255, 0, 0.7) 66.66666%, rgba(0, 0, 255, 0.7) 66.66666%);
@@ -109,19 +102,59 @@ textarea{
 	transition-duration: .3s;
 }
 
-span.love{
-	display: block;
-	position: absolute;
-	bottom: 40px;
-	width: 100%;
-	text-align: center;
-	font-family: 'Montserrat', 'sans-serif';
-	color: #424242;
+#octo-peek{
+		position: absolute;
+		width: 256px;
+		height: 87px;
+		top: 0;
+		right: 0;
+		overflow: hidden;
 }
 
-span.love a{
-	text-decoration: none;
-	color: #D12026;
+#octo-peek a{
+		display: block;
+    width: 86px;
+    height: 88px;
+    position: absolute;
+    right: -28px;
+    top: -32px;
+    background-image: url(../img/octocat-peak.png);
+    background-repeat: no-repeat;
+    background-position: 5px 5px;
+    -webkit-transition: top ease-out .2s, right ease-out .2s;
+    -moz-transition: top ease-out .2s, right ease-out .2s;
+    -ms-transition: top ease-out .2s, right ease-out .2s;
+    -o-transition: top ease-out .2s, right ease-out .2s;
+    transition: top ease-out .2s, right ease-out .2s;
 }
 
-	
+#octo-peek a:hover{
+		top: -20px;
+		right: -10px;
+}
+
+#octo-peek a span {
+    position: absolute;
+    top: 32px;
+    left: -159px;
+    width: 147px;
+    line-height: 20px;
+    font-size: 14px;
+    padding: 5px;
+    font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+    border-radius: 7px;
+    background-color: rgba(255,255,255,.7);
+    opacity: 0;
+    -webkit-transition: opacity ease-out .2s;
+    -moz-transition: opacity ease-out .2s;
+    -ms-transition: opacity ease-out .2s;
+    -o-transition: opacity ease-out .2s;
+    transition: opacity ease-out .2s;
+}
+
+#octo-peek a:hover span{
+		opacity: 1;
+}

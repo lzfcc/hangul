@@ -1,17 +1,21 @@
+'use strict';
+
 const gulp = require('gulp'),
     jshint = require('gulp-jshint'),
     nodemon = require("gulp-nodemon"),
-    browserSync = require("browser-sync"),
+    browserSync = require("browser-sync").create(),
     sass = require('gulp-sass'),
     babel = require("gulp-babel"),
-	uglify = require("gulp-uglify");
+    uglify = require("gulp-uglify");
 // Load plugins ??? load.plumber()???
 const load = require('gulp-load-plugins')();
 
-var path = {
-    js: 'public/es6js/*.js'
-}
+let reload = browserSync.reload;
 
+var path = {
+    js: 'public/es6js/*.js',
+    scss: 'public/sass/*.sass'
+}
 
 /* es6 */
 gulp.task('es6', () =>
@@ -19,7 +23,7 @@ gulp.task('es6', () =>
         .pipe(babel({
             presets: ['es2015']
         }))
-		.pipe(uglify())
+		    .pipe(uglify())
         .pipe(gulp.dest('public/javascripts/'))
 );
 
@@ -30,31 +34,39 @@ gulp.task('lint', () =>
         .pipe(jshint.reporter('default'))
 );
 
-gulp.watch(path.js, ['es6', 'lint']);
-
-gulp.task('default', ['browser-sync'], function () {
-});
-
 //https://segmentfault.com/a/1190000003787713
-gulp.task('browser-sync', ['nodemon'], function() {
-    browserSync.init(null, {
-        //proxy: "http://localhost:5000",
-        files: ["public/**/*.*"],
-        browser: "google chrome",
-        //port: 7000,
-        server: {
-            baseDir: "./"
-        }
+gulp.task('serve', ['nodemon'], function () {
+
+  var files = [
+         'view/*.hbs',
+         'public/**/*.css',
+     ];
+    browserSync.init(files, {
+        proxy: 'http://localhost:3000',
+        files: [path.js, path.scss],
+        browser: "firefox",
+        open: false, //don't oepn browser
+        port: 7000,
     });
+
+    //gulp.watch(path.scss, ['sass']).on("change", reload);
+    gulp.watch('public/stylesheets/*.css').on("change", reload);
+    gulp.watch(path.js, ['lint', 'es6']).on("change", reload);
 });
 
+gulp.task('sass', function () {
+    return gulp.src(path.scss)
+        .pipe(sass().on('error', sass.logError))
+        .pipe(gulp.dest('public/stylesheets'))
+        .pipe(reload({stream: true}));
+});
 
 gulp.task('nodemon', function (cb) {
 
     var started = false;
 
     return nodemon({
-        script: './bin/www'
+        script: './bin/www' //local server entrance
     }).on('start', function () {
         // to avoid nodemon being started multiple times
         // thanks @matthisk
@@ -65,13 +77,4 @@ gulp.task('nodemon', function (cb) {
     });
 });
 
-
-gulp.task('sass', function () {
-    return gulp.src('public/sass/*.sass')
-        .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest('public/stylesheets'));
-});
-
-gulp.task('sass:watch', function () {
-    gulp.watch('public/sass/*.sass', ['sass']);
-});
+gulp.task('default', ['serve']);
