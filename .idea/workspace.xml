@@ -20,51 +20,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="keyboard.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/javascripts/keyboard.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-66">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="keyboard.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="keyboard.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/stylesheets/keyboard.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1584">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="gulpfile.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gulpfile.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="6" column="35" lean-forward="false" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="keyboard.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/es6js/keyboard.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="281" column="19" lean-forward="true" selection-start-line="281" selection-start-column="19" selection-end-line="281" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DS.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/es6js/DS.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="692">
-              <caret line="39" column="2" lean-forward="false" selection-start-line="39" selection-start-column="2" selection-end-line="39" selection-end-column="2" />
+            <state relative-caret-position="265">
+              <caret line="46" column="80" lean-forward="false" selection-start-line="46" selection-start-column="80" selection-end-line="46" selection-end-column="80" />
               <folding />
             </state>
           </provider>
@@ -73,8 +33,62 @@
       <file leaf-file-name="hangul.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/stylesheets/hangul.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="12" column="19" lean-forward="false" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+            <state relative-caret-position="657">
+              <caret line="160" column="0" lean-forward="true" selection-start-line="160" selection-start-column="0" selection-end-line="160" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hangul.hbs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/hangul.hbs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="453">
+              <caret line="129" column="0" lean-forward="false" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
+              <folding>
+                <element signature="n#ul#0;n#div#1;n#div#1;n#main#0;n#!!top" expanded="false" />
+                <element signature="n#ul#1;n#div#1;n#div#1;n#main#0;n#!!top" expanded="false" />
+                <element signature="n#ul#2;n#div#1;n#div#1;n#main#0;n#!!top" expanded="false" />
+                <element signature="n#ul#3;n#div#1;n#div#1;n#main#0;n#!!top" expanded="false" />
+                <element signature="n#ul#4;n#div#1;n#div#1;n#main#0;n#!!top" expanded="false" />
+                <element signature="n#ul#5;n#div#1;n#div#1;n#main#0;n#!!top" expanded="false" />
+                <element signature="e#8881#8887#0#HTML" expanded="true" />
+                <element signature="e#8888#8894#0#HTML" expanded="true" />
+                <element signature="e#8950#8956#0#HTML" expanded="true" />
+                <element signature="e#8957#8963#0#HTML" expanded="true" />
+                <element signature="e#9222#9228#0#HTML" expanded="true" />
+                <element signature="e#9229#9235#0#HTML" expanded="true" />
+                <element signature="e#9432#9438#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gulpfile.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gulpfile.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="20">
+              <caret line="8" column="35" lean-forward="false" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="keyboard.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/es6js/keyboard.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="296" column="39" lean-forward="true" selection-start-line="296" selection-start-column="39" selection-end-line="296" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hangulLayout.hbs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/hangulLayout.hbs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -83,17 +97,9 @@
       <file leaf-file-name="crawler.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/crawler.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+            <state relative-caret-position="116">
               <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-              <folding>
-                <marker date="1482936925475" expanded="true" signature="0:45" ph="/** Created by Coronary on 2016/12/24. ...*/" />
-                <marker date="1482936925475" expanded="true" signature="211:231" ph="/*...*/" />
-                <marker date="1482936925475" expanded="true" signature="273:376" ph="{...}" />
-                <marker date="1482936925475" expanded="true" signature="340:372" ph="{...}" />
-                <marker date="1482936925475" expanded="true" signature="417:748" ph="{...}" />
-                <marker date="1482936925475" expanded="true" signature="534:744" ph="{...}" />
-                <marker date="1482936925475" expanded="true" signature="634:664" ph="{...}" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -103,11 +109,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-              <folding>
-                <marker date="1482936925480" expanded="true" signature="66:86" ph="/*...*/" />
-                <marker date="1482936925480" expanded="true" signature="128:204" ph="{...}" />
-                <marker date="1482936925480" expanded="true" signature="152:200" ph="{&quot;title&quot;: 'Hangul'...}" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -117,27 +119,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="8" column="42" lean-forward="false" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
-              <folding>
-                <marker date="1482936925034" expanded="true" signature="399:502" ph="/*...*/" />
-                <marker date="1482936925034" expanded="true" signature="535:652" ph="//..." />
-                <marker date="1482936925034" expanded="true" signature="969:1041" ph="{...}" />
-                <marker date="1482936925034" expanded="true" signature="1064:1117" ph="//..." />
-                <marker date="1482936925034" expanded="true" signature="1156:1321" ph="{...}" />
-                <marker date="1482936925034" expanded="true" signature="1198:1317" ph="{...}" />
-                <marker date="1482936925034" expanded="true" signature="1259:1311" ph="{&quot;message&quot;: err.message...}" />
-                <marker date="1482936925034" expanded="true" signature="1323:1383" ph="//..." />
-                <marker date="1482936925034" expanded="true" signature="1422:1528" ph="{...}" />
-                <marker date="1482936925034" expanded="true" signature="1479:1524" ph="{&quot;message&quot;: err.message...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -157,9 +138,19 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>var</find>
+      <find>transition</find>
+      <find>show</find>
+      <find>#key</find>
+      <find>#keyboard</find>
+      <find>opacity</find>
+      <find>.info</find>
+      <find>.keybo</find>
+      <find>fixed</find>
     </findStrings>
     <replaceStrings>
       <replace>let</replace>
+      <replace>.keyboard</replace>
+      <replace>.q-and-a</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -178,9 +169,11 @@
         <option value="$PROJECT_DIR$/public/es6js/DS.js" />
         <option value="$PROJECT_DIR$/routes/crawler.js" />
         <option value="$PROJECT_DIR$/app.js" />
-        <option value="$PROJECT_DIR$/public/es6js/keyboard.js" />
         <option value="$PROJECT_DIR$/gulpfile.js" />
+        <option value="$PROJECT_DIR$/public/es6js/keyboard.js" />
+        <option value="$PROJECT_DIR$/views/hangul.hbs" />
         <option value="$PROJECT_DIR$/public/stylesheets/hangul.css" />
+        <option value="$PROJECT_DIR$/public/stylesheets/keyboard.css" />
       </list>
     </option>
   </component>
@@ -205,7 +198,7 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1432" />
+    <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1456" />
     <option name="height" value="876" />
@@ -314,6 +307,24 @@
               <option name="myItemId" value="public" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hangul" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hangul" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -333,6 +344,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hangul" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hangul" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="img" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -348,7 +373,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="js.eslint.eslintPackage" value="" />
-    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
     <property name="JavaScriptPreferStrict" value="false" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
   </component>
@@ -433,22 +458,32 @@
       <option name="presentableId" value="Default" />
       <updated>1465648379546</updated>
       <workItem from="1482559435596" duration="7029000" />
-      <workItem from="1482989769613" duration="2615000" />
+      <workItem from="1482989769613" duration="3347000" />
+      <workItem from="1483508974761" duration="21030000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9644000" />
+    <option name="totallyTimeSpent" value="31406000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1432" y="-8" width="1456" height="876" extended-state="6" />
+    <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18055555" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295838" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -460,7 +495,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -487,6 +522,86 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/public/javascripts/keyboard.js">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/keyboard.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gulpfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="35" lean-forward="false" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/es6js/keyboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6182">
+          <caret line="281" column="19" lean-forward="false" selection-start-line="281" selection-start-column="19" selection-end-line="281" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/es6js/DS.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="858">
+          <caret line="39" column="2" lean-forward="false" selection-start-line="39" selection-start-column="2" selection-end-line="39" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/hangul.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" column="19" lean-forward="false" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/crawler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/hangul.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="42" lean-forward="false" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/keyboard.js">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6292">
           <caret line="286" column="0" lean-forward="false" selection-start-line="286" selection-start-column="0" selection-end-line="286" selection-end-column="0" />
           <folding />
@@ -505,9 +620,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
           <caret line="21" column="9" lean-forward="false" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
-          <folding>
-            <marker date="1482992807478" expanded="true" signature="908:909" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -539,15 +651,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding>
-            <marker date="1482936925475" expanded="true" signature="0:45" ph="/** Created by Coronary on 2016/12/24. ...*/" />
-            <marker date="1482936925475" expanded="true" signature="211:231" ph="/*...*/" />
-            <marker date="1482936925475" expanded="true" signature="273:376" ph="{...}" />
-            <marker date="1482936925475" expanded="true" signature="340:372" ph="{...}" />
-            <marker date="1482936925475" expanded="true" signature="417:748" ph="{...}" />
-            <marker date="1482936925475" expanded="true" signature="534:744" ph="{...}" />
-            <marker date="1482936925475" expanded="true" signature="634:664" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -555,11 +659,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
           <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding>
-            <marker date="1482936925480" expanded="true" signature="66:86" ph="/*...*/" />
-            <marker date="1482936925480" expanded="true" signature="128:204" ph="{...}" />
-            <marker date="1482936925480" expanded="true" signature="152:200" ph="{&quot;title&quot;: 'Hangul'...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -567,18 +667,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="8" column="42" lean-forward="false" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
-          <folding>
-            <marker date="1482936925034" expanded="true" signature="399:502" ph="/*...*/" />
-            <marker date="1482936925034" expanded="true" signature="535:652" ph="//..." />
-            <marker date="1482936925034" expanded="true" signature="969:1041" ph="{...}" />
-            <marker date="1482936925034" expanded="true" signature="1064:1117" ph="//..." />
-            <marker date="1482936925034" expanded="true" signature="1156:1321" ph="{...}" />
-            <marker date="1482936925034" expanded="true" signature="1198:1317" ph="{...}" />
-            <marker date="1482936925034" expanded="true" signature="1259:1311" ph="{&quot;message&quot;: err.message...}" />
-            <marker date="1482936925034" expanded="true" signature="1323:1383" ph="//..." />
-            <marker date="1482936925034" expanded="true" signature="1422:1528" ph="{...}" />
-            <marker date="1482936925034" expanded="true" signature="1479:1524" ph="{&quot;message&quot;: err.message...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -674,9 +763,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="9" lean-forward="false" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
-          <folding>
-            <marker date="1482992807478" expanded="true" signature="908:909" ph="{...}" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/hangul.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="8" column="42" lean-forward="false" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/es6js/DS.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="858">
+          <caret line="39" column="2" lean-forward="false" selection-start-line="39" selection-start-column="2" selection-end-line="39" selection-end-column="2" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -688,97 +798,85 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/hangul.js">
+    <entry file="file://$PROJECT_DIR$/public/javascripts/keyboard.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding>
-            <marker date="1482936925480" expanded="true" signature="66:86" ph="/*...*/" />
-            <marker date="1482936925480" expanded="true" signature="128:204" ph="{...}" />
-            <marker date="1482936925480" expanded="true" signature="152:200" ph="{&quot;title&quot;: 'Hangul'...}" />
-          </folding>
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="8" column="42" lean-forward="false" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
-          <folding>
-            <marker date="1482936925034" expanded="true" signature="399:502" ph="/*...*/" />
-            <marker date="1482936925034" expanded="true" signature="535:652" ph="//..." />
-            <marker date="1482936925034" expanded="true" signature="969:1041" ph="{...}" />
-            <marker date="1482936925034" expanded="true" signature="1064:1117" ph="//..." />
-            <marker date="1482936925034" expanded="true" signature="1156:1321" ph="{...}" />
-            <marker date="1482936925034" expanded="true" signature="1198:1317" ph="{...}" />
-            <marker date="1482936925034" expanded="true" signature="1259:1311" ph="{&quot;message&quot;: err.message...}" />
-            <marker date="1482936925034" expanded="true" signature="1323:1383" ph="//..." />
-            <marker date="1482936925034" expanded="true" signature="1422:1528" ph="{...}" />
-            <marker date="1482936925034" expanded="true" signature="1479:1524" ph="{&quot;message&quot;: err.message...}" />
-          </folding>
-        </state>
+    <entry file="file://$PROJECT_DIR$/img/Apple_Korean_Wireless_Keyboard.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/crawler.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="116">
           <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding>
-            <marker date="1482936925475" expanded="true" signature="0:45" ph="/** Created by Coronary on 2016/12/24. ...*/" />
-            <marker date="1482936925475" expanded="true" signature="211:231" ph="/*...*/" />
-            <marker date="1482936925475" expanded="true" signature="273:376" ph="{...}" />
-            <marker date="1482936925475" expanded="true" signature="340:372" ph="{...}" />
-            <marker date="1482936925475" expanded="true" signature="417:748" ph="{...}" />
-            <marker date="1482936925475" expanded="true" signature="534:744" ph="{...}" />
-            <marker date="1482936925475" expanded="true" signature="634:664" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gulpfile.js">
+    <entry file="file://$PROJECT_DIR$/views/hangulLayout.hbs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="6" column="35" lean-forward="false" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/keyboard.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1584">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/keyboard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-66">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/es6js/DS.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="692">
-          <caret line="39" column="2" lean-forward="false" selection-start-line="39" selection-start-column="2" selection-end-line="39" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/hangul.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="19" lean-forward="false" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/es6js/keyboard.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="281" column="19" lean-forward="true" selection-start-line="281" selection-start-column="19" selection-end-line="281" selection-end-column="19" />
+        <state relative-caret-position="76">
+          <caret line="296" column="39" lean-forward="true" selection-start-line="296" selection-start-column="39" selection-end-line="296" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gulpfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="8" column="35" lean-forward="false" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/hangul.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="453">
+          <caret line="129" column="0" lean-forward="false" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
+          <folding>
+            <element signature="n#ul#0;n#div#1;n#div#1;n#main#0;n#!!top" expanded="false" />
+            <element signature="n#ul#1;n#div#1;n#div#1;n#main#0;n#!!top" expanded="false" />
+            <element signature="n#ul#2;n#div#1;n#div#1;n#main#0;n#!!top" expanded="false" />
+            <element signature="n#ul#3;n#div#1;n#div#1;n#main#0;n#!!top" expanded="false" />
+            <element signature="n#ul#4;n#div#1;n#div#1;n#main#0;n#!!top" expanded="false" />
+            <element signature="n#ul#5;n#div#1;n#div#1;n#main#0;n#!!top" expanded="false" />
+            <element signature="e#8881#8887#0#HTML" expanded="true" />
+            <element signature="e#8888#8894#0#HTML" expanded="true" />
+            <element signature="e#8950#8956#0#HTML" expanded="true" />
+            <element signature="e#8957#8963#0#HTML" expanded="true" />
+            <element signature="e#9222#9228#0#HTML" expanded="true" />
+            <element signature="e#9229#9235#0#HTML" expanded="true" />
+            <element signature="e#9432#9438#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/hangul.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="657">
+          <caret line="160" column="0" lean-forward="true" selection-start-line="160" selection-start-column="0" selection-end-line="160" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/keyboard.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="46" column="80" lean-forward="false" selection-start-line="46" selection-start-column="80" selection-end-line="46" selection-end-column="80" />
           <folding />
         </state>
       </provider>

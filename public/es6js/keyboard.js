@@ -308,4 +308,16 @@ let hangul = (function Hangul() {
         xhr.send();
         doQuery = false;
     }, 3000);
+
+
+
+    let keyboard = document.querySelectorAll(".keyboard");
+    setTimeout(() => {
+        $(keyboard).addClass("show");
+    }, 500);
+    keyboard.addEventListener("transitionend", (e) => {
+        // let attrBottom = $(keyboard).css("bottom");
+        // let attrBottomNum = Number(attrBottom.substr(0, attrBottom.length - 2));
+        // console.log(attrBottomNum);
+    });
 })();
