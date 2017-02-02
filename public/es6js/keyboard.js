@@ -241,7 +241,7 @@ let hangul = (function Hangul() {
     let doQuery = false;
 
     editor.addEventListener("keydown", function(event) {
-        console.log(event);
+        //console.log(event);
         //event.preventDefa.keyult();  //should not appear here
 
         let text = editor.value;
@@ -280,20 +280,40 @@ let hangul = (function Hangul() {
         }
         doQuery = true;
     });
-
-    //editor.onchange = ...
-    // editor.addEventListener("input", () => {
-
-    // });
-
+    
+    //持久化
     setInterval(() => {
         localStorage.setItem("hangul", editor.value);
     }, 10000);
+    
+    //editor.onchange = ...
+    //editor.addEventListener("input", () => {
 
-    setInterval(function(){
-        if(!doQuery || editor.value === ""){
-            return;
+    // });
+
+    // debounce函数用来包裹我们的事件
+    function debounce(fn, delay) {
+      // 持久化一个timer
+        let timer = null;
+      // 闭包可以获取到timer
+        return function() {
+        // 通过函数获取到作用域和参数列表
+        // 通过 'this' 和 'arguments'
+            let context = this;
+            let args = arguments;
+        // 如果事件被触发，清除timer并重新开始计时
+            clearTimeout(timer);
+            timer = setTimeout(function() {
+                fn.apply(context, args);
+            }, delay);
         }
+    }
+    
+    editor.addEventListener('keydown', debounce(newSearch, 1000));
+    
+    function newSearch(){
+        console.log('searching...');
+        if (editor.value === '') return;
         let xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function(){
             if (xhr.readyState === XMLHttpRequest.DONE) {
@@ -306,18 +326,15 @@ let hangul = (function Hangul() {
         };
         xhr.open('GET', '/crawler?q=' + editor.value);
         xhr.send();
-        doQuery = false;
-    }, 3000);
-
-
+    }
 
     let keyboard = document.querySelectorAll(".keyboard");
     setTimeout(() => {
         $(keyboard).addClass("show");
     }, 500);
-    keyboard.addEventListener("transitionend", (e) => {
+   //keyboard.addEventListener("transitionend", (e) => {
         // let attrBottom = $(keyboard).css("bottom");
         // let attrBottomNum = Number(attrBottom.substr(0, attrBottom.length - 2));
         // console.log(attrBottomNum);
-    });
+    //});
 })();
