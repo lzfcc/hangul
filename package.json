@@ -27,7 +27,7 @@
     "gulp-plumber": "^1.1.0",
     "gulp-sass": "^3.0.0",
     "gulp-uglify": "^2.0.0",
-    "jshint": "^2.9.4",
-    "nodemon": "^1.9.2"
+    "jshint": "^2.10.3",
+    "nodemon": "^1.19.4"
   }
 }

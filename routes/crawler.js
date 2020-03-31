@@ -19,15 +19,18 @@ router.get('/', function(req, res, next) {
 
 function queryNaver(word, callback) {
 	var result;
-	superagent.get('http://cndic.naver.com/search/all')
+	superagent.get('https://zh.dict.naver.com/#/search?')
 			.query({'q': word})
 			.end(function(err, res){
 				var $ = cheerio.load(res.text);
-				fs.writeFile('./temp/res.html', res.text, 'utf8', function(err){
-					console.log(err);
+				fs.writeFile('res.html', res.text, 'utf8', function(err){
+					if (err) {
+						console.error(err);
+						return;
+					}
+					result = $('mean_list').text();
+					callback(result);
 				});
-				result = $('#content .word_result dl').text();
-				callback(result);
 			});
 }
 
