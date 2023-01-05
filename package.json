@@ -20,7 +20,7 @@
     "babel-preset-env": "^1.7.0",
     "browser-sync": "^2.18.5",
     "gulp": "^4.0.2",
-    "gulp-babel": "^6.1.2",
+    "gulp-babel": "^8.0.0",
     "gulp-jshint": "^2.0.4",
     "gulp-load-plugins": "^1.4.0",
     "gulp-nodemon": "^2.2.1",
